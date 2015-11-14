@@ -36,6 +36,7 @@ namespace MyTarget
                 .AddDbContext<ApplicationContext>(options =>
                     options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
 
+
             services.AddMvc();
         }
 

@@ -789,6 +789,17 @@
           "lib/net45/System.Net.Http.Formatting.dll": {}
         }
       },
+      "Microsoft.AspNet.WebApi.Core/5.0.0": {
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Client": "5.0.0"
+        },
+        "compile": {
+          "lib/net45/System.Web.Http.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Http.dll": {}
+        }
+      },
       "Microsoft.AspNet.WebUtilities/1.0.0-beta5": {
         "dependencies": {
           "Microsoft.Framework.WebEncoders.Core": "1.0.0-beta5"
@@ -1244,6 +1255,38 @@
         },
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Ninject/3.2.2.0": {
+        "compile": {
+          "lib/net45-full/Ninject.dll": {}
+        },
+        "runtime": {
+          "lib/net45-full/Ninject.dll": {}
+        }
+      },
+      "Ninject.Web.Common/3.2.0.0": {
+        "dependencies": {
+          "Ninject": "[3.2.0.0, 3.3.0.0)"
+        },
+        "compile": {
+          "lib/net45-full/Ninject.Web.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net45-full/Ninject.Web.Common.dll": {}
+        }
+      },
+      "Ninject.Web.WebApi/3.2.4.0": {
+        "dependencies": {
+          "Ninject": "[3.2.0.0, 3.3.0.0)",
+          "Ninject.Web.Common": "[3.2.0.0, 3.3.0.0)",
+          "Microsoft.AspNet.WebApi.Core": "[5.0, 6.0)"
+        },
+        "compile": {
+          "lib/net45-full/Ninject.Web.WebApi.dll": {}
+        },
+        "runtime": {
+          "lib/net45-full/Ninject.Web.WebApi.dll": {}
         }
       },
       "Remotion.Linq/2.0.0-alpha-002": {
@@ -1955,6 +1998,11 @@
           "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.dll": {}
         }
       },
+      "Microsoft.AspNet.WebApi.Core/5.0.0": {
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Client": "5.0.0"
+        }
+      },
       "Microsoft.AspNet.WebUtilities/1.0.0-beta5": {
         "dependencies": {
           "Microsoft.Framework.WebEncoders.Core": "1.0.0-beta5",
@@ -2448,6 +2496,19 @@
         },
         "runtime": {
           "lib/portable-net45+wp80+win8+wpa81+aspnetcore50/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Ninject/3.2.2.0": {},
+      "Ninject.Web.Common/3.2.0.0": {
+        "dependencies": {
+          "Ninject": "[3.2.0.0, 3.3.0.0)"
+        }
+      },
+      "Ninject.Web.WebApi/3.2.4.0": {
+        "dependencies": {
+          "Ninject": "[3.2.0.0, 3.3.0.0)",
+          "Ninject.Web.Common": "[3.2.0.0, 3.3.0.0)",
+          "Microsoft.AspNet.WebApi.Core": "[5.0, 6.0)"
         }
       },
       "Remotion.Linq/2.0.0-alpha-002": {
@@ -4299,6 +4360,18 @@
         "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.xml"
       ]
     },
+    "Microsoft.AspNet.WebApi.Core/5.0.0": {
+      "serviceable": true,
+      "sha512": "ZOVLLtFpSM8nkJopUM9upbJEUkAUS60j6Sj1hDKewHaekWMUnnoMX/i3Ee+7KgxMGk13yxxQRHtSwcjh1JpJ4w==",
+      "files": [
+        "Microsoft.AspNet.WebApi.Core.5.0.0.nupkg",
+        "Microsoft.AspNet.WebApi.Core.5.0.0.nupkg.sha512",
+        "Microsoft.AspNet.WebApi.Core.nuspec",
+        "content/web.config.transform",
+        "lib/net45/System.Web.Http.dll",
+        "lib/net45/System.Web.Http.xml"
+      ]
+    },
     "Microsoft.AspNet.WebUtilities/1.0.0-beta5": {
       "serviceable": true,
       "sha512": "Ieb9JeaI57V2HRWyFsQE+Ioo7jRE7gp8QgmHAgCuc58RfUUvKf3BdmjMMqw+0DfOQMf4VL9xWpj0yQ/bMA1VDA==",
@@ -4943,6 +5016,58 @@
         "lib/portable-net45+wp80+win8+wpa81+aspnetcore50/Newtonsoft.Json.dll",
         "lib/portable-net45+wp80+win8+wpa81+aspnetcore50/Newtonsoft.Json.xml",
         "tools/install.ps1"
+      ]
+    },
+    "Ninject/3.2.2.0": {
+      "sha512": "vDyKaDZ1RgmPxD87u3om3La34r4RHBZfap3tCsJtUbSGkIWjQJ8La1s61BR/C0LgO1+3xGEC6UfI7D594MNl5Q==",
+      "files": [
+        "Ninject.3.2.2.0.nupkg",
+        "Ninject.3.2.2.0.nupkg.sha512",
+        "Ninject.nuspec",
+        "lib/net35/Ninject.dll",
+        "lib/net35/Ninject.xml",
+        "lib/net40/Ninject.dll",
+        "lib/net40/Ninject.xml",
+        "lib/net45-full/Ninject.dll",
+        "lib/net45-full/Ninject.xml",
+        "lib/sl2/Ninject.dll",
+        "lib/sl2/Ninject.xml",
+        "lib/sl3/Ninject.dll",
+        "lib/sl3/Ninject.xml",
+        "lib/sl3-wp/Ninject.dll",
+        "lib/sl3-wp/Ninject.xml",
+        "lib/sl4/Ninject.dll",
+        "lib/sl4/Ninject.xml",
+        "lib/sl4-windowsphone71/Ninject.dll",
+        "lib/sl4-windowsphone71/Ninject.xml",
+        "lib/sl5/Ninject.dll",
+        "lib/sl5/Ninject.xml"
+      ]
+    },
+    "Ninject.Web.Common/3.2.0.0": {
+      "sha512": "0isoniPCLBWDzFo3f3DrTfo2p/hDxmTzY7sqkIpJuTfXwzDmpRJmfJbK2FqHCgPKmgbsQKPB1JSK0e1HN2FbHw==",
+      "files": [
+        "Ninject.Web.Common.3.2.0.0.nupkg",
+        "Ninject.Web.Common.3.2.0.0.nupkg.sha512",
+        "Ninject.Web.Common.nuspec",
+        "lib/net35-full/Ninject.Web.Common.dll",
+        "lib/net35-full/Ninject.Web.Common.xml",
+        "lib/net40-full/Ninject.Web.Common.dll",
+        "lib/net40-full/Ninject.Web.Common.xml",
+        "lib/net45-full/Ninject.Web.Common.dll",
+        "lib/net45-full/Ninject.Web.Common.xml"
+      ]
+    },
+    "Ninject.Web.WebApi/3.2.4.0": {
+      "sha512": "uogeMO3b5eYpZrNT+NjKsUSmXxv95vnrZJf7e5h4xo89kAEt4XnflMlfZxZWu+3vCltx5zron7zPoESIE0nJOw==",
+      "files": [
+        "Ninject.Web.WebApi.3.2.4.0.nupkg",
+        "Ninject.Web.WebApi.3.2.4.0.nupkg.sha512",
+        "Ninject.Web.WebApi.nuspec",
+        "lib/net40-full/Ninject.Web.WebApi.dll",
+        "lib/net40-full/Ninject.Web.WebApi.xml",
+        "lib/net45-full/Ninject.Web.WebApi.dll",
+        "lib/net45-full/Ninject.Web.WebApi.xml"
       ]
     },
     "Remotion.Linq/2.0.0-alpha-002": {
@@ -6038,7 +6163,9 @@
       "Microsoft.AspNet.Server.IIS >= 1.0.0-beta5",
       "Microsoft.AspNet.Server.WebListener >= 1.0.0-beta5",
       "Microsoft.AspNet.StaticFiles >= 1.0.0-beta5",
-      "Microsoft.AspNet.Mvc.WebApiCompatShim >= 6.0.0-beta5"
+      "Microsoft.AspNet.Mvc.WebApiCompatShim >= 6.0.0-beta5",
+      "Ninject >= 3.2.2",
+      "Ninject.Web.WebApi >= 3.2.4"
     ],
     "DNX,Version=v4.5.1": [
       "EntityFramework.Core >= 7.0.0-beta5"

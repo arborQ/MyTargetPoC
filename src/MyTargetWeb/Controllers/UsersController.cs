@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNet.Mvc;
-
+using MyTarget.Models;
+using System.Linq;
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace MyTarget.Controllers
@@ -8,11 +9,17 @@ namespace MyTarget.Controllers
     [Route("api/[controller]")]
     public class UsersController : Controller
     {
+        private readonly ApplicationContext _context;
+        public UsersController(ApplicationContext context)
+        {
+            _context = context;
+        }
+
         // GET: api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<User> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _context.Users.ToList();
         }
 
         // GET api/values/5
