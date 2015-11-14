@@ -1,0 +1,8 @@
+﻿{
+	"Data": {
+		"DefaultConnection": {
+      "ConnectionString": "Data Source=DESKTOP-E57PH7T\\SQLEXPRESS;Initial Catalog=MyTargetDev;Integrated Security=True"
+        
+		}
+	}
+}
