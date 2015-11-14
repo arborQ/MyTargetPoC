@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "jsx": "react",
+        "noLib": false,
+        "preserveConstEnums": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "noEmitHelpers": true,
+        "noEmit": true
+    },
+    "filesGlob": [
+        "!./node_modules/**/*",
+        "./typings/**/*.d.ts",
+        "./src/**/*.d.ts",
+        "./src/**/*.tsx"
+    ],
+    "files": [
+        "./typings/react-dom/react-dom.d.ts",
+        "./typings/react-router/react-router.d.ts",
+        "./typings/material-ui/material-ui.d.ts",
+        "./src/react/components/app.tsx",
+        "./src/react/components/login.tsx",
+        "./src/react/components/users/userEdit.tsx",
+        "./src/react/components/users/userList.tsx",
+        "./src/react/components/users/usersEntry.tsx",
+        "./src/react/components/users/usersRoutes.tsx",
+        "./src/react/react.app.tsx"
+    ],
+    "exclude": []
+}

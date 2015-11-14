@@ -1,0 +1,35 @@
+{
+  "name": "reactangular",
+  "version": "1.0.0",
+  "description": "test React - Angular app",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "tsd reinstall --overwrite --save",
+    "start": "live-server --entry-file=public/react.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://arborQ@github.com/arborQ/ReactAngular.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arborQ/ReactAngular/issues"
+  },
+  "homepage": "https://github.com/arborQ/ReactAngular#readme",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat-css": "^2.2.0",
+    "gulp-less": "^3.0.3",
+    "history": "^1.13.0",
+    "material-ui": "^0.13.2",
+    "react": "^0.14.2",
+    "react-dom": "^0.14.2",
+    "react-router": "^0.13.5",
+    "ts-loader": "^0.5.4",
+    "tsd": "^0.6.5",
+    "typescript": "^1.6.2",
+    "webpack": "^1.12.1"
+  },
+  "devDependencies": {}
+}
