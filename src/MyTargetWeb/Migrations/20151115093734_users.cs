@@ -16,9 +16,9 @@ namespace MyTargetWeb.Migrations
                     Id = table.Column(type: "bigint", nullable: false)
                         .Annotation("SqlServer:ValueGeneration", "Identity"),
                     Created = table.Column(type: "datetime2", nullable: false),
-                    IsActive = table.Column(type: "bit", nullable: false),
-                    Login = table.Column(type: "nvarchar(max)", nullable: true),
-                    Timestamp = table.Column(type: "varbinary(max)", nullable: true)
+                    IsActive = table.Column(type: "bit", nullable: false, defaultValue: false),
+                    Login = table.Column(type: "nvarchar(max)", nullable: false),
+                    Timestamp = table.Column(type: "rowversion", nullable: false)
                 },
                 constraints: table =>
                 {

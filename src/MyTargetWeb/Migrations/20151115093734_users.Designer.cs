@@ -11,7 +11,7 @@ namespace MyTargetWeb.Migrations
     {
         public override string Id
         {
-            get { return "20151114204021_users"; }
+            get { return "20151115093734_users"; }
         }
         
         public override string ProductVersion
@@ -35,11 +35,17 @@ namespace MyTargetWeb.Migrations
                     
                     b.Property<DateTime>("Created");
                     
-                    b.Property<bool>("IsActive");
+                    b.Property<bool>("IsActive")
+                        .Annotation("Relational:ColumnDefaultValue", "False")
+                        .Annotation("Relational:ColumnDefaultValueType", "System.Boolean");
                     
-                    b.Property<string>("Login");
+                    b.Property<string>("Login")
+                        .Required()
+                        .Annotation("MaxLength", 30);
                     
-                    b.Property<byte[]>("Timestamp");
+                    b.Property<byte[]>("Timestamp")
+                        .ConcurrencyToken()
+                        .Required();
                     
                     b.Key("Id");
                 });
