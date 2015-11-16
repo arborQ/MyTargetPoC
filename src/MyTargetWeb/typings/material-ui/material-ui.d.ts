@@ -1104,7 +1104,7 @@ declare namespace __MaterialUI {
             value?: string;
             selected?: boolean;
             width?: string;
-
+            route? : string;
             // Called by Tabs component
             onActive?: (tab: Tab) => void;
 

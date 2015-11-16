@@ -4,7 +4,6 @@ import {ColorManipulator} from 'material-ui/lib/utils/';
 export default {
   spacing: Spacing,
   fontFamily: 'Roboto, sans-serif',
-  sizes : { header : 64 },
   palette: {
     primary1Color: '#cf4646',
     primary2Color: Colors.red700,

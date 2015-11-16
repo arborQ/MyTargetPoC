@@ -16,13 +16,13 @@ class AppClass extends React.Component<any, any>{
     ];
     return (
       <div>
-        <Paper zDepth={0} style={{ "padding" : '5px', "backgroundColor" : arborTheme.palette.primary1Color, "height" : arborTheme.sizes.header }}>
+        <Paper zDepth={0} style={{ "padding" : '5px', "backgroundColor" : arborTheme.palette.primary1Color, "height" : 64 }}>
           <Link to="app">
-            <Avatar src="images/logo.png" size={arborTheme.sizes.header-10} />
+            <Avatar src="images/logo.png" size={64-10} />
           </Link>
           <Tabs style={{"width" : "400px", "float" : "right" }}>
-            <Tab label="Login" />
-            <Tab label="Users" />
+            <Tab label="Login" route="login"></Tab>
+            <Tab label="Users" route="users" />
           </Tabs>
         </Paper>
         <LeftNav ref="leftNav" menuItems={menuItems} docked={false}>
