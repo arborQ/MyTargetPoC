@@ -19648,9 +19648,8 @@
 	var React = __webpack_require__(1);
 	var react_router_1 = __webpack_require__(160);
 	var material_ui_1 = __webpack_require__(202);
-	var _1 = __webpack_require__(266);
 	var arborTheme_1 = __webpack_require__(366);
-	var _2 = __webpack_require__(266);
+	var _1 = __webpack_require__(266);
 	var AppClass = (function (_super) {
 	    __extends(AppClass, _super);
 	    function AppClass() {
@@ -19661,11 +19660,11 @@
 	            { route: 'login', text: 'Login' },
 	            { route: 'users', text: 'Users' },
 	        ];
-	        return (React.createElement("div", null, React.createElement(material_ui_1.Paper, {"zDepth": 0, "style": { "backgroundColor": _1.Colors.cyan500, "height": "64px" }}), React.createElement(material_ui_1.LeftNav, {"ref": "leftNav", "menuItems": menuItems, "docked": false}), React.createElement("div", {"style": { maxWidth: '800px', margin: '0 auto', paddingTop: '10px' }}, React.createElement(react_router_1.RouteHandler, null))));
+	        return (React.createElement("div", null, React.createElement(material_ui_1.Paper, {"zDepth": 0, "style": { "padding": '5px', "backgroundColor": arborTheme_1.default.palette.primary1Color, "height": arborTheme_1.default.sizes.header }}, React.createElement(react_router_1.Link, {"to": "app"}, React.createElement(material_ui_1.Avatar, {"src": "images/logo.png", "size": arborTheme_1.default.sizes.header - 10})), React.createElement(material_ui_1.Tabs, {"style": { "width": "400px", "float": "right" }}, React.createElement(material_ui_1.Tab, {"label": "Login"}), React.createElement(material_ui_1.Tab, {"label": "Users"}))), React.createElement(material_ui_1.LeftNav, {"ref": "leftNav", "menuItems": menuItems, "docked": false}), React.createElement("div", {"style": { maxWidth: '800px', margin: '0 auto', paddingTop: '10px' }}, React.createElement(react_router_1.RouteHandler, null))));
 	    };
 	    ;
 	    AppClass = __decorate([
-	        _2.ThemeDecorator(_2.ThemeManager.getMuiTheme(arborTheme_1.default))
+	        _1.ThemeDecorator(_1.ThemeManager.getMuiTheme(arborTheme_1.default))
 	    ], AppClass);
 	    return AppClass;
 	})(React.Component);
@@ -45062,9 +45061,10 @@
 	exports.default = {
 	    spacing: _1.Spacing,
 	    fontFamily: 'Roboto, sans-serif',
+	    sizes: { header: 64 },
 	    palette: {
-	        primary1Color: _1.Colors.cyan500,
-	        primary2Color: _1.Colors.cyan700,
+	        primary1Color: '#cf4646',
+	        primary2Color: _1.Colors.red700,
 	        primary3Color: _1.Colors.lightBlack,
 	        accent1Color: _1.Colors.pinkA200,
 	        accent2Color: _1.Colors.grey100,

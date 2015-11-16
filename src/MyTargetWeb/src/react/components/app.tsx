@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link, RouteHandler } from 'react-router';
-import { AppBar, Menu, MenuItem, LeftNav, Paper } from 'material-ui';
+import { Avatar, Menu, MenuItem, LeftNav, Paper, Tabs, Tab } from 'material-ui';
 import { Colors } from 'material-ui/lib/styles/';
 import arborTheme from './arborTheme';
 
@@ -16,7 +16,15 @@ class AppClass extends React.Component<any, any>{
     ];
     return (
       <div>
-        <Paper zDepth={0} style={{ "backgroundColor" : Colors.cyan500, "height" : "64px" }}></Paper>
+        <Paper zDepth={0} style={{ "padding" : '5px', "backgroundColor" : arborTheme.palette.primary1Color, "height" : arborTheme.sizes.header }}>
+          <Link to="app">
+            <Avatar src="images/logo.png" size={arborTheme.sizes.header-10} />
+          </Link>
+          <Tabs style={{"width" : "400px", "float" : "right" }}>
+            <Tab label="Login" />
+            <Tab label="Users" />
+          </Tabs>
+        </Paper>
         <LeftNav ref="leftNav" menuItems={menuItems} docked={false}>
         </LeftNav>
         <div style={{maxWidth : '800px', margin : '0 auto', paddingTop : '10px'}}>
