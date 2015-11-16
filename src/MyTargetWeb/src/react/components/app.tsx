@@ -1,19 +1,22 @@
 import * as React from 'react';
 import { Link, RouteHandler } from 'react-router';
-import { AppBar, Menu, MenuItem, LeftNav, FlatButton } from 'material-ui';
+import { AppBar, Menu, MenuItem, LeftNav, Paper } from 'material-ui';
+import { Colors } from 'material-ui/lib/styles/';
+import arborTheme from './arborTheme';
 
-export default class AppClass extends React.Component<any, any>{
+import { ThemeManager, ThemeDecorator } from 'material-ui/lib/styles/';
+
+@ThemeDecorator(ThemeManager.getMuiTheme(arborTheme))
+class AppClass extends React.Component<any, any>{
+
   render () {
     var menuItems = [
       { route: 'login', text: 'Login' },
       { route: 'users', text: 'Users' },
     ];
-    var leftToggle = () => {
-      alert('x');
-    };
     return (
       <div>
-        <AppBar title="MyTarget" onRightIconButtonTouchTap={leftToggle} iconElementRight={<FlatButton label="Save" />} />
+        <Paper zDepth={0} style={{ "backgroundColor" : Colors.cyan500, "height" : "64px" }}></Paper>
         <LeftNav ref="leftNav" menuItems={menuItems} docked={false}>
         </LeftNav>
         <div style={{maxWidth : '800px', margin : '0 auto', paddingTop : '10px'}}>
@@ -23,3 +26,5 @@ export default class AppClass extends React.Component<any, any>{
     );
   };
 }
+
+export default AppClass;

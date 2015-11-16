@@ -23,6 +23,7 @@
     "gulp-less": "^3.0.3",
     "history": "^1.13.0",
     "material-ui": "^0.13.2",
+    "promise-http-client": "^0.1.0",
     "react": "^0.14.2",
     "react-dom": "^0.14.2",
     "react-router": "^0.13.5",

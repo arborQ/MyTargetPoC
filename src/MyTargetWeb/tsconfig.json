@@ -9,7 +9,8 @@
         "preserveConstEnums": true,
         "suppressImplicitAnyIndexErrors": true,
         "noEmitHelpers": true,
-        "noEmit": true
+        "noEmit": true,
+        "experimentalDecorators": true
     },
     "filesGlob": [
         "!./node_modules/**/*",
@@ -20,14 +21,12 @@
     ],
     "files": [
         "./typings/material-ui/material-ui.d.ts",
-        "./typings/react-dom/react-dom.d.ts",
         "./typings/react-router/react-router.d.ts",
+        "./typings/react/react-dom.d.ts",
         "./typings/react/react.d.ts",
         "./typings/tsd.d.ts",
-        "./src/ajax/ajax.d.ts",
-        "./src/react/components/ui/material-ui.d.ts",
-        "./src/ajax/ajax.ts",
         "./src/react/components/app.tsx",
+        "./src/react/components/arborTheme.tsx",
         "./src/react/components/login.tsx",
         "./src/react/components/users/userEdit.tsx",
         "./src/react/components/users/userList.tsx",

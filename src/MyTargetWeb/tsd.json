@@ -5,17 +5,17 @@
   "path": "typings",
   "bundle": "typings/tsd.d.ts",
   "installed": {
-    "react/react.d.ts": {
-      "commit": "b3aeee64552e324581fdbe0926f4a96e981e451b"
-    },
-    "react-router/react-router.d.ts": {
-      "commit": "708609e0764daeb5eb64104af7aca50c520c4e6e"
-    },
-    "react-dom/react-dom.d.ts": {
-      "commit": "708609e0764daeb5eb64104af7aca50c520c4e6e"
-    },
     "material-ui/material-ui.d.ts": {
       "commit": "efd40e67ff323f7147651bdbef03c03ead7b1675"
+    },
+    "react/react.d.ts": {
+      "commit": "d401629469aceb5b2a23857aa448713f9771bd91"
+    },
+    "react/react-dom.d.ts": {
+      "commit": "d401629469aceb5b2a23857aa448713f9771bd91"
+    },
+    "react-router/react-router.d.ts": {
+      "commit": "d401629469aceb5b2a23857aa448713f9771bd91"
     }
   }
 }

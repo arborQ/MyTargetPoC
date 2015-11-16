@@ -47,8 +47,8 @@
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(158);
 	var app_1 = __webpack_require__(159);
-	var login_1 = __webpack_require__(366);
-	var usersEntry_1 = __webpack_require__(367);
+	var login_1 = __webpack_require__(367);
+	var usersEntry_1 = __webpack_require__(368);
 	var Router = __webpack_require__(160);
 	var react_router_1 = __webpack_require__(160);
 	var routes = (React.createElement(react_router_1.Route, {"name": "app", "path": "/", "handler": app_1.default}, React.createElement(react_router_1.Route, {"name": "login", "path": "/login", "handler": login_1.default}), React.createElement(react_router_1.Route, {"name": "users", "path": "/users", "handler": usersEntry_1.UserList}), React.createElement(react_router_1.Route, {"name": "users.edit", "path": "/users/edit", "handler": usersEntry_1.UserEdit})));
@@ -19648,6 +19648,9 @@
 	var React = __webpack_require__(1);
 	var react_router_1 = __webpack_require__(160);
 	var material_ui_1 = __webpack_require__(202);
+	var _1 = __webpack_require__(266);
+	var arborTheme_1 = __webpack_require__(366);
+	var _2 = __webpack_require__(266);
 	var AppClass = (function (_super) {
 	    __extends(AppClass, _super);
 	    function AppClass() {
@@ -19658,12 +19661,12 @@
 	            { route: 'login', text: 'Login' },
 	            { route: 'users', text: 'Users' },
 	        ];
-	        var leftToggle = function () {
-	            alert('x');
-	        };
-	        return (React.createElement("div", null, React.createElement(material_ui_1.AppBar, {"title": "MyTarget", "onRightIconButtonTouchTap": leftToggle, "iconElementRight": React.createElement(material_ui_1.FlatButton, {"label": "Save"})}), React.createElement(material_ui_1.LeftNav, {"ref": "leftNav", "menuItems": menuItems, "docked": false}), React.createElement("div", {"style": { maxWidth: '800px', margin: '0 auto', paddingTop: '10px' }}, React.createElement(react_router_1.RouteHandler, null))));
+	        return (React.createElement("div", null, React.createElement(material_ui_1.Paper, {"zDepth": 0, "style": { "backgroundColor": _1.Colors.cyan500, "height": "64px" }}), React.createElement(material_ui_1.LeftNav, {"ref": "leftNav", "menuItems": menuItems, "docked": false}), React.createElement("div", {"style": { maxWidth: '800px', margin: '0 auto', paddingTop: '10px' }}, React.createElement(react_router_1.RouteHandler, null))));
 	    };
 	    ;
+	    AppClass = __decorate([
+	        _2.ThemeDecorator(_2.ThemeManager.getMuiTheme(arborTheme_1.default))
+	    ], AppClass);
 	    return AppClass;
 	})(React.Component);
 	Object.defineProperty(exports, "__esModule", { value: true });
@@ -23241,6 +23244,7 @@
 	  },
 
 	  _onLeftIconButtonTouchTap: function _onLeftIconButtonTouchTap(event) {
+		  alert('xxx');
 	    if (this.props.onLeftIconButtonTouchTap) {
 	      this.props.onLeftIconButtonTouchTap(event);
 	    }
@@ -45052,6 +45056,32 @@
 /* 366 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var _1 = __webpack_require__(266);
+	var _2 = __webpack_require__(365);
+	Object.defineProperty(exports, "__esModule", { value: true });
+	exports.default = {
+	    spacing: _1.Spacing,
+	    fontFamily: 'Roboto, sans-serif',
+	    palette: {
+	        primary1Color: _1.Colors.cyan500,
+	        primary2Color: _1.Colors.cyan700,
+	        primary3Color: _1.Colors.lightBlack,
+	        accent1Color: _1.Colors.pinkA200,
+	        accent2Color: _1.Colors.grey100,
+	        accent3Color: _1.Colors.grey500,
+	        textColor: _1.Colors.darkBlack,
+	        alternateTextColor: _1.Colors.white,
+	        canvasColor: _1.Colors.white,
+	        borderColor: _1.Colors.grey300,
+	        disabledColor: _2.ColorManipulator.fade(_1.Colors.darkBlack, 0.3),
+	    },
+	};
+
+
+/***/ },
+/* 367 */
+/***/ function(module, exports, __webpack_require__) {
+
 	var React = __webpack_require__(1);
 	var material_ui_1 = __webpack_require__(202);
 	var material_ui_2 = __webpack_require__(202);
@@ -45077,19 +45107,19 @@
 
 
 /***/ },
-/* 367 */
+/* 368 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var userList_1 = __webpack_require__(368);
+	var userList_1 = __webpack_require__(369);
 	exports.UserList = userList_1.default;
-	var userEdit_1 = __webpack_require__(369);
+	var userEdit_1 = __webpack_require__(370);
 	exports.UserEdit = userEdit_1.default;
-	var usersRoutes_1 = __webpack_require__(370);
+	var usersRoutes_1 = __webpack_require__(371);
 	exports.UserRoute = usersRoutes_1.default;
 
 
 /***/ },
-/* 368 */
+/* 369 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -45124,7 +45154,7 @@
 
 
 /***/ },
-/* 369 */
+/* 370 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -45156,12 +45186,12 @@
 
 
 /***/ },
-/* 370 */
+/* 371 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
 	var react_router_1 = __webpack_require__(160);
-	var usersEntry_1 = __webpack_require__(367);
+	var usersEntry_1 = __webpack_require__(368);
 	var UserRoute = (function (_super) {
 	    __extends(UserRoute, _super);
 	    function UserRoute() {
