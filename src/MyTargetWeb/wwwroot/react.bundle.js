@@ -19660,7 +19660,7 @@
 	            { route: 'login', text: 'Login' },
 	            { route: 'users', text: 'Users' },
 	        ];
-	        return (React.createElement("div", null, React.createElement(material_ui_1.Paper, {"zDepth": 0, "style": { "padding": '5px', "backgroundColor": arborTheme_1.default.palette.primary1Color, "height": 64 }}, React.createElement(react_router_1.Link, {"to": "app"}, React.createElement(material_ui_1.Avatar, {"src": "images/logo.png", "size": 64 - 10})), React.createElement(material_ui_1.Tabs, {"style": { "width": "400px", "float": "right" }}, React.createElement(material_ui_1.Tab, {"label": "Login", "route": "login"}), React.createElement(material_ui_1.Tab, {"label": "Users", "route": "users"}))), React.createElement(material_ui_1.LeftNav, {"ref": "leftNav", "menuItems": menuItems, "docked": false}), React.createElement("div", {"style": { maxWidth: '800px', margin: '0 auto', paddingTop: '10px' }}, React.createElement(react_router_1.RouteHandler, null))));
+	        return (React.createElement("div", null, React.createElement(material_ui_1.Paper, {"zDepth": 0, "style": { "padding": '5px', "backgroundColor": arborTheme_1.default.palette.primary1Color, "height": 64 }}, React.createElement(react_router_1.Link, {"to": "app"}, React.createElement(material_ui_1.Avatar, {"src": "/images/logo.png", "size": 64 - 10})), React.createElement(material_ui_1.Tabs, {"style": { "width": "400px", "float": "right" }}, React.createElement(material_ui_1.Tab, {"label": "Login"}), React.createElement(material_ui_1.Tab, {"label": "Users"}))), React.createElement(material_ui_1.LeftNav, {"ref": "leftNav", "menuItems": menuItems, "docked": false}), React.createElement("div", {"style": { maxWidth: '800px', margin: '0 auto', paddingTop: '10px' }}, React.createElement(react_router_1.RouteHandler, null))));
 	    };
 	    ;
 	    AppClass = __decorate([
@@ -23243,7 +23243,6 @@
 	  },
 
 	  _onLeftIconButtonTouchTap: function _onLeftIconButtonTouchTap(event) {
-		  alert('xxx');
 	    if (this.props.onLeftIconButtonTouchTap) {
 	      this.props.onLeftIconButtonTouchTap(event);
 	    }

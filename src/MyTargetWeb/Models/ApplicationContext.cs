@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.Data.Entity;
+﻿using Microsoft.Data.Entity;
 
 namespace MyTarget.Models
 {
@@ -12,10 +8,10 @@ namespace MyTarget.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<User>()
-                .Property(a => a.Id)
-                .ForSqlServer()
-                .UseIdentity();
+            //modelBuilder.Entity<User>()
+            //    .Property(a => a.Id)
+            //    .ForSqlServer()
+            //    .UseIdentity();
 
             base.OnModelCreating(modelBuilder);
         }

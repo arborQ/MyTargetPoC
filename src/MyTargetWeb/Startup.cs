@@ -7,9 +7,11 @@ using Microsoft.AspNet.Hosting;
 using Microsoft.AspNet.Http;
 using Microsoft.AspNet.Routing;
 using Microsoft.Data.Entity;
+//using Microsoft.Dnx.Runtime;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Configuration;
 using Microsoft.Framework.Runtime;
+//using Microsoft.Framework.Runtime;
 using MyTarget.Models;
 
 namespace MyTarget
@@ -45,7 +47,12 @@ namespace MyTarget
         {
             app.UseStaticFiles();
 
-            app.UseMvc();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Frameworks}/{action=Index}/{id?}");
+            });
         }
     }
 }
