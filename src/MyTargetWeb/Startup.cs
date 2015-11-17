@@ -47,7 +47,12 @@ namespace MyTarget
         {
             app.UseStaticFiles();
 
-            app.UseMvc();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Frameworks}/{action=Index}/{id?}");
+            });
         }
     }
 }

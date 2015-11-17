@@ -643,6 +643,25 @@
           "lib/dnx451/Microsoft.AspNet.Mvc.Razor.Host.dll": {}
         }
       },
+      "Microsoft.AspNet.Mvc.TagHelpers/6.0.0-beta5": {
+        "dependencies": {
+          "Microsoft.AspNet.Mvc.Razor": "6.0.0-beta5",
+          "Microsoft.Framework.Caching.Memory": "1.0.0-beta5",
+          "Microsoft.Framework.FileSystemGlobbing": "1.0.0-beta5"
+        },
+        "frameworkAssemblies": [
+          "mscorlib",
+          "System",
+          "System.Core",
+          "Microsoft.CSharp"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.AspNet.Mvc.TagHelpers.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.AspNet.Mvc.TagHelpers.dll": {}
+        }
+      },
       "Microsoft.AspNet.Mvc.WebApiCompatShim/6.0.0-beta5": {
         "dependencies": {
           "Microsoft.AspNet.Mvc.Core": "6.0.0-beta5",
@@ -1025,6 +1044,20 @@
         },
         "runtime": {
           "lib/dnx451/Microsoft.Framework.DependencyInjection.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Framework.FileSystemGlobbing/1.0.0-beta5": {
+        "frameworkAssemblies": [
+          "mscorlib",
+          "System",
+          "System.Core",
+          "Microsoft.CSharp"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Framework.FileSystemGlobbing.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Framework.FileSystemGlobbing.dll": {}
         }
       },
       "Microsoft.Framework.Logging/1.0.0-beta5": {
@@ -1873,6 +1906,20 @@
           "lib/dnxcore50/Microsoft.AspNet.Mvc.Razor.Host.dll": {}
         }
       },
+      "Microsoft.AspNet.Mvc.TagHelpers/6.0.0-beta5": {
+        "dependencies": {
+          "Microsoft.AspNet.Mvc.Razor": "6.0.0-beta5",
+          "Microsoft.Framework.Caching.Memory": "1.0.0-beta5",
+          "Microsoft.Framework.FileSystemGlobbing": "1.0.0-beta5",
+          "System.Security.Cryptography.Hashing.Algorithms": "4.0.0-beta-23019"
+        },
+        "compile": {
+          "lib/dnxcore50/Microsoft.AspNet.Mvc.TagHelpers.dll": {}
+        },
+        "runtime": {
+          "lib/dnxcore50/Microsoft.AspNet.Mvc.TagHelpers.dll": {}
+        }
+      },
       "Microsoft.AspNet.Mvc.WebApiCompatShim/6.0.0-beta5": {
         "dependencies": {
           "Microsoft.AspNet.Mvc.Core": "6.0.0-beta5",
@@ -2223,6 +2270,21 @@
         },
         "runtime": {
           "lib/dotnet/Microsoft.Framework.DependencyInjection.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Framework.FileSystemGlobbing/1.0.0-beta5": {
+        "dependencies": {
+          "System.Runtime": "4.0.20-beta-23019",
+          "System.Collections": "4.0.10-beta-23019",
+          "System.IO.FileSystem": "4.0.0-beta-23019",
+          "System.Linq": "4.0.0-beta-23019",
+          "System.Runtime.Extensions": "4.0.10-beta-23019"
+        },
+        "compile": {
+          "lib/dnxcore50/Microsoft.Framework.FileSystemGlobbing.dll": {}
+        },
+        "runtime": {
+          "lib/dnxcore50/Microsoft.Framework.FileSystemGlobbing.dll": {}
         }
       },
       "Microsoft.Framework.Logging/1.0.0-beta5": {
@@ -4244,6 +4306,19 @@
         "Microsoft.AspNet.Mvc.Razor.Host.nuspec"
       ]
     },
+    "Microsoft.AspNet.Mvc.TagHelpers/6.0.0-beta5": {
+      "serviceable": true,
+      "sha512": "FvhgaBtuCOeN22JvA1G75+VRix/pJXY+DSoKH1qI1DxCzTI/Xc3/2XbRqzuCaG4eDRWt0HdgOtrX4DZHidi+Sg==",
+      "files": [
+        "Microsoft.AspNet.Mvc.TagHelpers.6.0.0-beta5.nupkg",
+        "Microsoft.AspNet.Mvc.TagHelpers.6.0.0-beta5.nupkg.sha512",
+        "Microsoft.AspNet.Mvc.TagHelpers.nuspec",
+        "lib/dnx451/Microsoft.AspNet.Mvc.TagHelpers.dll",
+        "lib/dnx451/Microsoft.AspNet.Mvc.TagHelpers.xml",
+        "lib/dnxcore50/Microsoft.AspNet.Mvc.TagHelpers.dll",
+        "lib/dnxcore50/Microsoft.AspNet.Mvc.TagHelpers.xml"
+      ]
+    },
     "Microsoft.AspNet.Mvc.WebApiCompatShim/6.0.0-beta5": {
       "serviceable": true,
       "sha512": "8sf1OyyBEScQeq2/CH92/KKcrWt6/T1yqRu5r3UNwEsak81rXIoZlAv+BM7/e+8T1RHTP24koPlxu3g/UcpTag==",
@@ -4724,6 +4799,21 @@
         "Microsoft.Framework.DependencyInjection.Abstractions.1.0.0-beta5.nupkg",
         "Microsoft.Framework.DependencyInjection.Abstractions.1.0.0-beta5.nupkg.sha512",
         "Microsoft.Framework.DependencyInjection.Abstractions.nuspec"
+      ]
+    },
+    "Microsoft.Framework.FileSystemGlobbing/1.0.0-beta5": {
+      "serviceable": true,
+      "sha512": "Q8HnOmCD4fYa7Ef0hLZNAvajSqopKQOFDPSvnC718Z8B2SaVWBVfxwFasb3Ag8kfSpQzWdlNo28LbenL+yyi2w==",
+      "files": [
+        "Microsoft.Framework.FileSystemGlobbing.1.0.0-beta5.nupkg",
+        "Microsoft.Framework.FileSystemGlobbing.1.0.0-beta5.nupkg.sha512",
+        "Microsoft.Framework.FileSystemGlobbing.nuspec",
+        "lib/dnx451/Microsoft.Framework.FileSystemGlobbing.dll",
+        "lib/dnx451/Microsoft.Framework.FileSystemGlobbing.xml",
+        "lib/dnxcore50/Microsoft.Framework.FileSystemGlobbing.dll",
+        "lib/dnxcore50/Microsoft.Framework.FileSystemGlobbing.xml",
+        "lib/net45/Microsoft.Framework.FileSystemGlobbing.dll",
+        "lib/net45/Microsoft.Framework.FileSystemGlobbing.xml"
       ]
     },
     "Microsoft.Framework.Logging/1.0.0-beta5": {
@@ -6160,6 +6250,7 @@
       "EntityFramework.Commands >= 7.0.0-beta5",
       "Microsoft.Framework.Configuration.Json >= 1.0.0-beta5",
       "Microsoft.AspNet.Mvc >= 6.0.0-beta5",
+      "Microsoft.AspNet.Mvc.TagHelpers >= 6.0.0-beta5",
       "Microsoft.AspNet.Server.IIS >= 1.0.0-beta5",
       "Microsoft.AspNet.Server.WebListener >= 1.0.0-beta5",
       "Microsoft.AspNet.StaticFiles >= 1.0.0-beta5",
