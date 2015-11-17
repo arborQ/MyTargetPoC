@@ -1,0 +1,24 @@
+{
+  "name": "reactangular",
+  "description": "test React - Angular app",
+  "main": "index.js",
+  "authors": [
+    "arbor <arbor@o2.pl>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/arborQ/MyTargetPoC",
+  "moduleType": [
+    "es6"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha"
+  }
+}

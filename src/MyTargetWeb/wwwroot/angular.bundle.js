@@ -64,7 +64,7 @@
 	    myComponent = __decorate([
 	        angular2_1.Component({
 	            selector: "my-app",
-	            template: "\n    <div>\n      <span>{{name}}</span>\n    </div>\n  "
+	            template: "\n    <div class=\"container-fluid\">\n      <button class=\"btn btn-primary\">{{name}}</button>\n    </div>\n  "
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], myComponent);
