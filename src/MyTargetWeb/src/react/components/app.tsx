@@ -21,8 +21,8 @@ class AppClass extends React.Component<any, any>{
             <Avatar src="images/logo.png" size={64-10} />
           </Link>
           <Tabs style={{"width" : "400px", "float" : "right" }}>
-            <Tab label="Login" route="login"></Tab>
-            <Tab label="Users" route="users" />
+            <Tab label="Login"><Link to="users">Users</Link></Tab>
+            <Tab label="Users"/>
           </Tabs>
         </Paper>
         <LeftNav ref="leftNav" menuItems={menuItems} docked={false}>

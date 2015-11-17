@@ -1,6 +1,6 @@
-// Type definitions for material-ui v0.12.1
+// Type definitions for material-ui v0.13.1
 // Project: https://github.com/callemall/material-ui
-// Definitions by: Nathan Brown <https://github.com/ngbrown>
+// Definitions by: Nathan Brown <https://github.com/ngbrown>, Oliver Herrmann <https://github.com/herrmanno>
 // Definitions: https://github.com/borisyankov/DefinitelyTyped
 
 ///<reference path='../react/react.d.ts' />
@@ -71,6 +71,9 @@ declare module "material-ui" {
     export import ToolbarTitle = __MaterialUI.Toolbar.ToolbarTitle; // require('material-ui/lib/toolbar/toolbar-title');
     export import Tooltip = __MaterialUI.Tooltip; // require('material-ui/lib/tooltip');
     export import Utils = __MaterialUI.Utils; // require('material-ui/lib/utils/');
+    
+    export import GridList = __MaterialUI.GridList.GridList; // require('material-ui/lib/gridlist/grid-list');
+    export import GridTile = __MaterialUI.GridList.GridTile; // require('material-ui/lib/gridlist/grid-tile');
 
     // export type definitions
     export type TouchTapEvent = __MaterialUI.TouchTapEvent;
@@ -222,7 +225,7 @@ declare namespace __MaterialUI {
     }
 
     // what's not commonly overridden by Checkbox, RadioButton, or Toggle
-    interface CommonEnhancedSwitchProps<T> extends React.Props<T> {
+    interface CommonEnhancedSwitchProps<T> extends React.HTMLAttributes, React.Props<T> {
         // <input/> is root element
         id?: string;
         iconStyle?: React.CSSProperties;
@@ -402,7 +405,7 @@ declare namespace __MaterialUI {
     }
 
     // non generally overridden elements of EnhancedButton
-    interface SharedEnhancedButtonProps<T> extends React.Props<T> {
+    interface SharedEnhancedButtonProps<T> extends React.HTMLAttributes, React.Props<T> {
         centerRipple?: boolean;
         containerElement?: string | React.ReactElement<any>;
         disabled?: boolean;
@@ -644,12 +647,11 @@ declare namespace __MaterialUI {
     export class Overlay extends React.Component<OverlayProps, {}> {
     }
 
-    interface PaperProps extends React.Props<Paper> {
+    interface PaperProps extends React.HTMLAttributes, React.Props<Paper> {
         circle?: boolean;
         rounded?: boolean;
         transitionEnabled?: boolean;
         zDepth?: number;
-        style?: any;
     }
     export class Paper extends React.Component<PaperProps, {}> {
     }
@@ -1104,7 +1106,7 @@ declare namespace __MaterialUI {
             value?: string;
             selected?: boolean;
             width?: string;
-            route? : string;
+
             // Called by Tabs component
             onActive?: (tab: Tab) => void;
 
@@ -1121,6 +1123,7 @@ declare namespace __MaterialUI {
             tabItemContainerStyle?: React.CSSProperties;
             tabWidth?: number;
             value?: string | number;
+            tabTemplate?: __React.ComponentClass<any>;
 
             onChange?: (value: string | number, e: React.FormEvent, tab: Tab) => void;
         }
@@ -1241,6 +1244,10 @@ declare namespace __MaterialUI {
         defaultTime?: Date;
         format?: string;
         pedantic?: boolean;
+        style?: __React.CSSProperties;
+        textFieldStye?: __React.CSSProperties;
+        autoOk?: boolean;
+        openDialog?: () => void;
         onFocus?: React.FocusEventHandler;
         onTouchTap?: TouchTapEventHandler;
         onChange?: (e: any, time: Date) => void;
@@ -1267,6 +1274,7 @@ declare namespace __MaterialUI {
         underlineFocusStyle?: React.CSSProperties;
         underlineDisabledStyle?: React.CSSProperties;
         type?: string;
+        hintStyle?: React.CSSProperties;
 
         disabled?: boolean;
         isRtl?: boolean;
@@ -1305,7 +1313,7 @@ declare namespace __MaterialUI {
         export class ToolbarSeparator extends React.Component<ToolbarSeparatorProps, {}> {
         }
 
-        interface ToolbarTitleProps extends React.Props<ToolbarTitle> {
+        interface ToolbarTitleProps extends React.HTMLAttributes, React.Props<ToolbarTitle> {
            text?: string;
         }
         export class ToolbarTitle extends React.Component<ToolbarTitleProps, {}> {
@@ -1470,6 +1478,34 @@ declare namespace __MaterialUI {
         }
         export class MenuDivider extends React.Component<MenuDividerProps, {}>{
         }
+    }
+    
+    namespace GridList {
+        
+        interface GridListProps extends React.Props<GridList> {
+            cols?: number;
+            padding?: number;
+            cellHeight?: number;
+        }
+        
+        export class GridList extends React.Component<GridListProps, {}>{
+        }
+        
+        interface GridTileProps extends React.Props<GridTile> {
+            title?: string;
+            subtitle?: __React.ReactNode;
+            titlePosition?: string; //"top"|"bottom"
+            titleBackground?: string;
+            actionIcon?: __React.ReactElement<any>;
+            actionPosition?: string; //"left"|"right"
+            cols?: number;
+            rows?: number;
+            rootClass?: string | __React.Component<any,any>;
+        }
+        
+        export class GridTile extends React.Component<GridTileProps, {}>{
+        }
+        
     }
 }    // __MaterialUI
 
@@ -1951,6 +1987,16 @@ declare module "material-ui/lib/menus/menu-item" {
 declare module "material-ui/lib/menus/menu-divider" {
     import MenuDivider = __MaterialUI.Menus.MenuDivider;
     export = MenuDivider;
+}
+
+declare module "material-ui/lib/grid-list/grid-list" {
+    import GridList = __MaterialUI.GridList.GridList;
+    export = GridList;
+}
+
+declare module "material-ui/lib/grid-list/grid-tile" {
+    import GridTile = __MaterialUI.GridList.GridTile;
+    export = GridTile;
 }
 
 declare module "material-ui/lib/styles/colors" {

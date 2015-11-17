@@ -1,6 +1,6 @@
 {
   "locked": false,
-  "version": 1,
+  "version": -9996,
   "targets": {
     "DNX,Version=v4.5.1": {
       "EntityFramework.Commands/7.0.0-beta5": {
@@ -9,10 +9,10 @@
           "Microsoft.AspNet.Hosting": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/EntityFramework.Commands.dll": {}
@@ -35,11 +35,7 @@
           "System.Collections.Immutable": "1.1.36"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
           "System.Collections",
-          "System.Core",
           "System.Diagnostics.Debug",
           "System.Diagnostics.Tools",
           "System.Globalization",
@@ -52,7 +48,11 @@
           "System.Resources.ResourceManager",
           "System.Runtime",
           "System.Runtime.Extensions",
-          "System.Threading"
+          "System.Threading",
+          "mscorlib",
+          "System",
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/EntityFramework.Core.dll": {}
@@ -66,12 +66,12 @@
           "EntityFramework.Core": "7.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
+          "System.Data",
+          "System.Transactions",
           "mscorlib",
           "System",
           "System.Core",
-          "System.Data",
-          "System.Transactions"
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/net45/EntityFramework.Relational.dll": {}
@@ -82,19 +82,19 @@
       },
       "EntityFramework.Relational.Design/7.0.0-beta5": {
         "dependencies": {
-          "EntityFramework.Relational": "7.0.0-beta5",
           "Microsoft.AspNet.Razor": "4.0.0-beta5",
           "Microsoft.CodeAnalysis.CSharp": "1.0.0-rc3",
+          "EntityFramework.Relational": "7.0.0-beta5",
           "Microsoft.Framework.Runtime.Roslyn": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
+          "System.IO",
+          "System.Text.Encoding",
+          "System.Threading.Tasks",
           "mscorlib",
           "System",
           "System.Core",
-          "System.IO",
-          "System.Text.Encoding",
-          "System.Threading.Tasks"
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/EntityFramework.Relational.Design.dll": {}
@@ -108,10 +108,10 @@
           "EntityFramework.Relational": "7.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/net45/EntityFramework.SqlServer.dll": {}
@@ -142,10 +142,10 @@
           "Microsoft.Framework.WebEncoders": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.Authentication.dll": {}
@@ -161,10 +161,10 @@
           "Microsoft.Framework.OptionsModel": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.Authorization.dll": {}
@@ -180,10 +180,10 @@
           "Microsoft.AspNet.WebUtilities": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.Cors.dll": {}
@@ -194,16 +194,16 @@
       },
       "Microsoft.AspNet.Cors.Core/1.0.0-beta5": {
         "dependencies": {
-          "Microsoft.AspNet.Http": "1.0.0-beta5",
           "Microsoft.Framework.Configuration.Abstractions": "1.0.0-beta5",
           "Microsoft.Framework.DependencyInjection.Abstractions": "1.0.0-beta5",
-          "Microsoft.Framework.OptionsModel": "1.0.0-beta5"
+          "Microsoft.Framework.OptionsModel": "1.0.0-beta5",
+          "Microsoft.AspNet.Http": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.Cors.Core.dll": {}
@@ -214,10 +214,10 @@
       },
       "Microsoft.AspNet.Cryptography.Internal/1.0.0-beta5": {
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.Cryptography.Internal.dll": {}
@@ -235,14 +235,14 @@
           "Microsoft.Framework.OptionsModel": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core",
           "System.IO",
           "System.Security",
           "System.Xml",
-          "System.Xml.Linq"
+          "System.Xml.Linq",
+          "mscorlib",
+          "System",
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.DataProtection.dll": {}
@@ -256,10 +256,10 @@
           "Microsoft.Framework.Runtime.Abstractions": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.DataProtection.Abstractions.dll": {}
@@ -270,10 +270,10 @@
       },
       "Microsoft.AspNet.Diagnostics.Abstractions/1.0.0-beta5": {
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.Diagnostics.Abstractions.dll": {}
@@ -284,10 +284,10 @@
       },
       "Microsoft.AspNet.FeatureModel/1.0.0-beta5": {
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.FeatureModel.dll": {}
@@ -301,10 +301,10 @@
           "Microsoft.Framework.Caching.Abstractions": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.FileProviders.Abstractions.dll": {}
@@ -318,10 +318,10 @@
           "Microsoft.AspNet.FileProviders.Abstractions": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.FileProviders.Physical.dll": {}
@@ -347,10 +347,10 @@
           "Newtonsoft.Json": "6.0.6"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.Hosting.dll": {}
@@ -361,14 +361,14 @@
       },
       "Microsoft.AspNet.Hosting.Abstractions/1.0.0-beta5": {
         "dependencies": {
-          "Microsoft.AspNet.FileProviders.Abstractions": "1.0.0-beta5",
-          "Microsoft.AspNet.Http.Abstractions": "1.0.0-beta5"
+          "Microsoft.AspNet.Http.Abstractions": "1.0.0-beta5",
+          "Microsoft.AspNet.FileProviders.Abstractions": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.Hosting.Abstractions.dll": {}
@@ -383,10 +383,10 @@
           "Microsoft.Framework.Configuration.Abstractions": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.Hosting.Server.Abstractions.dll": {}
@@ -404,10 +404,10 @@
           "Microsoft.Net.Http.Headers": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.Http.dll": {}
@@ -421,10 +421,10 @@
           "Microsoft.Framework.WebEncoders.Core": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.Http.Abstractions.dll": {}
@@ -441,10 +441,10 @@
           "Microsoft.Net.Http.Headers": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.Http.Extensions.dll": {}
@@ -455,10 +455,10 @@
       },
       "Microsoft.AspNet.Http.Features/1.0.0-beta5": {
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.Http.Features.dll": {}
@@ -473,10 +473,10 @@
           "Newtonsoft.Json": "6.0.6"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.JsonPatch.dll": {}
@@ -495,10 +495,10 @@
           "Microsoft.Framework.WebEncoders.Core": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.Loader.IIS.dll": {}
@@ -518,10 +518,10 @@
           "Microsoft.Framework.DependencyInjection": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.Mvc.dll": {}
@@ -535,10 +535,10 @@
           "Microsoft.AspNet.Routing": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.Mvc.Abstractions.dll": {}
@@ -552,10 +552,10 @@
           "Microsoft.AspNet.Mvc.Core": "6.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.Mvc.ApiExplorer.dll": {}
@@ -582,12 +582,12 @@
           "Microsoft.Framework.WebEncoders": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
+          "System.ComponentModel.DataAnnotations",
+          "System.Runtime.Serialization",
           "mscorlib",
           "System",
-          "System.ComponentModel.DataAnnotations",
           "System.Core",
-          "System.Runtime.Serialization"
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.Mvc.Core.dll": {}
@@ -602,19 +602,19 @@
           "Microsoft.AspNet.Mvc.Core": "6.0.0-beta5",
           "Microsoft.AspNet.Mvc.Razor.Host": "6.0.0-beta5",
           "Microsoft.AspNet.PageExecutionInstrumentation.Interfaces": "1.0.0-beta5",
-          "Microsoft.Framework.Runtime.Roslyn.Abstractions": "1.0.0-beta5",
-          "Microsoft.Framework.Runtime.Roslyn.Common": "1.0.0-beta5"
+          "Microsoft.Framework.Runtime.Roslyn.Common": "1.0.0-beta5",
+          "Microsoft.Framework.Runtime.Roslyn.Abstractions": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
           "System.Collections",
-          "System.Core",
           "System.IO",
           "System.Runtime",
           "System.Text.Encoding",
-          "System.Threading.Tasks"
+          "System.Threading.Tasks",
+          "mscorlib",
+          "System",
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.Mvc.Razor.dll": {}
@@ -631,10 +631,10 @@
           "Microsoft.Framework.Runtime.Abstractions": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.Mvc.Razor.Host.dll": {}
@@ -649,13 +649,13 @@
           "Microsoft.AspNet.WebApi.Client": "5.2.2"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
+          "System.Net.Http",
+          "System.Xml",
+          "System.Runtime.Serialization",
           "mscorlib",
           "System",
           "System.Core",
-          "System.Net.Http",
-          "System.Runtime.Serialization",
-          "System.Xml"
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.Mvc.WebApiCompatShim.dll": {}
@@ -666,10 +666,10 @@
       },
       "Microsoft.AspNet.PageExecutionInstrumentation.Interfaces/1.0.0-beta5": {
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.PageExecutionInstrumentation.Interfaces.dll": {}
@@ -680,10 +680,10 @@
       },
       "Microsoft.AspNet.Razor/4.0.0-beta5": {
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.Razor.dll": {}
@@ -697,10 +697,10 @@
           "Microsoft.AspNet.Razor": "4.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.Razor.Runtime.dll": {}
@@ -716,10 +716,10 @@
           "Microsoft.Framework.OptionsModel": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.Routing.dll": {}
@@ -730,22 +730,22 @@
       },
       "Microsoft.AspNet.Server.IIS/1.0.0-beta5": {
         "dependencies": {
-          "Microsoft.AspNet.Loader.IIS": "1.0.0-beta5",
-          "Microsoft.AspNet.Loader.IIS.Interop": "1.0.0-beta5"
+          "Microsoft.AspNet.Loader.IIS.Interop": "1.0.0-beta5",
+          "Microsoft.AspNet.Loader.IIS": "1.0.0-beta5"
         }
       },
       "Microsoft.AspNet.Server.WebListener/1.0.0-beta5": {
         "dependencies": {
-          "Microsoft.AspNet.Hosting.Server.Abstractions": "1.0.0-beta5",
           "Microsoft.AspNet.Http.Features": "1.0.0-beta5",
+          "Microsoft.AspNet.Hosting.Server.Abstractions": "1.0.0-beta5",
           "Microsoft.Framework.Logging.Abstractions": "1.0.0-beta5",
           "Microsoft.Net.Http.Server": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.Server.WebListener.dll": {}
@@ -756,17 +756,17 @@
       },
       "Microsoft.AspNet.StaticFiles/1.0.0-beta5": {
         "dependencies": {
+          "Microsoft.AspNet.Http.Extensions": "1.0.0-beta5",
           "Microsoft.AspNet.FileProviders.Abstractions": "1.0.0-beta5",
           "Microsoft.AspNet.Hosting.Abstractions": "1.0.0-beta5",
-          "Microsoft.AspNet.Http.Extensions": "1.0.0-beta5",
           "Microsoft.Framework.Logging.Abstractions": "1.0.0-beta5",
           "Microsoft.Framework.WebEncoders": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.StaticFiles.dll": {}
@@ -805,10 +805,10 @@
           "Microsoft.Framework.WebEncoders.Core": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.AspNet.WebUtilities.dll": {}
@@ -824,9 +824,9 @@
       },
       "Microsoft.CodeAnalysis.Common/1.0.0-rc3": {
         "dependencies": {
-          "Microsoft.CodeAnalysis.Analyzers": "[1.0.0-rc3]",
           "System.Collections.Immutable": "1.1.36",
-          "System.Reflection.Metadata": "1.0.21"
+          "System.Reflection.Metadata": "1.0.21",
+          "Microsoft.CodeAnalysis.Analyzers": "[1.0.0-rc3]"
         },
         "compile": {
           "lib/net45/Microsoft.CodeAnalysis.dll": {}
@@ -848,10 +848,10 @@
       },
       "Microsoft.Framework.Caching.Abstractions/1.0.0-beta5": {
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.Framework.Caching.Abstractions.dll": {}
@@ -862,15 +862,15 @@
       },
       "Microsoft.Framework.Caching.Memory/1.0.0-beta5": {
         "dependencies": {
-          "Microsoft.Framework.Caching.Abstractions": "1.0.0-beta5",
           "Microsoft.Framework.DependencyInjection.Abstractions": "1.0.0-beta5",
+          "Microsoft.Framework.Caching.Abstractions": "1.0.0-beta5",
           "Microsoft.Framework.OptionsModel": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.Framework.Caching.Memory.dll": {}
@@ -884,10 +884,10 @@
           "Microsoft.Framework.Configuration.Abstractions": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.Framework.Configuration.dll": {}
@@ -898,10 +898,10 @@
       },
       "Microsoft.Framework.Configuration.Abstractions/1.0.0-beta5": {
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.Framework.Configuration.Abstractions.dll": {}
@@ -915,10 +915,10 @@
           "Microsoft.Framework.Configuration": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.Framework.Configuration.Binder.dll": {}
@@ -932,10 +932,10 @@
           "Microsoft.Framework.Configuration": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.Framework.Configuration.CommandLine.dll": {}
@@ -949,10 +949,10 @@
           "Microsoft.Framework.Configuration": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.Framework.Configuration.EnvironmentVariables.dll": {}
@@ -966,10 +966,10 @@
           "Microsoft.Framework.Configuration": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.Framework.Configuration.Ini.dll": {}
@@ -980,14 +980,14 @@
       },
       "Microsoft.Framework.Configuration.Json/1.0.0-beta5": {
         "dependencies": {
-          "Microsoft.Framework.Configuration": "1.0.0-beta5",
-          "Newtonsoft.Json": "6.0.6"
+          "Newtonsoft.Json": "6.0.6",
+          "Microsoft.Framework.Configuration": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.Framework.Configuration.Json.dll": {}
@@ -1001,10 +1001,10 @@
           "Microsoft.Framework.DependencyInjection.Abstractions": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.Framework.DependencyInjection.dll": {}
@@ -1015,10 +1015,10 @@
       },
       "Microsoft.Framework.DependencyInjection.Abstractions/1.0.0-beta5": {
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.Framework.DependencyInjection.Abstractions.dll": {}
@@ -1033,11 +1033,11 @@
           "Microsoft.Framework.Logging.Abstractions": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
+          "System.Collections.Concurrent",
           "mscorlib",
           "System",
-          "System.Collections.Concurrent",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.Framework.Logging.dll": {}
@@ -1048,10 +1048,10 @@
       },
       "Microsoft.Framework.Logging.Abstractions/1.0.0-beta5": {
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.Framework.Logging.Abstractions.dll": {}
@@ -1067,10 +1067,10 @@
           "Microsoft.Framework.DependencyInjection.Abstractions": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.Framework.OptionsModel.dll": {}
@@ -1081,10 +1081,10 @@
       },
       "Microsoft.Framework.Runtime.Abstractions/1.0.0-beta5": {
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.Framework.Runtime.Abstractions.dll": {}
@@ -1098,10 +1098,10 @@
           "Microsoft.Framework.Runtime.Abstractions": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.Framework.Runtime.Caching.dll": {}
@@ -1113,18 +1113,18 @@
       "Microsoft.Framework.Runtime.Roslyn/1.0.0-beta5": {
         "dependencies": {
           "Microsoft.Framework.Runtime.Abstractions": "1.0.0-beta5",
-          "Microsoft.Framework.Runtime.Caching": "1.0.0-beta5",
-          "Microsoft.Framework.Runtime.Roslyn.Abstractions": "1.0.0-beta5"
+          "Microsoft.Framework.Runtime.Roslyn.Abstractions": "1.0.0-beta5",
+          "Microsoft.Framework.Runtime.Caching": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
+          "System.Collections",
+          "System.IO",
+          "System.Threading.Tasks",
+          "System.Text.Encoding",
           "mscorlib",
           "System",
-          "System.Collections",
           "System.Core",
-          "System.IO",
-          "System.Text.Encoding",
-          "System.Threading.Tasks"
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.Framework.Runtime.Roslyn.dll": {}
@@ -1135,14 +1135,14 @@
       },
       "Microsoft.Framework.Runtime.Roslyn.Abstractions/1.0.0-beta5": {
         "dependencies": {
-          "Microsoft.CodeAnalysis.CSharp": "1.0.0-rc3",
-          "Microsoft.Framework.Runtime.Abstractions": "1.0.0-beta5"
+          "Microsoft.Framework.Runtime.Abstractions": "1.0.0-beta5",
+          "Microsoft.CodeAnalysis.CSharp": "1.0.0-rc3"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.Framework.Runtime.Roslyn.Abstractions.dll": {}
@@ -1157,11 +1157,11 @@
           "Microsoft.Framework.Runtime.Abstractions": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
+          "System.Runtime",
           "mscorlib",
           "System",
           "System.Core",
-          "System.Runtime"
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.Framework.Runtime.Roslyn.Common.dll": {}
@@ -1177,10 +1177,10 @@
           "Microsoft.Framework.WebEncoders.Core": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.Framework.WebEncoders.dll": {}
@@ -1191,10 +1191,10 @@
       },
       "Microsoft.Framework.WebEncoders.Core/1.0.0-beta5": {
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.Framework.WebEncoders.Core.dll": {}
@@ -1205,10 +1205,10 @@
       },
       "Microsoft.Net.Http.Headers/1.0.0-beta5": {
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.Net.Http.Headers.dll": {}
@@ -1223,10 +1223,10 @@
           "Microsoft.Net.WebSockets": "1.0.0-beta5"
         },
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/dnx451/Microsoft.Net.Http.Server.dll": {}
@@ -1237,10 +1237,10 @@
       },
       "Microsoft.Net.WebSockets/1.0.0-beta5": {
         "frameworkAssemblies": [
-          "Microsoft.CSharp",
           "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "Microsoft.CSharp"
         ],
         "compile": {
           "lib/net45/Microsoft.Net.WebSockets.dll": {}
@@ -1278,9 +1278,9 @@
       },
       "Ninject.Web.WebApi/3.2.4.0": {
         "dependencies": {
-          "Microsoft.AspNet.WebApi.Core": "[5.0, 6.0)",
           "Ninject": "[3.2.0.0, 3.3.0.0)",
-          "Ninject.Web.Common": "[3.2.0.0, 3.3.0.0)"
+          "Ninject.Web.Common": "[3.2.0.0, 3.3.0.0)",
+          "Microsoft.AspNet.WebApi.Core": "[5.0, 6.0)"
         },
         "compile": {
           "lib/net45-full/Ninject.Web.WebApi.dll": {}
@@ -1341,9 +1341,9 @@
           "Microsoft.Framework.Logging.Abstractions": "1.0.0-beta5",
           "Microsoft.Framework.OptionsModel": "1.0.0-beta5",
           "Remotion.Linq": "2.0.0-alpha-002",
+          "System.Collections.Immutable": "1.1.36",
           "System.Collections": "4.0.10-beta-23019",
           "System.Collections.Concurrent": "4.0.10-beta-23019",
-          "System.Collections.Immutable": "1.1.36",
           "System.ComponentModel": "4.0.0-beta-23019",
           "System.Diagnostics.Debug": "4.0.10-beta-23019",
           "System.Diagnostics.Tools": "4.0.0-beta-23019",
@@ -1369,9 +1369,9 @@
       "EntityFramework.Relational/7.0.0-beta5": {
         "dependencies": {
           "EntityFramework.Core": "7.0.0-beta5",
-          "Microsoft.CSharp": "4.0.0-beta-23019",
           "System.Data.Common": "4.0.0-beta-23019",
-          "System.Text.RegularExpressions": "4.0.10-beta-23019"
+          "System.Text.RegularExpressions": "4.0.10-beta-23019",
+          "Microsoft.CSharp": "4.0.0-beta-23019"
         },
         "compile": {
           "lib/dotnet/EntityFramework.Relational.dll": {}
@@ -1382,9 +1382,9 @@
       },
       "EntityFramework.Relational.Design/7.0.0-beta5": {
         "dependencies": {
-          "EntityFramework.Relational": "7.0.0-beta5",
           "Microsoft.AspNet.Razor": "4.0.0-beta5",
           "Microsoft.CodeAnalysis.CSharp": "1.0.0-rc3",
+          "EntityFramework.Relational": "7.0.0-beta5",
           "Microsoft.Framework.Runtime.Roslyn": "1.0.0-beta5"
         },
         "compile": {
@@ -1462,10 +1462,10 @@
       },
       "Microsoft.AspNet.Cors.Core/1.0.0-beta5": {
         "dependencies": {
-          "Microsoft.AspNet.Http": "1.0.0-beta5",
           "Microsoft.Framework.Configuration.Abstractions": "1.0.0-beta5",
           "Microsoft.Framework.DependencyInjection.Abstractions": "1.0.0-beta5",
           "Microsoft.Framework.OptionsModel": "1.0.0-beta5",
+          "Microsoft.AspNet.Http": "1.0.0-beta5",
           "System.Runtime": "4.0.20-beta-23019"
         },
         "compile": {
@@ -1506,11 +1506,11 @@
           "System.Linq": "4.0.0-beta-23019",
           "System.Reflection.Extensions": "4.0.0-beta-23019",
           "System.Reflection.TypeExtensions": "4.0.0-beta-23019",
-          "System.Security.Claims": "4.0.0-beta-23019",
+          "System.Security.Cryptography.X509Certificates": "4.0.0-beta-23019",
           "System.Security.Cryptography.Encryption.Aes": "4.0.0-beta-23019",
           "System.Security.Cryptography.Hashing.Algorithms": "4.0.0-beta-23019",
           "System.Security.Cryptography.RandomNumberGenerator": "4.0.0-beta-23019",
-          "System.Security.Cryptography.X509Certificates": "4.0.0-beta-23019",
+          "System.Security.Claims": "4.0.0-beta-23019",
           "System.Security.Principal.Windows": "4.0.0-beta-23019",
           "System.Text.Encoding.Extensions": "4.0.10-beta-23019",
           "System.Xml.XDocument": "4.0.10-beta-23019"
@@ -1585,9 +1585,9 @@
           "Microsoft.AspNet.FileProviders.Abstractions": "1.0.0-beta5",
           "System.Collections": "4.0.10-beta-23019",
           "System.Collections.Concurrent": "4.0.10-beta-23019",
+          "System.IO.FileSystem.Watcher": "4.0.0-beta-23019",
           "System.IO.FileSystem": "4.0.0-beta-23019",
           "System.IO.FileSystem.Primitives": "4.0.0-beta-23019",
-          "System.IO.FileSystem.Watcher": "4.0.0-beta-23019",
           "System.Runtime.Extensions": "4.0.10-beta-23019",
           "System.Text.RegularExpressions": "4.0.10-beta-23019",
           "System.Threading": "4.0.10-beta-23019"
@@ -1625,8 +1625,8 @@
       },
       "Microsoft.AspNet.Hosting.Abstractions/1.0.0-beta5": {
         "dependencies": {
-          "Microsoft.AspNet.FileProviders.Abstractions": "1.0.0-beta5",
-          "Microsoft.AspNet.Http.Abstractions": "1.0.0-beta5"
+          "Microsoft.AspNet.Http.Abstractions": "1.0.0-beta5",
+          "Microsoft.AspNet.FileProviders.Abstractions": "1.0.0-beta5"
         },
         "compile": {
           "lib/dnxcore50/Microsoft.AspNet.Hosting.Abstractions.dll": {}
@@ -1697,8 +1697,8 @@
           "Microsoft.Framework.WebEncoders.Core": "1.0.0-beta5",
           "Microsoft.Net.Http.Headers": "1.0.0-beta5",
           "System.IO.FileSystem": "4.0.0-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.20-beta-23019"
+          "System.Runtime": "4.0.20-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019"
         },
         "compile": {
           "lib/dnxcore50/Microsoft.AspNet.Http.Extensions.dll": {}
@@ -1727,8 +1727,8 @@
       "Microsoft.AspNet.JsonPatch/1.0.0-beta5": {
         "dependencies": {
           "Microsoft.AspNet.Http.Extensions": "1.0.0-beta5",
-          "Microsoft.CSharp": "4.0.0-beta-23019",
           "Newtonsoft.Json": "6.0.6",
+          "Microsoft.CSharp": "4.0.0-beta-23019",
           "System.Collections.Concurrent": "4.0.10-beta-23019",
           "System.ComponentModel.TypeConverter": "4.0.0-beta-23019",
           "System.Globalization": "4.0.10-beta-23019",
@@ -1824,12 +1824,12 @@
           "Microsoft.AspNet.JsonPatch": "1.0.0-beta5",
           "Microsoft.AspNet.Mvc.Abstractions": "6.0.0-beta5",
           "Microsoft.AspNet.Routing": "1.0.0-beta5",
-          "Microsoft.CSharp": "4.0.0-beta-23019",
           "Microsoft.Framework.Logging.Abstractions": "1.0.0-beta5",
           "Microsoft.Framework.Runtime.Abstractions": "1.0.0-beta5",
           "Microsoft.Framework.WebEncoders": "1.0.0-beta5",
           "System.ComponentModel.Annotations": "4.0.10-beta-23019",
-          "System.Runtime.Serialization.Primitives": "4.0.10-beta-23019"
+          "System.Runtime.Serialization.Primitives": "4.0.10-beta-23019",
+          "Microsoft.CSharp": "4.0.0-beta-23019"
         },
         "compile": {
           "lib/dnxcore50/Microsoft.AspNet.Mvc.Core.dll": {}
@@ -1844,8 +1844,8 @@
           "Microsoft.AspNet.Mvc.Core": "6.0.0-beta5",
           "Microsoft.AspNet.Mvc.Razor.Host": "6.0.0-beta5",
           "Microsoft.AspNet.PageExecutionInstrumentation.Interfaces": "1.0.0-beta5",
-          "Microsoft.Framework.Runtime.Roslyn.Abstractions": "1.0.0-beta5",
           "Microsoft.Framework.Runtime.Roslyn.Common": "1.0.0-beta5",
+          "Microsoft.Framework.Runtime.Roslyn.Abstractions": "1.0.0-beta5",
           "System.Threading.Tasks.Parallel": "4.0.0-beta-23019"
         },
         "compile": {
@@ -1878,8 +1878,8 @@
           "Microsoft.AspNet.Mvc.Core": "6.0.0-beta5",
           "Microsoft.AspNet.WebApi.Client": "5.2.2",
           "System.Net.Http": "4.0.0-beta-23019",
-          "System.Runtime.Serialization.Xml": "4.0.10-beta-23019",
-          "System.Xml.XmlSerializer": "4.0.10-beta-23019"
+          "System.Xml.XmlSerializer": "4.0.10-beta-23019",
+          "System.Runtime.Serialization.Xml": "4.0.10-beta-23019"
         },
         "compile": {
           "lib/dnxcore50/Microsoft.AspNet.Mvc.WebApiCompatShim.dll": {}
@@ -1910,10 +1910,10 @@
           "System.Reflection": "4.0.10-beta-23019",
           "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Runtime.Extensions": "4.0.10-beta-23019",
-          "System.Security.Cryptography.Hashing.Algorithms": "4.0.0-beta-23019",
           "System.Threading": "4.0.10-beta-23019",
           "System.Threading.Tasks": "4.0.10-beta-23019",
-          "System.Threading.Thread": "4.0.0-beta-23019"
+          "System.Threading.Thread": "4.0.0-beta-23019",
+          "System.Security.Cryptography.Hashing.Algorithms": "4.0.0-beta-23019"
         },
         "compile": {
           "lib/dnxcore50/Microsoft.AspNet.Razor.dll": {}
@@ -1952,14 +1952,14 @@
       },
       "Microsoft.AspNet.Server.IIS/1.0.0-beta5": {
         "dependencies": {
-          "Microsoft.AspNet.Loader.IIS": "1.0.0-beta5",
-          "Microsoft.AspNet.Loader.IIS.Interop": "1.0.0-beta5"
+          "Microsoft.AspNet.Loader.IIS.Interop": "1.0.0-beta5",
+          "Microsoft.AspNet.Loader.IIS": "1.0.0-beta5"
         }
       },
       "Microsoft.AspNet.Server.WebListener/1.0.0-beta5": {
         "dependencies": {
-          "Microsoft.AspNet.Hosting.Server.Abstractions": "1.0.0-beta5",
           "Microsoft.AspNet.Http.Features": "1.0.0-beta5",
+          "Microsoft.AspNet.Hosting.Server.Abstractions": "1.0.0-beta5",
           "Microsoft.Framework.Logging.Abstractions": "1.0.0-beta5",
           "Microsoft.Net.Http.Server": "1.0.0-beta5",
           "System.Security.Claims": "4.0.0-beta-23019"
@@ -1973,9 +1973,9 @@
       },
       "Microsoft.AspNet.StaticFiles/1.0.0-beta5": {
         "dependencies": {
+          "Microsoft.AspNet.Http.Extensions": "1.0.0-beta5",
           "Microsoft.AspNet.FileProviders.Abstractions": "1.0.0-beta5",
           "Microsoft.AspNet.Hosting.Abstractions": "1.0.0-beta5",
-          "Microsoft.AspNet.Http.Extensions": "1.0.0-beta5",
           "Microsoft.Framework.Logging.Abstractions": "1.0.0-beta5",
           "Microsoft.Framework.WebEncoders": "1.0.0-beta5"
         },
@@ -1988,8 +1988,8 @@
       },
       "Microsoft.AspNet.WebApi.Client/5.2.2": {
         "dependencies": {
-          "Microsoft.Net.Http": "2.2.22",
-          "Newtonsoft.Json": "6.0.4"
+          "Newtonsoft.Json": "6.0.4",
+          "Microsoft.Net.Http": "2.2.22"
         },
         "compile": {
           "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.dll": {}
@@ -2023,21 +2023,15 @@
       "Microsoft.Bcl/1.1.9": {
         "dependencies": {
           "Microsoft.Bcl.Build": "1.0.14"
-        },
-        "compile": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
-        },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
         }
       },
       "Microsoft.Bcl.Build/1.0.14": {},
       "Microsoft.CodeAnalysis.Analyzers/1.0.0-rc3": {},
       "Microsoft.CodeAnalysis.Common/1.0.0-rc3": {
         "dependencies": {
-          "Microsoft.CodeAnalysis.Analyzers": "[1.0.0-rc3]",
           "System.Collections.Immutable": "1.1.36",
-          "System.Reflection.Metadata": "1.0.21"
+          "System.Reflection.Metadata": "1.0.21",
+          "Microsoft.CodeAnalysis.Analyzers": "[1.0.0-rc3]"
         },
         "compile": {
           "lib/portable-net45+win8/Microsoft.CodeAnalysis.dll": {}
@@ -2059,22 +2053,22 @@
       },
       "Microsoft.CSharp/4.0.0-beta-23019": {
         "dependencies": {
+          "System.Runtime": "4.0.20-beta-23019",
+          "System.Dynamic.Runtime": "4.0.0-beta-23019",
+          "System.Linq.Expressions": "4.0.0-beta-23019",
+          "System.Runtime.InteropServices": "4.0.20-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
+          "System.Linq": "4.0.0-beta-23019",
+          "System.Reflection.TypeExtensions": "4.0.0-beta-23019",
+          "System.Reflection.Primitives": "4.0.0-beta-23019",
+          "System.Reflection.Extensions": "4.0.0-beta-23019",
+          "System.Threading": "4.0.0-beta-23019",
           "System.Collections": "4.0.10-beta-23019",
           "System.Diagnostics.Debug": "4.0.10-beta-23019",
-          "System.Dynamic.Runtime": "4.0.0-beta-23019",
-          "System.Globalization": "4.0.10-beta-23019",
-          "System.Linq": "4.0.0-beta-23019",
-          "System.Linq.Expressions": "4.0.0-beta-23019",
-          "System.ObjectModel": "4.0.10-beta-23019",
           "System.Reflection": "4.0.10-beta-23019",
-          "System.Reflection.Extensions": "4.0.0-beta-23019",
-          "System.Reflection.Primitives": "4.0.0-beta-23019",
-          "System.Reflection.TypeExtensions": "4.0.0-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.20-beta-23019",
+          "System.Globalization": "4.0.10-beta-23019",
           "System.Runtime.Extensions": "4.0.10-beta-23019",
-          "System.Runtime.InteropServices": "4.0.20-beta-23019",
-          "System.Threading": "4.0.0-beta-23019"
+          "System.ObjectModel": "4.0.10-beta-23019"
         },
         "compile": {
           "ref/dotnet/Microsoft.CSharp.dll": {}
@@ -2087,8 +2081,8 @@
         "dependencies": {
           "System.Collections": "4.0.10-beta-23019",
           "System.Threading": "4.0.10-beta-23019",
-          "System.Threading.Tasks": "4.0.10-beta-23019",
-          "System.Threading.ThreadPool": "4.0.10-beta-23019"
+          "System.Threading.ThreadPool": "4.0.10-beta-23019",
+          "System.Threading.Tasks": "4.0.10-beta-23019"
         },
         "compile": {
           "lib/dotnet/Microsoft.Framework.Caching.Abstractions.dll": {}
@@ -2099,8 +2093,8 @@
       },
       "Microsoft.Framework.Caching.Memory/1.0.0-beta5": {
         "dependencies": {
-          "Microsoft.Framework.Caching.Abstractions": "1.0.0-beta5",
           "Microsoft.Framework.DependencyInjection.Abstractions": "1.0.0-beta5",
+          "Microsoft.Framework.Caching.Abstractions": "1.0.0-beta5",
           "Microsoft.Framework.OptionsModel": "1.0.0-beta5",
           "System.Linq": "4.0.0-beta-23019",
           "System.Threading": "4.0.10-beta-23019",
@@ -2188,8 +2182,8 @@
       },
       "Microsoft.Framework.Configuration.Json/1.0.0-beta5": {
         "dependencies": {
-          "Microsoft.Framework.Configuration": "1.0.0-beta5",
           "Newtonsoft.Json": "6.0.6",
+          "Microsoft.Framework.Configuration": "1.0.0-beta5",
           "System.Dynamic.Runtime": "4.0.10-beta-23019"
         },
         "compile": {
@@ -2235,8 +2229,8 @@
         "dependencies": {
           "Microsoft.Framework.DependencyInjection.Abstractions": "1.0.0-beta5",
           "Microsoft.Framework.Logging.Abstractions": "1.0.0-beta5",
-          "System.Collections": "4.0.10-beta-23019",
           "System.Collections.Concurrent": "4.0.10-beta-23019",
+          "System.Collections": "4.0.10-beta-23019",
           "System.ComponentModel": "4.0.0-beta-23019",
           "System.Diagnostics.TraceSource": "4.0.0-beta-23019",
           "System.Globalization": "4.0.10-beta-23019",
@@ -2254,8 +2248,8 @@
         "dependencies": {
           "System.Collections": "4.0.10-beta-23019",
           "System.Collections.Concurrent": "4.0.10-beta-23019",
-          "System.Globalization": "4.0.10-beta-23019",
           "System.Linq": "4.0.0-beta-23019",
+          "System.Globalization": "4.0.10-beta-23019",
           "System.Reflection": "4.0.10-beta-23019",
           "System.Runtime": "4.0.20-beta-23019",
           "System.Runtime.Extensions": "4.0.10-beta-23019",
@@ -2294,12 +2288,12 @@
       },
       "Microsoft.Framework.Runtime.Abstractions/1.0.0-beta5": {
         "dependencies": {
-          "System.ComponentModel": "4.0.0-beta-23019",
           "System.IO": "4.0.10-beta-23019",
           "System.Reflection": "4.0.10-beta-23019",
           "System.Runtime": "4.0.20-beta-23019",
           "System.Runtime.Extensions": "4.0.10-beta-23019",
-          "System.Threading.Tasks": "4.0.10-beta-23019"
+          "System.Threading.Tasks": "4.0.10-beta-23019",
+          "System.ComponentModel": "4.0.0-beta-23019"
         },
         "compile": {
           "lib/dnxcore50/Microsoft.Framework.Runtime.Abstractions.dll": {}
@@ -2311,10 +2305,10 @@
       "Microsoft.Framework.Runtime.Caching/1.0.0-beta5": {
         "dependencies": {
           "Microsoft.Framework.Runtime.Abstractions": "1.0.0-beta5",
-          "System.Collections.Concurrent": "4.0.10-beta-23019",
+          "System.Runtime": "4.0.20-beta-23019",
           "System.IO.FileSystem": "4.0.0-beta-23019",
           "System.Linq": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.20-beta-23019"
+          "System.Collections.Concurrent": "4.0.10-beta-23019"
         },
         "compile": {
           "lib/dnxcore50/Microsoft.Framework.Runtime.Caching.dll": {}
@@ -2326,11 +2320,11 @@
       "Microsoft.Framework.Runtime.Roslyn/1.0.0-beta5": {
         "dependencies": {
           "Microsoft.Framework.Runtime.Abstractions": "1.0.0-beta5",
-          "Microsoft.Framework.Runtime.Caching": "1.0.0-beta5",
           "Microsoft.Framework.Runtime.Roslyn.Abstractions": "1.0.0-beta5",
+          "Microsoft.Framework.Runtime.Caching": "1.0.0-beta5",
           "System.Collections.Concurrent": "4.0.10-beta-23019",
-          "System.IO.FileSystem": "4.0.0-beta-23019",
-          "System.Runtime.InteropServices": "4.0.20-beta-23019"
+          "System.Runtime.InteropServices": "4.0.20-beta-23019",
+          "System.IO.FileSystem": "4.0.0-beta-23019"
         },
         "compile": {
           "lib/dnxcore50/Microsoft.Framework.Runtime.Roslyn.dll": {}
@@ -2341,8 +2335,8 @@
       },
       "Microsoft.Framework.Runtime.Roslyn.Abstractions/1.0.0-beta5": {
         "dependencies": {
-          "Microsoft.CodeAnalysis.CSharp": "1.0.0-rc3",
           "Microsoft.Framework.Runtime.Abstractions": "1.0.0-beta5",
+          "Microsoft.CodeAnalysis.CSharp": "1.0.0-rc3",
           "System.Runtime": "4.0.20-beta-23019"
         },
         "compile": {
@@ -2413,8 +2407,8 @@
           "System.Diagnostics.Contracts": "4.0.0-beta-23019",
           "System.Globalization": "4.0.10-beta-23019",
           "System.Globalization.Extensions": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.20-beta-23019",
-          "System.Text.Encoding": "4.0.10-beta-23019"
+          "System.Text.Encoding": "4.0.10-beta-23019",
+          "System.Runtime": "4.0.20-beta-23019"
         },
         "compile": {
           "lib/dnxcore50/Microsoft.Net.Http.Headers.dll": {}
@@ -2457,8 +2451,8 @@
           "System.Text.Encoding.Extensions": "4.0.10-beta-23019",
           "System.Threading": "4.0.10-beta-23019",
           "System.Threading.Tasks": "4.0.10-beta-23019",
-          "System.Threading.ThreadPool": "4.0.10-beta-23019",
-          "System.Threading.Timer": "4.0.0-beta-23019"
+          "System.Threading.Timer": "4.0.0-beta-23019",
+          "System.Threading.ThreadPool": "4.0.10-beta-23019"
         },
         "compile": {
           "lib/dnxcore50/Microsoft.Net.WebSockets.dll": {}
@@ -2481,13 +2475,13 @@
       },
       "Microsoft.Win32.Registry/4.0.0-beta-23019": {
         "dependencies": {
-          "System.Collections": "4.0.10-beta-23019",
-          "System.Globalization": "4.0.10-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Runtime": "4.0.20-beta-23019",
-          "System.Runtime.Extensions": "4.0.10-beta-23019",
+          "System.Runtime.InteropServices": "4.0.20-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Runtime.Handles": "4.0.0-beta-23019",
-          "System.Runtime.InteropServices": "4.0.20-beta-23019"
+          "System.Runtime.Extensions": "4.0.10-beta-23019",
+          "System.Collections": "4.0.10-beta-23019",
+          "System.Globalization": "4.0.10-beta-23019"
         },
         "compile": {
           "ref/dotnet/Microsoft.Win32.Registry.dll": {}
@@ -2512,9 +2506,9 @@
       },
       "Ninject.Web.WebApi/3.2.4.0": {
         "dependencies": {
-          "Microsoft.AspNet.WebApi.Core": "[5.0, 6.0)",
           "Ninject": "[3.2.0.0, 3.3.0.0)",
-          "Ninject.Web.Common": "[3.2.0.0, 3.3.0.0)"
+          "Ninject.Web.Common": "[3.2.0.0, 3.3.0.0)",
+          "Microsoft.AspNet.WebApi.Core": "[5.0, 6.0)"
         }
       },
       "Remotion.Linq/2.0.0-alpha-002": {
@@ -2538,15 +2532,15 @@
       },
       "System.Collections.Concurrent/4.0.10-beta-23019": {
         "dependencies": {
-          "System.Collections": "4.0.10-beta-23019",
-          "System.Diagnostics.Debug": "4.0.10-beta-23019",
-          "System.Diagnostics.Tracing": "4.0.20-beta-23019",
-          "System.Globalization": "4.0.10-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Runtime": "4.0.20-beta-23019",
-          "System.Runtime.Extensions": "4.0.10-beta-23019",
+          "System.Threading.Tasks": "4.0.10-beta-23019",
+          "System.Diagnostics.Tracing": "4.0.20-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
+          "System.Diagnostics.Debug": "4.0.10-beta-23019",
           "System.Threading": "4.0.10-beta-23019",
-          "System.Threading.Tasks": "4.0.10-beta-23019"
+          "System.Collections": "4.0.10-beta-23019",
+          "System.Runtime.Extensions": "4.0.10-beta-23019",
+          "System.Globalization": "4.0.10-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Collections.Concurrent.dll": {}
@@ -2565,12 +2559,12 @@
       },
       "System.Collections.NonGeneric/4.0.0-beta-23019": {
         "dependencies": {
-          "System.Diagnostics.Debug": "4.0.10-beta-23019",
+          "System.Runtime": "4.0.20-beta-23019",
           "System.Globalization": "4.0.10-beta-23019",
           "System.Resources.ResourceManager": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.20-beta-23019",
-          "System.Runtime.Extensions": "4.0.10-beta-23019",
-          "System.Threading": "4.0.10-beta-23019"
+          "System.Diagnostics.Debug": "4.0.10-beta-23019",
+          "System.Threading": "4.0.10-beta-23019",
+          "System.Runtime.Extensions": "4.0.10-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Collections.NonGeneric.dll": {}
@@ -2592,16 +2586,16 @@
       },
       "System.ComponentModel.Annotations/4.0.10-beta-23019": {
         "dependencies": {
-          "System.Collections": "4.0.10-beta-23019",
+          "System.Runtime": "4.0.20-beta-23019",
           "System.ComponentModel": "4.0.0-beta-23019",
-          "System.Globalization": "4.0.10-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
+          "System.Reflection.Extensions": "4.0.0-beta-23019",
           "System.Linq": "4.0.0-beta-23019",
           "System.Reflection": "4.0.10-beta-23019",
-          "System.Reflection.Extensions": "4.0.0-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.20-beta-23019",
-          "System.Runtime.Extensions": "4.0.10-beta-23019",
           "System.Text.RegularExpressions": "4.0.10-beta-23019",
+          "System.Collections": "4.0.10-beta-23019",
+          "System.Globalization": "4.0.10-beta-23019",
+          "System.Runtime.Extensions": "4.0.10-beta-23019",
           "System.Threading": "4.0.10-beta-23019"
         },
         "compile": {
@@ -2613,9 +2607,9 @@
       },
       "System.ComponentModel.EventBasedAsync/4.0.10-beta-23019": {
         "dependencies": {
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Runtime": "4.0.20-beta-23019",
           "System.Threading": "4.0.10-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Threading.Tasks": "4.0.10-beta-23019"
         },
         "compile": {
@@ -2627,8 +2621,8 @@
       },
       "System.ComponentModel.Primitives/4.0.0-beta-23019": {
         "dependencies": {
-          "System.ComponentModel": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.20-beta-23019"
+          "System.Runtime": "4.0.20-beta-23019",
+          "System.ComponentModel": "4.0.0-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.ComponentModel.Primitives.dll": {}
@@ -2639,15 +2633,15 @@
       },
       "System.ComponentModel.TypeConverter/4.0.0-beta-23019": {
         "dependencies": {
-          "System.Collections": "4.0.10-beta-23019",
+          "System.Runtime": "4.0.20-beta-23019",
+          "System.Globalization": "4.0.10-beta-23019",
           "System.ComponentModel": "4.0.0-beta-23019",
           "System.ComponentModel.Primitives": "4.0.0-beta-23019",
-          "System.Globalization": "4.0.10-beta-23019",
-          "System.Reflection": "4.0.10-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Reflection.Extensions": "4.0.0-beta-23019",
           "System.Reflection.Primitives": "4.0.0-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.20-beta-23019",
+          "System.Collections": "4.0.10-beta-23019",
+          "System.Reflection": "4.0.10-beta-23019",
           "System.Runtime.Extensions": "4.0.10-beta-23019",
           "System.Threading": "4.0.10-beta-23019"
         },
@@ -2660,15 +2654,15 @@
       },
       "System.Console/4.0.0-beta-23019": {
         "dependencies": {
-          "System.IO": "4.0.10-beta-23019",
-          "System.IO.FileSystem.Primitives": "4.0.0-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Runtime": "4.0.20-beta-23019",
           "System.Runtime.InteropServices": "4.0.20-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
+          "System.IO.FileSystem.Primitives": "4.0.0-beta-23019",
+          "System.IO": "4.0.10-beta-23019",
+          "System.Threading.Tasks": "4.0.10-beta-23019",
           "System.Text.Encoding": "4.0.10-beta-23019",
-          "System.Text.Encoding.Extensions": "4.0.10-beta-23019",
           "System.Threading": "4.0.10-beta-23019",
-          "System.Threading.Tasks": "4.0.10-beta-23019"
+          "System.Text.Encoding.Extensions": "4.0.10-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Console.dll": {}
@@ -2679,15 +2673,15 @@
       },
       "System.Data.Common/4.0.0-beta-23019": {
         "dependencies": {
-          "System.Collections": "4.0.0-beta-23019",
-          "System.Collections.NonGeneric": "4.0.0-beta-23019",
-          "System.Globalization": "4.0.0-beta-23019",
+          "System.Runtime": "4.0.0-beta-23019",
+          "System.Threading.Tasks": "4.0.0-beta-23019",
           "System.IO": "4.0.0-beta-23019",
           "System.Resources.ResourceManager": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.0-beta-23019",
-          "System.Runtime.Extensions": "4.0.0-beta-23019",
           "System.Text.RegularExpressions": "4.0.0-beta-23019",
-          "System.Threading.Tasks": "4.0.0-beta-23019"
+          "System.Collections.NonGeneric": "4.0.0-beta-23019",
+          "System.Collections": "4.0.0-beta-23019",
+          "System.Runtime.Extensions": "4.0.0-beta-23019",
+          "System.Globalization": "4.0.0-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Data.Common.dll": {}
@@ -2698,32 +2692,32 @@
       },
       "System.Data.SqlClient/4.0.0-beta-23019": {
         "dependencies": {
-          "Microsoft.Win32.Primitives": "4.0.0-beta-23019",
-          "System.Collections": "4.0.0-beta-23019",
-          "System.Collections.Concurrent": "4.0.0-beta-23019",
+          "System.Runtime": "4.0.20-beta-23019",
+          "System.Runtime.InteropServices": "4.0.20-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Collections.NonGeneric": "4.0.0-beta-23019",
           "System.Data.Common": "4.0.0-beta-23019",
-          "System.Diagnostics.Debug": "4.0.10-beta-23019",
-          "System.Globalization": "4.0.10-beta-23019",
-          "System.IO": "4.0.10-beta-23019",
-          "System.Linq": "4.0.0-beta-23019",
-          "System.Reflection": "4.0.0-beta-23019",
-          "System.Reflection.TypeExtensions": "4.0.0-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.20-beta-23019",
-          "System.Runtime.Extensions": "4.0.10-beta-23019",
-          "System.Runtime.Handles": "4.0.0-beta-23019",
-          "System.Runtime.InteropServices": "4.0.20-beta-23019",
-          "System.Security.Principal.Windows": "4.0.0-beta-23019",
-          "System.Text.Encoding": "4.0.10-beta-23019",
-          "System.Text.Encoding.CodePages": "4.0.0-beta-23019",
-          "System.Text.RegularExpressions": "4.0.10-beta-23019",
-          "System.Threading": "4.0.10-beta-23019",
+          "System.Xml.ReaderWriter": "4.0.0-beta-23019",
+          "System.Collections.Concurrent": "4.0.0-beta-23019",
           "System.Threading.Tasks": "4.0.0-beta-23019",
-          "System.Threading.Thread": "4.0.0-beta-23019",
-          "System.Threading.ThreadPool": "4.0.0-beta-23019",
+          "System.Collections": "4.0.0-beta-23019",
           "System.Threading.Timer": "4.0.0-beta-23019",
-          "System.Xml.ReaderWriter": "4.0.0-beta-23019"
+          "System.Threading.ThreadPool": "4.0.0-beta-23019",
+          "System.Security.Principal.Windows": "4.0.0-beta-23019",
+          "System.Runtime.Handles": "4.0.0-beta-23019",
+          "System.Text.Encoding.CodePages": "4.0.0-beta-23019",
+          "System.Threading.Thread": "4.0.0-beta-23019",
+          "System.Reflection": "4.0.0-beta-23019",
+          "System.Linq": "4.0.0-beta-23019",
+          "System.Reflection.TypeExtensions": "4.0.0-beta-23019",
+          "Microsoft.Win32.Primitives": "4.0.0-beta-23019",
+          "System.IO": "4.0.10-beta-23019",
+          "System.Text.Encoding": "4.0.10-beta-23019",
+          "System.Globalization": "4.0.10-beta-23019",
+          "System.Runtime.Extensions": "4.0.10-beta-23019",
+          "System.Threading": "4.0.10-beta-23019",
+          "System.Text.RegularExpressions": "4.0.10-beta-23019",
+          "System.Diagnostics.Debug": "4.0.10-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Data.SqlClient.dll": {}
@@ -2756,25 +2750,25 @@
       },
       "System.Diagnostics.Process/4.0.0-beta-23019": {
         "dependencies": {
-          "Microsoft.Win32.Primitives": "4.0.0-beta-23019",
-          "Microsoft.Win32.Registry": "4.0.0-beta-23019",
-          "System.Collections": "4.0.10-beta-23019",
-          "System.Globalization": "4.0.10-beta-23019",
-          "System.IO": "4.0.10-beta-23019",
-          "System.IO.FileSystem": "4.0.0-beta-23019",
-          "System.IO.FileSystem.Primitives": "4.0.0-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Runtime": "4.0.20-beta-23019",
-          "System.Runtime.Extensions": "4.0.10-beta-23019",
-          "System.Runtime.Handles": "4.0.0-beta-23019",
           "System.Runtime.InteropServices": "4.0.20-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
+          "System.Runtime.Handles": "4.0.0-beta-23019",
+          "System.IO.FileSystem": "4.0.0-beta-23019",
           "System.Security.SecureString": "4.0.0-beta-23019",
-          "System.Text.Encoding": "4.0.10-beta-23019",
-          "System.Text.Encoding.Extensions": "4.0.10-beta-23019",
-          "System.Threading": "4.0.10-beta-23019",
-          "System.Threading.Tasks": "4.0.10-beta-23019",
+          "Microsoft.Win32.Registry": "4.0.0-beta-23019",
+          "Microsoft.Win32.Primitives": "4.0.0-beta-23019",
+          "System.IO.FileSystem.Primitives": "4.0.0-beta-23019",
           "System.Threading.Thread": "4.0.0-beta-23019",
-          "System.Threading.ThreadPool": "4.0.10-beta-23019"
+          "System.Text.Encoding": "4.0.10-beta-23019",
+          "System.IO": "4.0.10-beta-23019",
+          "System.Threading": "4.0.10-beta-23019",
+          "System.Collections": "4.0.10-beta-23019",
+          "System.Threading.Tasks": "4.0.10-beta-23019",
+          "System.Threading.ThreadPool": "4.0.10-beta-23019",
+          "System.Globalization": "4.0.10-beta-23019",
+          "System.Text.Encoding.Extensions": "4.0.10-beta-23019",
+          "System.Runtime.Extensions": "4.0.10-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Diagnostics.Process.dll": {}
@@ -2796,13 +2790,13 @@
       },
       "System.Diagnostics.TraceSource/4.0.0-beta-23019": {
         "dependencies": {
-          "System.Collections": "4.0.10-beta-23019",
-          "System.Diagnostics.Debug": "4.0.10-beta-23019",
-          "System.Globalization": "4.0.10-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Runtime": "4.0.20-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
+          "System.Collections": "4.0.10-beta-23019",
           "System.Runtime.Extensions": "4.0.10-beta-23019",
-          "System.Threading": "4.0.10-beta-23019"
+          "System.Diagnostics.Debug": "4.0.10-beta-23019",
+          "System.Threading": "4.0.10-beta-23019",
+          "System.Globalization": "4.0.10-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Diagnostics.TraceSource.dll": {}
@@ -2824,20 +2818,20 @@
       },
       "System.Dynamic.Runtime/4.0.10-beta-23019": {
         "dependencies": {
+          "System.Runtime": "4.0.20-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Collections": "4.0.0-beta-23019",
+          "System.Reflection": "4.0.0-beta-23019",
           "System.Diagnostics.Debug": "4.0.0-beta-23019",
+          "System.Reflection.Primitives": "4.0.0-beta-23019",
+          "System.Reflection.Emit": "4.0.0-beta-23019",
+          "System.ObjectModel": "4.0.0-beta-23019",
+          "System.Threading": "4.0.0-beta-23019",
+          "System.Reflection.TypeExtensions": "4.0.0-beta-23019",
+          "System.Runtime.Extensions": "4.0.0-beta-23019",
           "System.Globalization": "4.0.0-beta-23019",
           "System.Linq": "4.0.0-beta-23019",
-          "System.Linq.Expressions": "4.0.10-beta-23019",
-          "System.ObjectModel": "4.0.0-beta-23019",
-          "System.Reflection": "4.0.0-beta-23019",
-          "System.Reflection.Emit": "4.0.0-beta-23019",
-          "System.Reflection.Primitives": "4.0.0-beta-23019",
-          "System.Reflection.TypeExtensions": "4.0.0-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.20-beta-23019",
-          "System.Runtime.Extensions": "4.0.0-beta-23019",
-          "System.Threading": "4.0.0-beta-23019"
+          "System.Linq.Expressions": "4.0.10-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Dynamic.Runtime.dll": {}
@@ -2859,8 +2853,8 @@
       },
       "System.Globalization.Calendars/4.0.0-beta-23019": {
         "dependencies": {
-          "System.Globalization": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.0-beta-23019"
+          "System.Runtime": "4.0.0-beta-23019",
+          "System.Globalization": "4.0.0-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Globalization.Calendars.dll": {}
@@ -2871,11 +2865,11 @@
       },
       "System.Globalization.Extensions/4.0.0-beta-23019": {
         "dependencies": {
-          "System.Globalization": "4.0.10-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Runtime": "4.0.20-beta-23019",
           "System.Runtime.Extensions": "4.0.10-beta-23019",
-          "System.Runtime.InteropServices": "4.0.20-beta-23019"
+          "System.Globalization": "4.0.10-beta-23019",
+          "System.Runtime.InteropServices": "4.0.20-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Globalization.Extensions.dll": {}
@@ -2899,15 +2893,15 @@
       },
       "System.IO.Compression/4.0.0-beta-23019": {
         "dependencies": {
-          "System.Collections": "4.0.0-beta-23019",
-          "System.IO": "4.0.0-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Runtime": "4.0.0-beta-23019",
-          "System.Runtime.Extensions": "4.0.0-beta-23019",
-          "System.Runtime.InteropServices": "4.0.0-beta-23019",
+          "System.IO": "4.0.0-beta-23019",
           "System.Text.Encoding": "4.0.0-beta-23019",
-          "System.Threading": "4.0.0-beta-23019",
-          "System.Threading.Tasks": "4.0.0-beta-23019"
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
+          "System.Threading.Tasks": "4.0.0-beta-23019",
+          "System.Runtime.InteropServices": "4.0.0-beta-23019",
+          "System.Collections": "4.0.0-beta-23019",
+          "System.Runtime.Extensions": "4.0.0-beta-23019",
+          "System.Threading": "4.0.0-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.IO.Compression.dll": {}
@@ -2918,19 +2912,19 @@
       },
       "System.IO.FileSystem/4.0.0-beta-23019": {
         "dependencies": {
-          "System.Collections": "4.0.10-beta-23019",
-          "System.IO": "4.0.10-beta-23019",
-          "System.IO.FileSystem.Primitives": "4.0.0-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Runtime": "4.0.20-beta-23019",
-          "System.Runtime.Extensions": "4.0.10-beta-23019",
-          "System.Runtime.Handles": "4.0.0-beta-23019",
           "System.Runtime.InteropServices": "4.0.20-beta-23019",
-          "System.Text.Encoding": "4.0.10-beta-23019",
-          "System.Text.Encoding.Extensions": "4.0.10-beta-23019",
-          "System.Threading": "4.0.10-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
+          "System.IO.FileSystem.Primitives": "4.0.0-beta-23019",
+          "System.Runtime.Handles": "4.0.0-beta-23019",
           "System.Threading.Overlapped": "4.0.0-beta-23019",
-          "System.Threading.Tasks": "4.0.10-beta-23019"
+          "System.Text.Encoding": "4.0.10-beta-23019",
+          "System.IO": "4.0.10-beta-23019",
+          "System.Collections": "4.0.10-beta-23019",
+          "System.Threading.Tasks": "4.0.10-beta-23019",
+          "System.Runtime.Extensions": "4.0.10-beta-23019",
+          "System.Text.Encoding.Extensions": "4.0.10-beta-23019",
+          "System.Threading": "4.0.10-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.IO.FileSystem.dll": {}
@@ -2952,14 +2946,14 @@
       },
       "System.IO.FileSystem.Watcher/4.0.0-beta-23019": {
         "dependencies": {
-          "Microsoft.Win32.Primitives": "4.0.0-beta-23019",
-          "System.IO.FileSystem": "4.0.0-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Runtime": "4.0.20-beta-23019",
-          "System.Runtime.Extensions": "4.0.10-beta-23019",
-          "System.Runtime.Handles": "4.0.0-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
+          "System.IO.FileSystem": "4.0.0-beta-23019",
+          "System.Threading.Overlapped": "4.0.0-beta-23019",
           "System.Threading": "4.0.0-beta-23019",
-          "System.Threading.Overlapped": "4.0.0-beta-23019"
+          "System.Runtime.Handles": "4.0.0-beta-23019",
+          "Microsoft.Win32.Primitives": "4.0.0-beta-23019",
+          "System.Runtime.Extensions": "4.0.10-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.IO.FileSystem.Watcher.dll": {}
@@ -2970,10 +2964,10 @@
       },
       "System.Linq/4.0.0-beta-23019": {
         "dependencies": {
-          "System.Collections": "4.0.10-beta-23019",
-          "System.Diagnostics.Debug": "4.0.10-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Runtime": "4.0.20-beta-23019",
+          "System.Collections": "4.0.10-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
+          "System.Diagnostics.Debug": "4.0.10-beta-23019",
           "System.Runtime.Extensions": "4.0.10-beta-23019"
         },
         "compile": {
@@ -2985,21 +2979,21 @@
       },
       "System.Linq.Expressions/4.0.10-beta-23019": {
         "dependencies": {
+          "System.Runtime": "4.0.20-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Collections": "4.0.0-beta-23019",
           "System.Diagnostics.Debug": "4.0.0-beta-23019",
-          "System.Globalization": "4.0.0-beta-23019",
-          "System.IO": "4.0.0-beta-23019",
-          "System.Linq": "4.0.0-beta-23019",
-          "System.ObjectModel": "4.0.0-beta-23019",
           "System.Reflection": "4.0.0-beta-23019",
-          "System.Reflection.Emit": "4.0.0-beta-23019",
-          "System.Reflection.Extensions": "4.0.0-beta-23019",
-          "System.Reflection.Primitives": "4.0.0-beta-23019",
+          "System.IO": "4.0.0-beta-23019",
           "System.Reflection.TypeExtensions": "4.0.0-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.20-beta-23019",
+          "System.Reflection.Primitives": "4.0.0-beta-23019",
+          "System.Reflection.Emit": "4.0.0-beta-23019",
+          "System.ObjectModel": "4.0.0-beta-23019",
+          "System.Threading": "4.0.0-beta-23019",
           "System.Runtime.Extensions": "4.0.0-beta-23019",
-          "System.Threading": "4.0.0-beta-23019"
+          "System.Linq": "4.0.0-beta-23019",
+          "System.Globalization": "4.0.0-beta-23019",
+          "System.Reflection.Extensions": "4.0.0-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Linq.Expressions.dll": {}
@@ -3010,13 +3004,13 @@
       },
       "System.Linq.Queryable/4.0.0-beta-23019": {
         "dependencies": {
-          "System.Collections": "4.0.10-beta-23019",
-          "System.Linq": "4.0.0-beta-23019",
+          "System.Runtime": "4.0.20-beta-23019",
           "System.Linq.Expressions": "4.0.10-beta-23019",
-          "System.Reflection": "4.0.10-beta-23019",
-          "System.Reflection.Extensions": "4.0.0-beta-23019",
+          "System.Linq": "4.0.0-beta-23019",
           "System.Resources.ResourceManager": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.20-beta-23019"
+          "System.Reflection.Extensions": "4.0.0-beta-23019",
+          "System.Reflection": "4.0.10-beta-23019",
+          "System.Collections": "4.0.10-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Linq.Queryable.dll": {}
@@ -3027,22 +3021,22 @@
       },
       "System.Net.Http/4.0.0-beta-23019": {
         "dependencies": {
+          "System.Runtime": "4.0.20-beta-23019",
+          "System.Runtime.InteropServices": "4.0.20-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
+          "System.Runtime.Handles": "4.0.0-beta-23019",
+          "System.Security.Cryptography.X509Certificates": "4.0.0-beta-23019",
           "Microsoft.Win32.Primitives": "4.0.0-beta-23019",
-          "System.Collections": "4.0.0-beta-23019",
+          "System.Threading.Tasks": "4.0.0-beta-23019",
           "System.Diagnostics.Debug": "4.0.0-beta-23019",
+          "System.Collections": "4.0.0-beta-23019",
+          "System.Runtime.Extensions": "4.0.0-beta-23019",
           "System.Globalization": "4.0.0-beta-23019",
-          "System.IO": "4.0.10-beta-23019",
+          "System.Threading": "4.0.0-beta-23019",
           "System.IO.Compression": "4.0.0-beta-23019",
           "System.Net.Primitives": "4.0.10-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.20-beta-23019",
-          "System.Runtime.Extensions": "4.0.0-beta-23019",
-          "System.Runtime.Handles": "4.0.0-beta-23019",
-          "System.Runtime.InteropServices": "4.0.20-beta-23019",
-          "System.Security.Cryptography.X509Certificates": "4.0.0-beta-23019",
-          "System.Text.Encoding": "4.0.10-beta-23019",
-          "System.Threading": "4.0.0-beta-23019",
-          "System.Threading.Tasks": "4.0.0-beta-23019"
+          "System.IO": "4.0.10-beta-23019",
+          "System.Text.Encoding": "4.0.10-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Net.Http.dll": {}
@@ -3075,10 +3069,10 @@
       },
       "System.Net.WebSockets/4.0.0-beta-23019": {
         "dependencies": {
-          "Microsoft.Win32.Primitives": "4.0.0-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Runtime": "4.0.0-beta-23019",
-          "System.Threading.Tasks": "4.0.0-beta-23019"
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
+          "System.Threading.Tasks": "4.0.0-beta-23019",
+          "Microsoft.Win32.Primitives": "4.0.0-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Net.WebSockets.dll": {}
@@ -3089,10 +3083,10 @@
       },
       "System.ObjectModel/4.0.10-beta-23019": {
         "dependencies": {
-          "System.Collections": "4.0.10-beta-23019",
-          "System.Diagnostics.Debug": "4.0.10-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Runtime": "4.0.20-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
+          "System.Diagnostics.Debug": "4.0.10-beta-23019",
+          "System.Collections": "4.0.10-beta-23019",
           "System.Threading": "4.0.10-beta-23019"
         },
         "compile": {
@@ -3104,27 +3098,24 @@
       },
       "System.Private.DataContractSerialization/4.0.0-beta-23019": {
         "dependencies": {
-          "System.Collections": "4.0.10-beta-23019",
-          "System.Globalization": "4.0.10-beta-23019",
-          "System.IO": "4.0.10-beta-23019",
-          "System.Linq": "4.0.0-beta-23019",
-          "System.Reflection": "4.0.10-beta-23019",
-          "System.Reflection.Extensions": "4.0.0-beta-23019",
+          "System.Runtime": "4.0.20-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Reflection.Primitives": "4.0.0-beta-23019",
           "System.Reflection.TypeExtensions": "4.0.0-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.20-beta-23019",
-          "System.Runtime.Extensions": "4.0.10-beta-23019",
-          "System.Runtime.Serialization.Primitives": "4.0.10-beta-23019",
+          "System.Reflection.Extensions": "4.0.0-beta-23019",
+          "System.Linq": "4.0.0-beta-23019",
           "System.Text.Encoding": "4.0.10-beta-23019",
-          "System.Text.Encoding.Extensions": "4.0.10-beta-23019",
-          "System.Text.RegularExpressions": "4.0.10-beta-23019",
-          "System.Threading": "4.0.10-beta-23019",
+          "System.IO": "4.0.10-beta-23019",
           "System.Xml.ReaderWriter": "4.0.10-beta-23019",
+          "System.Text.Encoding.Extensions": "4.0.10-beta-23019",
+          "System.Collections": "4.0.10-beta-23019",
+          "System.Reflection": "4.0.10-beta-23019",
+          "System.Runtime.Serialization.Primitives": "4.0.10-beta-23019",
+          "System.Globalization": "4.0.10-beta-23019",
+          "System.Runtime.Extensions": "4.0.10-beta-23019",
+          "System.Threading": "4.0.10-beta-23019",
+          "System.Text.RegularExpressions": "4.0.10-beta-23019",
           "System.Xml.XmlSerializer": "4.0.10-beta-23019"
-        },
-        "compile": {
-          "ref/dnxcore50/_._": {}
         },
         "runtime": {
           "lib/DNXCore50/System.Private.DataContractSerialization.dll": {}
@@ -3132,51 +3123,45 @@
       },
       "System.Private.Networking/4.0.0-beta-23019": {
         "dependencies": {
-          "Microsoft.Win32.Primitives": "4.0.0-beta-23019",
+          "System.Runtime": "4.0.20-beta-23019",
+          "System.Runtime.InteropServices": "4.0.20-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
+          "System.Runtime.Handles": "4.0.0-beta-23019",
+          "System.Security.Cryptography.X509Certificates": "4.0.0-beta-23019",
           "System.Collections": "4.0.0-beta-23019",
           "System.Collections.Concurrent": "4.0.0-beta-23019",
-          "System.Collections.NonGeneric": "4.0.0-beta-23019",
-          "System.ComponentModel.EventBasedAsync": "4.0.10-beta-23019",
-          "System.Diagnostics.Debug": "4.0.10-beta-23019",
           "System.Diagnostics.Tracing": "4.0.0-beta-23019",
-          "System.Globalization": "4.0.0-beta-23019",
-          "System.IO": "4.0.10-beta-23019",
-          "System.IO.FileSystem": "4.0.0-beta-23019",
-          "System.IO.FileSystem.Primitives": "4.0.0-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.20-beta-23019",
-          "System.Runtime.Extensions": "4.0.10-beta-23019",
-          "System.Runtime.Handles": "4.0.0-beta-23019",
-          "System.Runtime.InteropServices": "4.0.20-beta-23019",
-          "System.Security.Cryptography.Encryption": "4.0.0-beta-23019",
-          "System.Security.Cryptography.X509Certificates": "4.0.0-beta-23019",
-          "System.Security.Principal.Windows": "4.0.0-beta-23019",
-          "System.Security.SecureString": "4.0.0-beta-23019",
           "System.Threading": "4.0.0-beta-23019",
-          "System.Threading.Overlapped": "4.0.0-beta-23019",
           "System.Threading.Tasks": "4.0.0-beta-23019",
-          "System.Threading.ThreadPool": "4.0.10-beta-23019"
-        },
-        "compile": {
-          "ref/dnxcore50/_._": {}
+          "System.Collections.NonGeneric": "4.0.0-beta-23019",
+          "System.Security.SecureString": "4.0.0-beta-23019",
+          "System.Security.Principal.Windows": "4.0.0-beta-23019",
+          "Microsoft.Win32.Primitives": "4.0.0-beta-23019",
+          "System.IO.FileSystem": "4.0.0-beta-23019",
+          "System.Threading.Overlapped": "4.0.0-beta-23019",
+          "System.Security.Cryptography.Encryption": "4.0.0-beta-23019",
+          "System.Globalization": "4.0.0-beta-23019",
+          "System.IO.FileSystem.Primitives": "4.0.0-beta-23019",
+          "System.IO": "4.0.10-beta-23019",
+          "System.Diagnostics.Debug": "4.0.10-beta-23019",
+          "System.Threading.ThreadPool": "4.0.10-beta-23019",
+          "System.ComponentModel.EventBasedAsync": "4.0.10-beta-23019",
+          "System.Runtime.Extensions": "4.0.10-beta-23019"
         },
         "runtime": {
           "lib/DNXCore50/System.Private.Networking.dll": {}
         }
       },
       "System.Private.Uri/4.0.0-beta-23019": {
-        "compile": {
-          "ref/dnxcore50/_._": {}
-        },
         "runtime": {
           "lib/DNXCore50/System.Private.Uri.dll": {}
         }
       },
       "System.Reflection/4.0.10-beta-23019": {
         "dependencies": {
+          "System.Runtime": "4.0.20-beta-23019",
           "System.IO": "4.0.0-beta-23019",
-          "System.Reflection.Primitives": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.20-beta-23019"
+          "System.Reflection.Primitives": "4.0.0-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Reflection.dll": {}
@@ -3187,11 +3172,11 @@
       },
       "System.Reflection.Emit/4.0.0-beta-23019": {
         "dependencies": {
-          "System.IO": "4.0.0-beta-23019",
+          "System.Runtime": "4.0.0-beta-23019",
           "System.Reflection": "4.0.0-beta-23019",
           "System.Reflection.Emit.ILGeneration": "4.0.0-beta-23019",
-          "System.Reflection.Primitives": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.0-beta-23019"
+          "System.IO": "4.0.0-beta-23019",
+          "System.Reflection.Primitives": "4.0.0-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Reflection.Emit.dll": {}
@@ -3202,9 +3187,9 @@
       },
       "System.Reflection.Emit.ILGeneration/4.0.0-beta-23019": {
         "dependencies": {
+          "System.Runtime": "4.0.0-beta-23019",
           "System.Reflection": "4.0.0-beta-23019",
-          "System.Reflection.Primitives": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.0-beta-23019"
+          "System.Reflection.Primitives": "4.0.0-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Reflection.Emit.ILGeneration.dll": {}
@@ -3215,8 +3200,8 @@
       },
       "System.Reflection.Extensions/4.0.0-beta-23019": {
         "dependencies": {
-          "System.Reflection": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.0-beta-23019"
+          "System.Runtime": "4.0.0-beta-23019",
+          "System.Reflection": "4.0.0-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Reflection.Extensions.dll": {}
@@ -3249,8 +3234,8 @@
       },
       "System.Reflection.TypeExtensions/4.0.0-beta-23019": {
         "dependencies": {
-          "System.Reflection": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.0-beta-23019"
+          "System.Runtime": "4.0.0-beta-23019",
+          "System.Reflection": "4.0.0-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Reflection.TypeExtensions.dll": {}
@@ -3261,9 +3246,9 @@
       },
       "System.Resources.ResourceManager/4.0.0-beta-23019": {
         "dependencies": {
-          "System.Globalization": "4.0.0-beta-23019",
+          "System.Runtime": "4.0.0-beta-23019",
           "System.Reflection": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.0-beta-23019"
+          "System.Globalization": "4.0.0-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Resources.ResourceManager.dll": {}
@@ -3307,9 +3292,9 @@
       },
       "System.Runtime.InteropServices/4.0.20-beta-23019": {
         "dependencies": {
+          "System.Runtime": "4.0.0-beta-23019",
           "System.Reflection": "4.0.0-beta-23019",
           "System.Reflection.Primitives": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.0-beta-23019",
           "System.Runtime.Handles": "4.0.0-beta-23019"
         },
         "compile": {
@@ -3321,9 +3306,9 @@
       },
       "System.Runtime.Numerics/4.0.0-beta-23019": {
         "dependencies": {
-          "System.Globalization": "4.0.10-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Runtime": "4.0.20-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
+          "System.Globalization": "4.0.10-beta-23019",
           "System.Runtime.Extensions": "4.0.10-beta-23019"
         },
         "compile": {
@@ -3335,8 +3320,8 @@
       },
       "System.Runtime.Serialization.Primitives/4.0.10-beta-23019": {
         "dependencies": {
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.20-beta-23019"
+          "System.Runtime": "4.0.20-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Runtime.Serialization.Primitives.dll": {}
@@ -3347,8 +3332,8 @@
       },
       "System.Runtime.Serialization.Xml/4.0.10-beta-23019": {
         "dependencies": {
-          "System.Private.DataContractSerialization": "4.0.0-beta-23019",
-          "System.Runtime.Serialization.Primitives": "4.0.10-beta-23019"
+          "System.Runtime.Serialization.Primitives": "4.0.10-beta-23019",
+          "System.Private.DataContractSerialization": "4.0.0-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Runtime.Serialization.Xml.dll": {}
@@ -3359,14 +3344,14 @@
       },
       "System.Security.Claims/4.0.0-beta-23019": {
         "dependencies": {
+          "System.Runtime": "4.0.0-beta-23019",
+          "System.Security.Principal": "4.0.0-beta-23019",
+          "System.IO": "4.0.0-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Collections": "4.0.0-beta-23019",
           "System.Diagnostics.Debug": "4.0.0-beta-23019",
           "System.Globalization": "4.0.0-beta-23019",
-          "System.IO": "4.0.0-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.0-beta-23019",
-          "System.Runtime.Extensions": "4.0.0-beta-23019",
-          "System.Security.Principal": "4.0.0-beta-23019"
+          "System.Runtime.Extensions": "4.0.0-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Security.Claims.dll": {}
@@ -3377,11 +3362,11 @@
       },
       "System.Security.Cryptography.Encoding/4.0.0-beta-23019": {
         "dependencies": {
-          "System.Diagnostics.Debug": "4.0.0-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Runtime": "4.0.0-beta-23019",
-          "System.Runtime.InteropServices": "4.0.0-beta-23019",
-          "System.Security.Cryptography.Encryption": "4.0.0-beta-23019"
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
+          "System.Diagnostics.Debug": "4.0.0-beta-23019",
+          "System.Security.Cryptography.Encryption": "4.0.0-beta-23019",
+          "System.Runtime.InteropServices": "4.0.0-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Security.Cryptography.Encoding.dll": {}
@@ -3392,11 +3377,11 @@
       },
       "System.Security.Cryptography.Encryption/4.0.0-beta-23019": {
         "dependencies": {
-          "System.Globalization": "4.0.0-beta-23019",
-          "System.IO": "4.0.0-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Runtime": "4.0.0-beta-23019",
-          "System.Threading.Tasks": "4.0.0-beta-23019"
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
+          "System.IO": "4.0.0-beta-23019",
+          "System.Threading.Tasks": "4.0.0-beta-23019",
+          "System.Globalization": "4.0.0-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Security.Cryptography.Encryption.dll": {}
@@ -3407,10 +3392,10 @@
       },
       "System.Security.Cryptography.Encryption.Aes/4.0.0-beta-23019": {
         "dependencies": {
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Runtime": "4.0.0-beta-23019",
-          "System.Runtime.InteropServices": "4.0.0-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Security.Cryptography.Encryption": "4.0.0-beta-23019",
+          "System.Runtime.InteropServices": "4.0.0-beta-23019",
           "System.Security.Cryptography.RandomNumberGenerator": "4.0.0-beta-23019"
         },
         "compile": {
@@ -3422,9 +3407,9 @@
       },
       "System.Security.Cryptography.Hashing/4.0.0-beta-23019": {
         "dependencies": {
-          "System.IO": "4.0.0-beta-23019",
+          "System.Runtime": "4.0.0-beta-23019",
           "System.Resources.ResourceManager": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.0-beta-23019"
+          "System.IO": "4.0.0-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Security.Cryptography.Hashing.dll": {}
@@ -3435,12 +3420,12 @@
       },
       "System.Security.Cryptography.Hashing.Algorithms/4.0.0-beta-23019": {
         "dependencies": {
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Runtime": "4.0.0-beta-23019",
-          "System.Runtime.InteropServices": "4.0.0-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Security.Cryptography.Encryption": "4.0.0-beta-23019",
-          "System.Security.Cryptography.Hashing": "4.0.0-beta-23019",
-          "System.Security.Cryptography.RandomNumberGenerator": "4.0.0-beta-23019"
+          "System.Runtime.InteropServices": "4.0.0-beta-23019",
+          "System.Security.Cryptography.RandomNumberGenerator": "4.0.0-beta-23019",
+          "System.Security.Cryptography.Hashing": "4.0.0-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Security.Cryptography.Hashing.Algorithms.dll": {}
@@ -3451,10 +3436,10 @@
       },
       "System.Security.Cryptography.RandomNumberGenerator/4.0.0-beta-23019": {
         "dependencies": {
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Runtime": "4.0.0-beta-23019",
-          "System.Runtime.InteropServices": "4.0.0-beta-23019",
-          "System.Security.Cryptography.Encryption": "4.0.0-beta-23019"
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
+          "System.Security.Cryptography.Encryption": "4.0.0-beta-23019",
+          "System.Runtime.InteropServices": "4.0.0-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Security.Cryptography.RandomNumberGenerator.dll": {}
@@ -3465,16 +3450,16 @@
       },
       "System.Security.Cryptography.RSA/4.0.0-beta-23019": {
         "dependencies": {
-          "System.Diagnostics.Debug": "4.0.0-beta-23019",
+          "System.Runtime": "4.0.0-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
+          "System.Security.Cryptography.Encoding": "4.0.0-beta-23019",
           "System.IO": "4.0.0-beta-23019",
           "System.Reflection": "4.0.0-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.0-beta-23019",
-          "System.Runtime.Extensions": "4.0.0-beta-23019",
-          "System.Runtime.InteropServices": "4.0.0-beta-23019",
-          "System.Security.Cryptography.Encoding": "4.0.0-beta-23019",
-          "System.Security.Cryptography.Encryption": "4.0.0-beta-23019",
           "System.Security.Cryptography.Hashing": "4.0.0-beta-23019",
+          "System.Diagnostics.Debug": "4.0.0-beta-23019",
+          "System.Security.Cryptography.Encryption": "4.0.0-beta-23019",
+          "System.Runtime.InteropServices": "4.0.0-beta-23019",
+          "System.Runtime.Extensions": "4.0.0-beta-23019",
           "System.Security.Cryptography.Hashing.Algorithms": "4.0.0-beta-23019",
           "System.Threading": "4.0.0-beta-23019"
         },
@@ -3487,23 +3472,23 @@
       },
       "System.Security.Cryptography.X509Certificates/4.0.0-beta-23019": {
         "dependencies": {
-          "System.Diagnostics.Debug": "4.0.0-beta-23019",
-          "System.Globalization": "4.0.0-beta-23019",
-          "System.Globalization.Calendars": "4.0.0-beta-23019",
-          "System.IO": "4.0.0-beta-23019",
-          "System.IO.FileSystem": "4.0.0-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Runtime": "4.0.20-beta-23019",
-          "System.Runtime.Extensions": "4.0.10-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Runtime.InteropServices": "4.0.0-beta-23019",
-          "System.Runtime.Numerics": "4.0.0-beta-23019",
-          "System.Security.Cryptography.Encoding": "4.0.0-beta-23019",
           "System.Security.Cryptography.Encryption": "4.0.0-beta-23019",
-          "System.Security.Cryptography.Hashing": "4.0.0-beta-23019",
-          "System.Security.Cryptography.Hashing.Algorithms": "4.0.0-beta-23019",
           "System.Security.Cryptography.RSA": "4.0.0-beta-23019",
-          "System.Text.Encoding": "4.0.10-beta-23019",
-          "System.Threading": "4.0.0-beta-23019"
+          "System.Security.Cryptography.Encoding": "4.0.0-beta-23019",
+          "System.Globalization": "4.0.0-beta-23019",
+          "System.Diagnostics.Debug": "4.0.0-beta-23019",
+          "System.Runtime.Numerics": "4.0.0-beta-23019",
+          "System.IO": "4.0.0-beta-23019",
+          "System.Globalization.Calendars": "4.0.0-beta-23019",
+          "System.Threading": "4.0.0-beta-23019",
+          "System.Security.Cryptography.Hashing.Algorithms": "4.0.0-beta-23019",
+          "System.Security.Cryptography.Hashing": "4.0.0-beta-23019",
+          "System.IO.FileSystem": "4.0.0-beta-23019",
+          "System.Runtime.Extensions": "4.0.10-beta-23019",
+          "System.Text.Encoding": "4.0.10-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Security.Cryptography.X509Certificates.dll": {}
@@ -3525,15 +3510,15 @@
       },
       "System.Security.Principal.Windows/4.0.0-beta-23019": {
         "dependencies": {
-          "System.Collections": "4.0.0-beta-23019",
-          "System.Diagnostics.Debug": "4.0.0-beta-23019",
-          "System.Reflection": "4.0.0-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Runtime": "4.0.0-beta-23019",
-          "System.Runtime.Extensions": "4.0.0-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
+          "System.Collections": "4.0.0-beta-23019",
           "System.Runtime.InteropServices": "4.0.0-beta-23019",
           "System.Security.Claims": "4.0.0-beta-23019",
           "System.Security.Principal": "4.0.0-beta-23019",
+          "System.Diagnostics.Debug": "4.0.0-beta-23019",
+          "System.Reflection": "4.0.0-beta-23019",
+          "System.Runtime.Extensions": "4.0.0-beta-23019",
           "System.Threading": "4.0.10-beta-23019"
         },
         "compile": {
@@ -3545,10 +3530,10 @@
       },
       "System.Security.SecureString/4.0.0-beta-23019": {
         "dependencies": {
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Runtime": "4.0.20-beta-23019",
-          "System.Runtime.Handles": "4.0.0-beta-23019",
           "System.Runtime.InteropServices": "4.0.20-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
+          "System.Runtime.Handles": "4.0.0-beta-23019",
           "System.Security.Cryptography.Encryption": "4.0.0-beta-23019",
           "System.Threading": "4.0.10-beta-23019"
         },
@@ -3572,17 +3557,17 @@
       },
       "System.Text.Encoding.CodePages/4.0.0-beta-23019": {
         "dependencies": {
-          "System.Collections": "4.0.10-beta-23019",
-          "System.Globalization": "4.0.10-beta-23019",
-          "System.IO": "4.0.10-beta-23019",
-          "System.Reflection": "4.0.10-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Runtime": "4.0.20-beta-23019",
-          "System.Runtime.Extensions": "4.0.10-beta-23019",
-          "System.Runtime.Handles": "4.0.0-beta-23019",
-          "System.Runtime.InteropServices": "4.0.20-beta-23019",
           "System.Text.Encoding": "4.0.10-beta-23019",
-          "System.Threading": "4.0.10-beta-23019"
+          "System.Runtime.InteropServices": "4.0.20-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
+          "System.Runtime.Handles": "4.0.0-beta-23019",
+          "System.IO": "4.0.10-beta-23019",
+          "System.Collections": "4.0.10-beta-23019",
+          "System.Threading": "4.0.10-beta-23019",
+          "System.Reflection": "4.0.10-beta-23019",
+          "System.Globalization": "4.0.10-beta-23019",
+          "System.Runtime.Extensions": "4.0.10-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Text.Encoding.CodePages.dll": {}
@@ -3605,10 +3590,10 @@
       },
       "System.Text.RegularExpressions/4.0.10-beta-23019": {
         "dependencies": {
+          "System.Runtime": "4.0.20-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Collections": "4.0.10-beta-23019",
           "System.Globalization": "4.0.10-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.20-beta-23019",
           "System.Runtime.Extensions": "4.0.10-beta-23019",
           "System.Threading": "4.0.10-beta-23019"
         },
@@ -3656,14 +3641,14 @@
       },
       "System.Threading.Tasks.Parallel/4.0.0-beta-23019": {
         "dependencies": {
+          "System.Runtime": "4.0.20-beta-23019",
           "System.Collections.Concurrent": "4.0.10-beta-23019",
-          "System.Diagnostics.Debug": "4.0.10-beta-23019",
+          "System.Threading.Tasks": "4.0.10-beta-23019",
           "System.Diagnostics.Tracing": "4.0.20-beta-23019",
           "System.Resources.ResourceManager": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.20-beta-23019",
-          "System.Runtime.Extensions": "4.0.10-beta-23019",
+          "System.Diagnostics.Debug": "4.0.10-beta-23019",
           "System.Threading": "4.0.10-beta-23019",
-          "System.Threading.Tasks": "4.0.10-beta-23019"
+          "System.Runtime.Extensions": "4.0.10-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Threading.Tasks.Parallel.dll": {}
@@ -3708,20 +3693,20 @@
       },
       "System.Xml.ReaderWriter/4.0.10-beta-23019": {
         "dependencies": {
-          "System.Collections": "4.0.10-beta-23019",
-          "System.Diagnostics.Debug": "4.0.10-beta-23019",
-          "System.Globalization": "4.0.10-beta-23019",
+          "System.Runtime": "4.0.20-beta-23019",
+          "System.Text.Encoding": "4.0.10-beta-23019",
           "System.IO": "4.0.10-beta-23019",
+          "System.Threading.Tasks": "4.0.10-beta-23019",
+          "System.Runtime.InteropServices": "4.0.20-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.IO.FileSystem": "4.0.0-beta-23019",
           "System.IO.FileSystem.Primitives": "4.0.0-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.20-beta-23019",
-          "System.Runtime.Extensions": "4.0.10-beta-23019",
-          "System.Runtime.InteropServices": "4.0.20-beta-23019",
-          "System.Text.Encoding": "4.0.10-beta-23019",
-          "System.Text.Encoding.Extensions": "4.0.10-beta-23019",
+          "System.Diagnostics.Debug": "4.0.10-beta-23019",
           "System.Text.RegularExpressions": "4.0.10-beta-23019",
-          "System.Threading.Tasks": "4.0.10-beta-23019"
+          "System.Collections": "4.0.10-beta-23019",
+          "System.Runtime.Extensions": "4.0.10-beta-23019",
+          "System.Globalization": "4.0.10-beta-23019",
+          "System.Text.Encoding.Extensions": "4.0.10-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Xml.ReaderWriter.dll": {}
@@ -3732,17 +3717,17 @@
       },
       "System.Xml.XDocument/4.0.10-beta-23019": {
         "dependencies": {
-          "System.Collections": "4.0.10-beta-23019",
-          "System.Diagnostics.Debug": "4.0.10-beta-23019",
-          "System.Globalization": "4.0.10-beta-23019",
-          "System.IO": "4.0.10-beta-23019",
-          "System.Reflection": "4.0.10-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
           "System.Runtime": "4.0.20-beta-23019",
-          "System.Runtime.Extensions": "4.0.10-beta-23019",
-          "System.Text.Encoding": "4.0.10-beta-23019",
+          "System.IO": "4.0.10-beta-23019",
+          "System.Xml.ReaderWriter": "4.0.10-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
+          "System.Diagnostics.Debug": "4.0.10-beta-23019",
+          "System.Collections": "4.0.10-beta-23019",
+          "System.Globalization": "4.0.10-beta-23019",
           "System.Threading": "4.0.10-beta-23019",
-          "System.Xml.ReaderWriter": "4.0.10-beta-23019"
+          "System.Text.Encoding": "4.0.10-beta-23019",
+          "System.Reflection": "4.0.10-beta-23019",
+          "System.Runtime.Extensions": "4.0.10-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Xml.XDocument.dll": {}
@@ -3753,16 +3738,16 @@
       },
       "System.Xml.XmlDocument/4.0.0-beta-23019": {
         "dependencies": {
-          "System.Collections": "4.0.10-beta-23019",
-          "System.Diagnostics.Debug": "4.0.10-beta-23019",
-          "System.Globalization": "4.0.10-beta-23019",
+          "System.Runtime": "4.0.20-beta-23019",
+          "System.Xml.ReaderWriter": "4.0.10-beta-23019",
           "System.IO": "4.0.10-beta-23019",
           "System.Resources.ResourceManager": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.20-beta-23019",
-          "System.Runtime.Extensions": "4.0.10-beta-23019",
           "System.Text.Encoding": "4.0.10-beta-23019",
-          "System.Threading": "4.0.10-beta-23019",
-          "System.Xml.ReaderWriter": "4.0.10-beta-23019"
+          "System.Collections": "4.0.10-beta-23019",
+          "System.Diagnostics.Debug": "4.0.10-beta-23019",
+          "System.Runtime.Extensions": "4.0.10-beta-23019",
+          "System.Globalization": "4.0.10-beta-23019",
+          "System.Threading": "4.0.10-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Xml.XmlDocument.dll": {}
@@ -3773,22 +3758,22 @@
       },
       "System.Xml.XmlSerializer/4.0.10-beta-23019": {
         "dependencies": {
+          "System.Runtime": "4.0.20-beta-23019",
+          "System.Resources.ResourceManager": "4.0.0-beta-23019",
+          "System.Xml.XmlDocument": "4.0.0-beta-23019",
+          "System.Reflection.TypeExtensions": "4.0.0-beta-23019",
+          "System.Reflection.Primitives": "4.0.0-beta-23019",
+          "System.Reflection.Extensions": "4.0.0-beta-23019",
+          "System.Linq": "4.0.0-beta-23019",
           "System.Collections": "4.0.10-beta-23019",
           "System.Diagnostics.Debug": "4.0.10-beta-23019",
           "System.Globalization": "4.0.10-beta-23019",
-          "System.IO": "4.0.10-beta-23019",
-          "System.Linq": "4.0.0-beta-23019",
+          "System.Xml.ReaderWriter": "4.0.10-beta-23019",
           "System.Reflection": "4.0.10-beta-23019",
-          "System.Reflection.Extensions": "4.0.0-beta-23019",
-          "System.Reflection.Primitives": "4.0.0-beta-23019",
-          "System.Reflection.TypeExtensions": "4.0.0-beta-23019",
-          "System.Resources.ResourceManager": "4.0.0-beta-23019",
-          "System.Runtime": "4.0.20-beta-23019",
-          "System.Runtime.Extensions": "4.0.10-beta-23019",
+          "System.IO": "4.0.10-beta-23019",
           "System.Text.RegularExpressions": "4.0.10-beta-23019",
           "System.Threading": "4.0.10-beta-23019",
-          "System.Xml.ReaderWriter": "4.0.10-beta-23019",
-          "System.Xml.XmlDocument": "4.0.0-beta-23019"
+          "System.Runtime.Extensions": "4.0.10-beta-23019"
         },
         "compile": {
           "ref/dotnet/System.Xml.XmlSerializer.dll": {}

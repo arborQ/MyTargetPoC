@@ -20,8 +20,7 @@ namespace MyTargetWeb.Migrations
                 {
                     b.Property<long>("Id")
                         .GenerateValueOnAdd()
-                        .StoreGeneratedPattern(StoreGeneratedPattern.Identity)
-                        .Annotation("SqlServer:ValueGeneration", "Identity");
+                        .StoreGeneratedPattern(StoreGeneratedPattern.Identity);
                     
                     b.Property<DateTime>("Created");
                     
