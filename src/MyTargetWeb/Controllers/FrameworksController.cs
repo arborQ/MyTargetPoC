@@ -15,5 +15,10 @@ namespace MyTarget.Controllers
         {
             return View();
         }
+
+        public IActionResult Angular()
+        {
+            return View();
+        }
     }
 }

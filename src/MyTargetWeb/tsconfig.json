@@ -8,9 +8,10 @@
         "noLib": false,
         "preserveConstEnums": true,
         "suppressImplicitAnyIndexErrors": true,
-        "noEmitHelpers": true,
+        "noEmitHelpers": false,
         "noEmit": true,
-        "experimentalDecorators": true
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true
     },
     "filesGlob": [
         "!./node_modules/**/*",
@@ -20,6 +21,7 @@
         "./src/**/*.tsx"
     ],
     "files": [
+        "./typings/angular2/angular2.d.ts",
         "./typings/material-ui/material-ui.d.ts",
         "./typings/react-router/react-router.d.ts",
         "./typings/react/react-dom.d.ts",
