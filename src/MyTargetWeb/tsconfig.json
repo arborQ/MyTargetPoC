@@ -25,6 +25,7 @@
         "./typings/react/react-dom.d.ts",
         "./typings/react/react.d.ts",
         "./typings/tsd.d.ts",
+        "./src/angular/angular.app.ts",
         "./src/react/components/app.tsx",
         "./src/react/components/arborTheme.tsx",
         "./src/react/components/login.tsx",

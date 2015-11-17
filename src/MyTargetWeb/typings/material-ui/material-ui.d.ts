@@ -222,7 +222,7 @@ declare namespace __MaterialUI {
     }
 
     // what's not commonly overridden by Checkbox, RadioButton, or Toggle
-    interface CommonEnhancedSwitchProps<T> extends React.Props<T> {
+    interface CommonEnhancedSwitchProps<T> extends React.HTMLAttributes, React.Props<T> {
         // <input/> is root element
         id?: string;
         iconStyle?: React.CSSProperties;
@@ -402,7 +402,7 @@ declare namespace __MaterialUI {
     }
 
     // non generally overridden elements of EnhancedButton
-    interface SharedEnhancedButtonProps<T> extends React.Props<T> {
+    interface SharedEnhancedButtonProps<T> extends React.HTMLAttributes, React.Props<T> {
         centerRipple?: boolean;
         containerElement?: string | React.ReactElement<any>;
         disabled?: boolean;
@@ -644,12 +644,11 @@ declare namespace __MaterialUI {
     export class Overlay extends React.Component<OverlayProps, {}> {
     }
 
-    interface PaperProps extends React.Props<Paper> {
+    interface PaperProps extends React.HTMLAttributes, React.Props<Paper> {
         circle?: boolean;
         rounded?: boolean;
         transitionEnabled?: boolean;
         zDepth?: number;
-        style?: any;
     }
     export class Paper extends React.Component<PaperProps, {}> {
     }
@@ -1104,7 +1103,7 @@ declare namespace __MaterialUI {
             value?: string;
             selected?: boolean;
             width?: string;
-            route? : string;
+
             // Called by Tabs component
             onActive?: (tab: Tab) => void;
 
@@ -1305,7 +1304,7 @@ declare namespace __MaterialUI {
         export class ToolbarSeparator extends React.Component<ToolbarSeparatorProps, {}> {
         }
 
-        interface ToolbarTitleProps extends React.Props<ToolbarTitle> {
+        interface ToolbarTitleProps extends React.HTMLAttributes, React.Props<ToolbarTitle> {
            text?: string;
         }
         export class ToolbarTitle extends React.Component<ToolbarTitleProps, {}> {
