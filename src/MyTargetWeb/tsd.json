@@ -16,9 +16,6 @@
     },
     "react-router/react-router.d.ts": {
       "commit": "d401629469aceb5b2a23857aa448713f9771bd91"
-    },
-    "angular2/angular2.d.ts": {
-      "commit": "961b76f37bdfcff459cab9ed9fd3f204f0633d5e"
     }
   }
 }
