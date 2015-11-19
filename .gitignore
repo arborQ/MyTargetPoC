@@ -197,3 +197,5 @@ FakesAssemblies/
 
 node_modules
 bower_components
+jspm_packages
+src/MyTargetWeb/wwwroot/angular/

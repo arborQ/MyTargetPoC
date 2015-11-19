@@ -16,6 +16,12 @@
     },
     "react-router/react-router.d.ts": {
       "commit": "d401629469aceb5b2a23857aa448713f9771bd91"
+    },
+    "angularjs/angular.d.ts": {
+      "commit": "fc341765ebbb04b7109981a25dced01f488f4d94"
+    },
+    "jquery/jquery.d.ts": {
+      "commit": "fc341765ebbb04b7109981a25dced01f488f4d94"
     }
   }
 }

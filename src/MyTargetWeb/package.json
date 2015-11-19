@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/arborQ/ReactAngular#readme",
   "dependencies": {
+    "angular": "^1.5.0-beta.2",
     "angular2": "^2.0.0-alpha.46",
     "gulp": "^3.9.0",
     "gulp-concat-css": "^2.2.0",
@@ -33,5 +34,16 @@
     "typescript": "^1.6.2",
     "webpack": "^1.12.1"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "jspm": {
+    "directories": {
+      "baseURL": "wwwroot"
+    },
+    "dependencies": {
+      "angular": "npm:angular@^1.5.0-beta.2"
+    },
+    "devDependencies": {
+      "typescript": "npm:typescript@^1.6.2"
+    }
+  }
 }

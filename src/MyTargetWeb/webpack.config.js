@@ -15,7 +15,6 @@ module.exports = {
     }]
   },
   entry: {
-      react: './src/react/react.app.tsx',
-      angular: './src/angular/angular.app.ts'
+      react: './src/react/react.app.tsx'
   }
 };

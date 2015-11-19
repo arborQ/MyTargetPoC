@@ -8,11 +8,16 @@
     <link rel="stylesheet" href="~/bower_components/bootstrap/dist/css/bootstrap.min.css" charset="utf-8">
     <link rel="shortcut icon" type="image/ico" href="/images/favicon.ico">
 </head>
-<body style="margin : 0;">
-    <my-app>Loading ...</my-app>
+<body style="margin : 0;" ng-controller="appCtr as vm">
+    <my-app my-navigations="vm.navigations">Loading ...</my-app>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/holder/2.9.0/holder.min.js" charset="utf-8"></script>
     <script src="~/common.js" charset="utf-8"></script>
-    <script src="~/angular.bundle.js" charset="utf-8"></script>
+    <script src="~/jspm_packages/system.js" charset="utf-8"></script>
+    <script src="~/config.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      System.import('angular/app').then(function(){
+        angular.bootstrap(document, ['app']);
+      });
+    </script>
 </body>
 </html>
