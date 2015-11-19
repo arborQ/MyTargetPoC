@@ -1,9 +1,11 @@
-import { module } from 'angular';
+import * as angular from 'angular';
 import  pages  from './appSettup';
 import appControllerClass from './appController';
 var appName = 'app';
 
-var app = module(appName, pages.map((m) => m.name));
+var app = angular.module(appName, pages.map((m) => m.name)).config(($urlRouterProvider : ng.ui.IUrlRouterProvider)=>{
+  $urlRouterProvider.otherwise('/');
+})
 
 app.controller('appCtr', appControllerClass);
 

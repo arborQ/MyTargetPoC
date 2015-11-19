@@ -19,10 +19,14 @@
   "homepage": "https://github.com/arborQ/ReactAngular#readme",
   "dependencies": {
     "angular": "^1.5.0-beta.2",
+    "angular-ui-router": "^0.2.15",
     "angular2": "^2.0.0-alpha.46",
     "gulp": "^3.9.0",
+    "gulp-clean": "^0.3.1",
     "gulp-concat-css": "^2.2.0",
     "gulp-less": "^3.0.3",
+    "gulp-ng-annotate": "^1.1.0",
+    "gulp-typescript": "^2.9.2",
     "history": "^1.13.0",
     "material-ui": "^0.13.2",
     "react": "^0.14.2",
@@ -40,7 +44,8 @@
       "baseURL": "wwwroot"
     },
     "dependencies": {
-      "angular": "npm:angular@^1.5.0-beta.2"
+      "angular": "npm:angular@^1.5.0-beta.2",
+      "angular-ui-router": "github:angular-ui/ui-router@^0.2.15"
     },
     "devDependencies": {
       "typescript": "npm:typescript@^1.6.2"
