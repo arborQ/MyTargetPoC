@@ -199,6 +199,4 @@ node_modules
 bower_components
 jspm_packages
 src/MyTargetWeb/wwwroot/bundle.*
-src/MyTargetWeb/wwwroot/src/
-src/MyTargetWeb/src/core/
-src/MyTargetWeb/wwwroot/core/
+src/MyTargetWeb/wwwroot/ngApp/**/.js

@@ -1,31 +1,24 @@
 import 'angular-ui-router';
 import { module } from 'angular';
-
 import pages from './setup.pages';
-
 class menuController {
-    menuItems : string[];
-    $inject = ['menuOptions'];
-    constructor(menuOptions : string[]){
-      this.menuItems = menuOptions;
+    constructor(menuOptions) {
+        this.$inject = ['menuOptions'];
+        this.menuItems = menuOptions;
     }
 }
-
 var pageCodes = pages.map((p) => p.name);
 pageCodes.push('ui.router');
 // alert(uiRouter);
 var app = module("app", pageCodes);
-
 app.constant('menuOptions', pages.filter((p) => p.showNavigation).map((p) => p.name));
-
-app.config(() => {});
-
+app.config(() => { });
 app.directive('myApp', () => {
-  return <ng.IDirective>{
-    restrict : 'E',
-    controller : menuController,
-    controllerAs : 'vm',
-    template : `
+    return {
+        restrict: 'E',
+        controller: menuController,
+        controllerAs: 'vm',
+        template: `
     <div>
       <nav class="navbar navbar-light bg-faded">
         <a class="navbar-brand" href="#">MyTarget</a>
@@ -38,5 +31,5 @@ app.directive('myApp', () => {
         <ui-view></ui-view>
       </div>
     `
-  };
+    };
 });

@@ -12,9 +12,12 @@
     <my-app my-navigations="vm.navigations">Loading ...</my-app>
 
     <script src="~/common.js" charset="utf-8"></script>
+    <script src="~/jspm_packages/system.js" charset="utf-8"></script>
+    <script src="~/config.js" charset="utf-8"></script>
+    <!-- <script src="~/bundle.angular.js" charset="utf-8"></script> -->
+
     <environment names="Production">
-      <script src="~/jspm_packages/system.js" charset="utf-8"></script>
-      <script src="~/config.js" charset="utf-8"></script>
+
 
     </environment>
     <!-- <environment names="Production">
@@ -22,7 +25,7 @@
       <script src="~/bundle.angular.js" charset="utf-8"></script>
     </environment> -->
     <script type="text/javascript">
-      System.import('ngApp/app!typescript').then(function(){
+      System.import('ngApp/app').then(function(){
         angular.bootstrap(document, ['app']);
       });
     </script>
