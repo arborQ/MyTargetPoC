@@ -8,14 +8,21 @@
     <link rel="stylesheet" href="~/bower_components/bootstrap/dist/css/bootstrap.min.css" charset="utf-8">
     <link rel="shortcut icon" type="image/ico" href="/images/favicon.ico">
 </head>
-<body style="margin : 0;" ng-controller="appCtr as vm">
+<body style="margin : 0;">
     <my-app my-navigations="vm.navigations">Loading ...</my-app>
 
     <script src="~/common.js" charset="utf-8"></script>
-    <script src="~/jspm_packages/system.js" charset="utf-8"></script>
-    <script src="~/config.js" charset="utf-8"></script>
+    <environment names="Production">
+      <script src="~/jspm_packages/system.js" charset="utf-8"></script>
+      <script src="~/config.js" charset="utf-8"></script>
+
+    </environment>
+    <!-- <environment names="Production">
+      <script src="~/jspm_packages/system-csp-production.js" charset="utf-8"></script>
+      <script src="~/bundle.angular.js" charset="utf-8"></script>
+    </environment> -->
     <script type="text/javascript">
-      System.import('src/app').then(function(){
+      System.import('ngApp/app!typescript').then(function(){
         angular.bootstrap(document, ['app']);
       });
     </script>

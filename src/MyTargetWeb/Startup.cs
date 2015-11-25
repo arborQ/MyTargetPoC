@@ -51,7 +51,7 @@ namespace MyTarget
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Frameworks}/{action=Index}/{id?}");
+                    template: "{controller=Frameworks}/{action=React}/{id?}");
             });
         }
     }
