@@ -10,3 +10,5 @@ gulp.task('ts:compile', function(){
 gulp.task('ts:watch', ['ts:compile'], function(){
   gulp.watch('./wwwroot/ngApp/**/*.ts', ['ts:compile']);
 });
+
+//jspm bundle ngApp/app wwwroot/bundle.angular.min.js --minify --no-mangle

@@ -15,6 +15,7 @@ System.config({
 
   map: {
     "angular": "npm:angular@1.4.8",
+    "angular-resource": "npm:angular-resource@1.4.8",
     "angular-ui-router": "github:angular-ui/ui-router@0.2.15",
     "babel": "npm:babel-core@5.8.34",
     "babel-runtime": "npm:babel-runtime@5.8.34",
