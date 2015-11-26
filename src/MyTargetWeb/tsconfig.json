@@ -43,8 +43,9 @@
         "./wwwroot/retApp/app.routes.tsx",
         "./wwwroot/retApp/app.tsx",
         "./wwwroot/retApp/components/homePage.tsx",
-        "./wwwroot/retApp/components/users/controllers/userDisplay.tsx",
-        "./wwwroot/retApp/components/users/controllers/userList.tsx"
+        "./wwwroot/retApp/components/users/userDisplay.tsx",
+        "./wwwroot/retApp/components/users/userEdit.tsx",
+        "./wwwroot/retApp/components/users/userList.tsx"
     ],
     "exclude": [],
     "atom": {
