@@ -5,9 +5,6 @@
   "path": "typings",
   "bundle": "typings/tsd.d.ts",
   "installed": {
-    "material-ui/material-ui.d.ts": {
-      "commit": "efd40e67ff323f7147651bdbef03c03ead7b1675"
-    },
     "angularjs/angular.d.ts": {
       "commit": "fc341765ebbb04b7109981a25dced01f488f4d94"
     },
@@ -19,6 +16,15 @@
     },
     "angularjs/angular-resource.d.ts": {
       "commit": "36c6ce86fb64bafb28ec95dc78c6b98228b45c8d"
+    },
+    "react/react.d.ts": {
+      "commit": "b3aeee64552e324581fdbe0926f4a96e981e451b"
+    },
+    "react-router/react-router.d.ts": {
+      "commit": "708609e0764daeb5eb64104af7aca50c520c4e6e"
+    },
+    "react-dom/react-dom.d.ts": {
+      "commit": "708609e0764daeb5eb64104af7aca50c520c4e6e"
     }
   }
 }

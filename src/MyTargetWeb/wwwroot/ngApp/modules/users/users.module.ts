@@ -33,7 +33,6 @@ app.config(($stateProvider : ng.ui.IStateProvider) => {
             </table>
           </div>
         </div>
-      </div>
     `,
     controller : controller,
     controllerAs : 'vm'

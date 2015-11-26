@@ -8,7 +8,7 @@
         "noLib": false,
         "preserveConstEnums": true,
         "suppressImplicitAnyIndexErrors": true,
-        "noEmitHelpers": false,
+        "noEmitHelpers": true,
         "noEmit": true,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true
@@ -26,6 +26,9 @@
         "./typings/angularjs/angular-resource.d.ts",
         "./typings/angularjs/angular.d.ts",
         "./typings/jquery/jquery.d.ts",
+        "./typings/react-dom/react-dom.d.ts",
+        "./typings/react-router/react-router.d.ts",
+        "./typings/react/react.d.ts",
         "./typings/tsd.d.ts",
         "./wwwroot/ngApp/modules/interfaces/IEntity.d.ts",
         "./wwwroot/ngApp/modules/interfaces/ui/ISelectable.d.ts",
@@ -36,7 +39,15 @@
         "./wwwroot/ngApp/modules/setup/pages.ts",
         "./wwwroot/ngApp/modules/users/controllers/userDisplay.ts",
         "./wwwroot/ngApp/modules/users/controllers/userList.ts",
-        "./wwwroot/ngApp/modules/users/users.module.ts"
+        "./wwwroot/ngApp/modules/users/users.module.ts",
+        "./wwwroot/retApp/app.routes.tsx",
+        "./wwwroot/retApp/app.tsx",
+        "./wwwroot/retApp/components/homePage.tsx",
+        "./wwwroot/retApp/components/users/controllers/userDisplay.tsx",
+        "./wwwroot/retApp/components/users/controllers/userList.tsx"
     ],
-    "exclude": []
+    "exclude": [],
+    "atom": {
+        "rewriteTsconfig": true
+    }
 }

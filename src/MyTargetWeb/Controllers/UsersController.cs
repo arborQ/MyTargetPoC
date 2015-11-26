@@ -24,9 +24,9 @@ namespace MyTarget.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public User Get(int id)
         {
-            return "value";
+            return _context.Users.FirstOrDefault(u => u.Id == id);
         }
 
         // POST api/values

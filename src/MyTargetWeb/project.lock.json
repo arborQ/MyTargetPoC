@@ -4310,13 +4310,13 @@
       "serviceable": true,
       "sha512": "FvhgaBtuCOeN22JvA1G75+VRix/pJXY+DSoKH1qI1DxCzTI/Xc3/2XbRqzuCaG4eDRWt0HdgOtrX4DZHidi+Sg==",
       "files": [
-        "Microsoft.AspNet.Mvc.TagHelpers.6.0.0-beta5.nupkg",
-        "Microsoft.AspNet.Mvc.TagHelpers.6.0.0-beta5.nupkg.sha512",
-        "Microsoft.AspNet.Mvc.TagHelpers.nuspec",
         "lib/dnx451/Microsoft.AspNet.Mvc.TagHelpers.dll",
         "lib/dnx451/Microsoft.AspNet.Mvc.TagHelpers.xml",
         "lib/dnxcore50/Microsoft.AspNet.Mvc.TagHelpers.dll",
-        "lib/dnxcore50/Microsoft.AspNet.Mvc.TagHelpers.xml"
+        "lib/dnxcore50/Microsoft.AspNet.Mvc.TagHelpers.xml",
+        "Microsoft.AspNet.Mvc.TagHelpers.6.0.0-beta5.nupkg",
+        "Microsoft.AspNet.Mvc.TagHelpers.6.0.0-beta5.nupkg.sha512",
+        "Microsoft.AspNet.Mvc.TagHelpers.nuspec"
       ]
     },
     "Microsoft.AspNet.Mvc.WebApiCompatShim/6.0.0-beta5": {
@@ -4805,15 +4805,15 @@
       "serviceable": true,
       "sha512": "Q8HnOmCD4fYa7Ef0hLZNAvajSqopKQOFDPSvnC718Z8B2SaVWBVfxwFasb3Ag8kfSpQzWdlNo28LbenL+yyi2w==",
       "files": [
-        "Microsoft.Framework.FileSystemGlobbing.1.0.0-beta5.nupkg",
-        "Microsoft.Framework.FileSystemGlobbing.1.0.0-beta5.nupkg.sha512",
-        "Microsoft.Framework.FileSystemGlobbing.nuspec",
         "lib/dnx451/Microsoft.Framework.FileSystemGlobbing.dll",
         "lib/dnx451/Microsoft.Framework.FileSystemGlobbing.xml",
         "lib/dnxcore50/Microsoft.Framework.FileSystemGlobbing.dll",
         "lib/dnxcore50/Microsoft.Framework.FileSystemGlobbing.xml",
         "lib/net45/Microsoft.Framework.FileSystemGlobbing.dll",
-        "lib/net45/Microsoft.Framework.FileSystemGlobbing.xml"
+        "lib/net45/Microsoft.Framework.FileSystemGlobbing.xml",
+        "Microsoft.Framework.FileSystemGlobbing.1.0.0-beta5.nupkg",
+        "Microsoft.Framework.FileSystemGlobbing.1.0.0-beta5.nupkg.sha512",
+        "Microsoft.Framework.FileSystemGlobbing.nuspec"
       ]
     },
     "Microsoft.Framework.Logging/1.0.0-beta5": {
