@@ -45,7 +45,8 @@
         "./wwwroot/retApp/components/homePage.tsx",
         "./wwwroot/retApp/components/users/userDisplay.tsx",
         "./wwwroot/retApp/components/users/userEdit.tsx",
-        "./wwwroot/retApp/components/users/userList.tsx"
+        "./wwwroot/retApp/components/users/userList.tsx",
+        "./wwwroot/retApp/mixings/Loading.tsx"
     ],
     "exclude": [],
     "atom": {

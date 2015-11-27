@@ -1,0 +1,10 @@
+#navbar.headroom {
+    transition: transform 200ms linear;
+}
+#navbar.headroom--pinned {
+    transform: translateY(0%);
+    width: 100%;
+}
+#navbar.headroom--unpinned {
+    transform: translateY(-100%);
+}
