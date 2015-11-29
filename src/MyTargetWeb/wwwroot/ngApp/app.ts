@@ -21,7 +21,7 @@ app.directive('myApp', () => {
     template : `
     <div>
       <nav class="navbar navbar-light bg-faded">
-        <a class="navbar-brand" href="#">MyTarget</a>
+        <a class="navbar-brand" id="logo" href="#"><span>JustMove</span></a>
         <ul class="nav navbar-nav">
           <li class="nav-item" ui-sref-active="active" ng-repeat="item in vm.menuItems">
             <a class="nav-link" ui-sref="{{item}}">{{item}}</a>

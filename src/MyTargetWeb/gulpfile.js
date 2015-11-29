@@ -1,6 +1,10 @@
 var gulp = require('gulp'),
 ts = require('gulp-typescript'),
-ngAnnotate = require('gulp-ng-annotate');
+ngAnnotate = require('gulp-ng-annotate'),
+less = require('gulp-less')
+concat = require('gulp-concat-css'),
+ugly = require('gulp-minify-css')
+;
 
 var tsConfig = require('./tsconfig.json').compilerOptions;
 
@@ -25,12 +29,11 @@ gulp.task('tsx:watch', ['tsx:compile'], function(){
 });
 
 gulp.task('less:compile', function(){
-  var c = require('gulp-concat-css');
-  gulp.src('./wwwroot/less/**/*.less')
-   .pipe(require('gulp-less'))
+  gulp.src('./wwwroot/**/*.less')
+   .pipe(less)
   //.pipe(c('site.min.css'))
   // .pipe(require('gulp-minify-css'))
-  .pipe(gulp.dest('./wwwroot'))
+  .pipe(gulp.dest('./wwwroot'));
 });
 
 //jspm bundle ngApp/app wwwroot/bundle.angular.min.js --minify --no-mangle

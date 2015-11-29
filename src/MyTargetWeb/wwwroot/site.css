@@ -1,3 +1,12 @@
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
 #navbar.headroom {
     transition: transform 200ms linear;
 }
@@ -7,4 +16,30 @@
 }
 #navbar.headroom--unpinned {
     transform: translateY(-100%);
+}
+
+.loading
+{
+    -webkit-animation-name:             rotate;
+    -webkit-animation-duration:         2.5s;
+    -webkit-animation-iteration-count:  infinite;
+    -webkit-animation-timing-function: linear;
+}
+.loading_placeholder{
+  height: 124px;
+  width : 100%;
+  padding: 20px 0;
+}
+.loading.main{
+  margin : 0 auto;
+  width : 124px;
+  height: 124px;
+  background-image: url('images/logo_124.png');
+}
+
+#logo{
+  background-image: url('images/logo_38.png');
+  background-position: left;
+  background-repeat: no-repeat;
+  padding-left: 40px;
 }

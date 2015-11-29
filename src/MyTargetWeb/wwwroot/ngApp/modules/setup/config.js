@@ -1,5 +1,6 @@
-var applicationConfig = ($stateProvider, $urlRouterProvider) => {
+var applicationConfig = function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
     $stateProvider.state('home', { url: '/', template: '<div>home</div>' });
 };
-export default applicationConfig;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = applicationConfig;

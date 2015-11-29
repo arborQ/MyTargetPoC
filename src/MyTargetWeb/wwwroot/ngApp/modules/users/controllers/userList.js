@@ -1,15 +1,26 @@
-export default class UserList {
-    constructor(userService) {
+var UserList = (function () {
+    function UserList(userService) {
         this.model = userService.query();
     }
-    get selectedUser() { return this.model.filter((u) => u.$selected)[0]; }
-    get isSelected() { return !!this.selectedUser; }
-    select(user) {
-        this.model.forEach((item) => {
+    Object.defineProperty(UserList.prototype, "selectedUser", {
+        get: function () { return this.model.filter(function (u) { return u.$selected; })[0]; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(UserList.prototype, "isSelected", {
+        get: function () { return !!this.selectedUser; },
+        enumerable: true,
+        configurable: true
+    });
+    UserList.prototype.select = function (user) {
+        this.model.forEach(function (item) {
             if (item !== user) {
                 item.$selected = false;
             }
         });
         user.$selected = !user.$selected;
-    }
-}
+    };
+    return UserList;
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = UserList;
