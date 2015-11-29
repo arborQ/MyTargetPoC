@@ -201,3 +201,5 @@ jspm_packages
 src/MyTargetWeb/wwwroot/bundle.*
 src/MyTargetWeb/wwwroot/ngApp/**/.js
 src/MyTargetWeb/wwwroot/retApp/**/.js
+src/MyTargetWeb/wwwroot/*.css
+src/MyTargetWeb/wwwroot/ngApp/**/*.html

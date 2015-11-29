@@ -21,6 +21,7 @@
   "dependencies": {
     "bootstrap": "^4.0.0-alpha",
     "holderjs": "~2.9.0",
-    "headroom.js": "~0.7.0"
+    "headroom.js": "~0.7.0",
+    "font-awesome": "~4.5.0"
   }
 }

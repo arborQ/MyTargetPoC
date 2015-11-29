@@ -2,8 +2,9 @@ var gulp = require('gulp'),
 ts = require('gulp-typescript'),
 ngAnnotate = require('gulp-ng-annotate'),
 less = require('gulp-less')
-concat = require('gulp-concat-css'),
+concatCss = require('gulp-concat-css'),
 ugly = require('gulp-minify-css')
+jade = require('gulp-jade')
 ;
 
 var tsConfig = require('./tsconfig.json').compilerOptions;
@@ -30,10 +31,27 @@ gulp.task('tsx:watch', ['tsx:compile'], function(){
 
 gulp.task('less:compile', function(){
   gulp.src('./wwwroot/**/*.less')
-   .pipe(less)
-  //.pipe(c('site.min.css'))
-  // .pipe(require('gulp-minify-css'))
+   .pipe(less())
+   .pipe(concatCss('site.min.css'))
+   .pipe(ugly())
   .pipe(gulp.dest('./wwwroot'));
 });
 
+gulp.task('less:watch', ['less:compile'], function(){
+  gulp.watch('./wwwroot/**/*.less', ['less:compile']);
+});
+
+gulp.task('jade:compile', function(){
+  gulp.src('./wwwroot/ngApp/**/*.jade')
+  .pipe(jade())
+  .pipe(gulp.dest('./wwwroot/ngApp'));
+});
+
+gulp.task('jade:watch', ['jade:compile'], function(){
+  gulp.watch('./wwwroot/ngApp/**/*.jade', ['jade:compile']);
+});
+
+
+gulp.task('all:watch', ['jade:watch', 'less:watch', 'ts:watch'] , function(){});
+gulp.task('all:compile', ['jade:compile', 'less:compile', 'ts:compile'] , function(){});
 //jspm bundle ngApp/app wwwroot/bundle.angular.min.js --minify --no-mangle

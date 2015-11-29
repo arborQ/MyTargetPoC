@@ -41,5 +41,8 @@
     "**.xproj",
     "**.user",
     "**.vspscc"
-  ]
+  ],
+  "scripts": {
+    "prepublish": [ "npm install", "bower install", "jspm install", "gulp all:compile" ]
+  }
 }
