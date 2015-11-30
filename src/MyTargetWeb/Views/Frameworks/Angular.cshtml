@@ -19,6 +19,9 @@
 
     <environment names="Production">
       <script src="~/bundle.angular.sfx.js" charset="utf-8"></script>
+      <script type="text/javascript">
+          angular.bootstrap(document, ['app']);
+      </script>
     </environment>
     <environment names="Development">
       <script src="~/jspm_packages/system.js" charset="utf-8"></script>
