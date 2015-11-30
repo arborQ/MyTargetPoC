@@ -1,1 +1,1 @@
-exports.viewTemplateUrl = function (module, viewName) { return ("/ngApp/modules/" + module + "/views/" + viewName + ".html"); };
+exports.viewTemplateUrl = function (module, viewName) { return ("/ngApp/modules/" + module + "/views/" + viewName + ".html?_=" + new Date()); };

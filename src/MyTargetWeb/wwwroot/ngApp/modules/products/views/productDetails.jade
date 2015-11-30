@@ -1,1 +1,18 @@
-.details details
+.modal-open
+  .modal-backdrop.fade.in
+  .modal.fade.in(style="display:block;")
+    .modal-dialog(role='document')
+      .modal-content
+        .modal-header
+          h4.modal-title Dodaj produkt
+        .modal-body
+          form(name="dialogForm")
+            .form-group
+              label.control-label(for="product-name", ng-required="true") Nazwa
+              input.form-control#product-name(type="text")
+            .form-group
+              label.control-label(for="product-size") Rozmiar
+              input.form-control#product-size(type="text")
+        .modal-footer
+          a.btn.btn-secondary(ui-sref="^") Anuluj
+          button.btn.btn-primary(type='button', ng-disabled="dialogForm.$invalid || !dialogForm.$dirty") Zapisz

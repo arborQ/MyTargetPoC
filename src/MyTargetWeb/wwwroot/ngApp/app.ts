@@ -16,7 +16,7 @@ app.config(applicationConfig);
 app.directive('myApp', () => {
   return <ng.IDirective>{
     restrict : 'E',
-    controller : applicationController,
+    controller : applicationController, resole : {},
     controllerAs : 'vm',
     template : `
     <div>

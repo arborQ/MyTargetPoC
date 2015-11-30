@@ -38,6 +38,7 @@
         "./wwwroot/ngApp/modules/products/products.module.ts",
         "./wwwroot/ngApp/modules/setup/config.ts",
         "./wwwroot/ngApp/modules/setup/controller.ts",
+        "./wwwroot/ngApp/modules/setup/i18n.ts",
         "./wwwroot/ngApp/modules/setup/pages.ts",
         "./wwwroot/ngApp/modules/setup/viewHelper.ts",
         "./wwwroot/ngApp/modules/users/controllers/userDisplay.ts",
