@@ -16,22 +16,23 @@
     </my-app>
 
     <script src="~/common.js" charset="utf-8"></script>
-    <script src="~/jspm_packages/system.js" charset="utf-8"></script>
-    <script src="~/config.js" charset="utf-8"></script>
-    <!-- <script src="~/bundle.angular.min.js" charset="utf-8"></script> -->
 
     <environment names="Production">
-
-
+      <script src="~/bundle.angular.sfx.js" charset="utf-8"></script>
+    </environment>
+    <environment names="Development">
+      <script src="~/jspm_packages/system.js" charset="utf-8"></script>
+      <script src="~/config.js" charset="utf-8"></script>
+      <script type="text/javascript">
+        System.import('ngApp/app').then(function(){
+          angular.bootstrap(document, ['app']);
+        });
+      </script>
     </environment>
     <!-- <environment names="Production">
       <script src="~/jspm_packages/system-csp-production.js" charset="utf-8"></script>
       <script src="~/bundle.angular.js" charset="utf-8"></script>
     </environment> -->
-    <script type="text/javascript">
-      System.import('ngApp/app').then(function(){
-        angular.bootstrap(document, ['app']);
-      });
-    </script>
+
 </body>
 </html>

@@ -43,6 +43,6 @@
     "**.vspscc"
   ],
   "scripts": {
-    "prepublish": [ "npm install", "bower install", "jspm install", "gulp all:compile" ]
+    "prepublish": [ "npm install", "bower install", "gulp all:compile" ]
   }
 }
