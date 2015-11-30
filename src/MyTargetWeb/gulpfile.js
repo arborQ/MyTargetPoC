@@ -30,7 +30,7 @@ gulp.task('tsx:watch', ['tsx:compile'], function(){
 });
 
 gulp.task('less:compile', function(){
-  gulp.src('./wwwroot/**/*.less')
+  gulp.src(['./wwwroot/less/**/*.less', '!./wwwwroot/bower_components/**/*.less'])
    .pipe(less())
    .pipe(concatCss('site.min.css'))
    .pipe(ugly())
