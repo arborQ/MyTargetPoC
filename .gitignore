@@ -202,3 +202,8 @@ src/MyTargetWeb/wwwroot/ngApp/**/.js
 src/MyTargetWeb/wwwroot/retApp/**/.js
 src/MyTargetWeb/wwwroot/*.css
 src/MyTargetWeb/wwwroot/ngApp/**/*.html
+
+src/MyTargetWebUpdate/wwwroot/ngApp/**/*.js
+src/MyTargetWebUpdate/wwwroot/retApp/**/.js
+src/MyTargetWebUpdate/wwwroot/*.css
+src/MyTargetWebUpdate/wwwroot/ngApp/**/*.html

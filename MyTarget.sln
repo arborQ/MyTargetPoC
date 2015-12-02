@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{BC87FF90-2C97-4702-A625-2B560D8E9157}"
 EndProject
@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MyTargetWeb", "src\MyTargetWeb\MyTargetWeb.xproj", "{49426DB8-394B-4CCC-A748-52FB5A7DD37F}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MyTargetWebUpdate", "src\MyTargetWebUpdate\MyTargetWebUpdate.xproj", "{DAE1BB3D-E20A-48CD-BF50-83751DF63126}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,11 +24,16 @@ Global
 		{49426DB8-394B-4CCC-A748-52FB5A7DD37F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49426DB8-394B-4CCC-A748-52FB5A7DD37F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49426DB8-394B-4CCC-A748-52FB5A7DD37F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAE1BB3D-E20A-48CD-BF50-83751DF63126}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAE1BB3D-E20A-48CD-BF50-83751DF63126}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAE1BB3D-E20A-48CD-BF50-83751DF63126}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAE1BB3D-E20A-48CD-BF50-83751DF63126}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{49426DB8-394B-4CCC-A748-52FB5A7DD37F} = {BC87FF90-2C97-4702-A625-2B560D8E9157}
+		{DAE1BB3D-E20A-48CD-BF50-83751DF63126} = {BC87FF90-2C97-4702-A625-2B560D8E9157}
 	EndGlobalSection
 EndGlobal

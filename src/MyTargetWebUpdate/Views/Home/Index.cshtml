@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Just Move</title>
+    <link rel="stylesheet" href="~/bower_components/bootstrap/dist/css/bootstrap.min.css" charset="utf-8">
+    <link rel="stylesheet" href="~/bower_components/font-awesome/css/font-awesome.min.css" charset="utf-8">
+    <link rel="stylesheet" href="~/site.min.css" charset="utf-8">
+    <link rel="shortcut icon" type="image/ico" href="/images/logo_16.ico">
+</head>
+<body id="just_move">
+    <my-app my-navigations="vm.navigations">
+        <div class="loading_placeholder"><div class="loading main"></div></div>
+    </my-app>
+
+    <script src="~/common.js" charset="utf-8"></script>
+
+    <environment names="Production">
+        <script src="~/bundle.angular.sfx.js" charset="utf-8"></script>
+        <script type="text/javascript">
+          angular.bootstrap(document, ['app']);
+        </script>
+    </environment>
+    <environment names="Development">
+        <script src="~/jspm_packages/system.js" charset="utf-8"></script>
+        <script src="~/config.js" charset="utf-8"></script>
+        <script type="text/javascript">
+        System.import('ngApp/app').then(function(){
+          angular.bootstrap(document, ['app']);
+        });
+        </script>
+    </environment>
+    <!-- <environment names="Production">
+      <script src="~/jspm_packages/system-csp-production.js" charset="utf-8"></script>
+      <script src="~/bundle.angular.js" charset="utf-8"></script>
+    </environment> -->
+
+</body>
+</html>
