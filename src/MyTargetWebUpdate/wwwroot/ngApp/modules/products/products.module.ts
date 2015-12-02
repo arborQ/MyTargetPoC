@@ -10,7 +10,7 @@ app.config(($stateProvider : ng.ui.IStateProvider) => {
   $stateProvider.state(name, {
     url : '/products',
     resolve : {
-      userService : ($resource : ng.resource.IResourceService) => $resource<string>('/api/products')
+      _service : ($resource : ng.resource.IResourceService) => $resource<string>('/api/products')
     },
     templateUrl : viewTemplateUrl('products', 'productList'),
     controller : controller,

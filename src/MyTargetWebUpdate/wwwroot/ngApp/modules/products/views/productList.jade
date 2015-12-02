@@ -7,9 +7,8 @@
         span Dodaj nowy
     .card-block
       .list-group
-        a.list-group-item(ui-sref=".edit({ id : 1})")
-          span one
-          span.label.label-default.label-pill.pull-right 120 szt.
-        a.list-group-item(ui-sref=".edit({ id : 2})")
-          span one
-          span.label.label-default.label-pill.pull-right 120 szt.
+        a.list-group-item(ui-sref=".edit({ id : product.Id})", ng-repeat="product in vm.model")
+          span 
+            span {{product.Name}} 
+            b ({{product.Size}})
+          span.label.label-default.label-pill.pull-right {{product.StoredQuantity}} szt.
