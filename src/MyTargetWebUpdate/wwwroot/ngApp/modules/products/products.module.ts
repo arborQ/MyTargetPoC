@@ -12,7 +12,7 @@ app.config(($stateProvider : ng.ui.IStateProvider) => {
   $stateProvider.state(name, {
     url : '/products',
     resolve : {
-      _service : ($resource : ng.resource.IResourceService) => $resource<string>('/api/products')
+      _service : ($resource : ng.resource.IResourceService, $stateParams : ng.ui.IStateService) => $resource<string>('/api/products', null, { 'update': { method:'PUT' }})
     },
     templateUrl : viewTemplateUrl('products', 'productList'),
     controller : controller,

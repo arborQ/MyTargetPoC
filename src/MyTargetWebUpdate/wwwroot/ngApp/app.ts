@@ -21,10 +21,10 @@ app.directive('myApp', () => {
     template : `
     <div>
       <nav class="navbar navbar-light bg-faded">
-        <a class="navbar-brand" id="logo" href="#"><span>JustMove</span></a>
+        <a class="navbar-brand" id="logo" href="#"><span class="md-hide">JustMove</span>&nbsp;</a>
         <ul class="nav navbar-nav">
           <li class="nav-item" ui-sref-active="active" ng-repeat="item in vm.menuItems">
-            <a class="nav-link" ui-sref="{{item}}">{{item}}</a>
+            <a class="nav-link" ui-sref="{{item.name}}">{{item.display}}</a>
           </li>
         </ul>
         </nav>

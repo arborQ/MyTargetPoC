@@ -1,4 +1,4 @@
-/// <binding BeforeBuild='all:compile' AfterBuild='build' />
+/// <binding BeforeBuild='all:compile' />
 var gulp = require('gulp'),
 ts = require('gulp-typescript'),
 ngAnnotate = require('gulp-ng-annotate'),

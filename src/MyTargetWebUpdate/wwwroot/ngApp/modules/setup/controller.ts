@@ -1,6 +1,8 @@
 export default class applicationController {
-    menuItems : string[];
+    menuItems : any[];
+    itemDictionary : {  };
     constructor(menuOptions : string[]){
-      this.menuItems = menuOptions;
+      this.itemDictionary = { 'arbor-products-module' : 'Produkty' };
+      this.menuItems = menuOptions.map((p : string) => { return { name : p, display : (this.itemDictionary[p] || p) };});
     }
 }

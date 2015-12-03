@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web.Http;
 using Microsoft.AspNet.Mvc;
 using MyTargetWebUpdate.Models;
 
@@ -10,7 +11,7 @@ using MyTargetWebUpdate.Models;
 namespace MyTargetWebUpdate.Controllers
 {
     [Route("api/[controller]")]
-    public class ProductsController : Controller
+    public class ProductsController : ApiController
     {
         private ApplicationDbContext DbContext { get; set; }
 
@@ -19,18 +20,28 @@ namespace MyTargetWebUpdate.Controllers
             DbContext = dbContext;
         }
 
-        // GET: api/values
-        [HttpGet]
-        public IEnumerable<Product> Get()
-        {
-            return DbContext.Products.ToList();
-        }
+        //// GET: api/values
+        //[HttpGet]
+        //public IEnumerable<Product> Get()
+        //{
+        //    var products =  DbContext.Products.ToList();
+        //    return Ok(product);
+        //}
 
         // GET api/values/5
-        [HttpGet("{id}")]
-        public Product Get(long id)
+        [HttpGet]
+        public ActionResult GetProduct(long? id)
         {
-            return DbContext.Products.FirstOrDefault(a => a.Id == id);
+            if (id.HasValue)
+            {
+                var product = DbContext.Products.FirstOrDefault(a => a.Id == id);
+                return Ok(product);
+            }
+            else
+            {
+                var products = DbContext.Products.ToList();
+                return Ok(products);
+            }
         }
 
         // POST api/values
@@ -43,9 +54,21 @@ namespace MyTargetWebUpdate.Controllers
         }
 
         // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        [HttpPut]
+        public ActionResult Put(long id, [FromBody]Product value)
         {
+
+            DbContext.Products.Update(value, Microsoft.Data.Entity.GraphBehavior.SingleObject);
+
+            //var product = DbContext.Products.First(a => a.Id == id);
+            //product.Name = value.Name;
+            //product.Code = value.Code;
+            //product.Size = value.Size;
+            //product.NetPrice = value.NetPrice;
+
+            DbContext.SaveChanges();
+
+            return Ok();
         }
 
         // DELETE api/values/5

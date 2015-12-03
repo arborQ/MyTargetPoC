@@ -1,11 +1,9 @@
 export default class productCreate{
-  model : any;
-  constructor(_service: any, private $state : any){
-    console.log('create');
+  model : ng.resource.IResource<any>;
+  constructor(_service: ng.resource.IResourceClass<ng.resource.IResource<any>>, private $state : ng.ui.IStateService){
     this.model = new _service();
   }
   saveToServer(){
-    console.log(this.model);
-    this.model.$save((id : number) => { console.log(id); this.$state.go(`^.edit({ id : ${id} })`);  });
+    var id = this.model.$save(() => { this.$state.go('^', null , { reload : true});  });
   }
 }
