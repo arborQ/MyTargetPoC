@@ -1,7 +1,0 @@
-﻿{
-	"Data": {
-		"DefaultConnection": {
-      "ConnectionString": "Data Source=.;Initial Catalog=MyTargetDev;Integrated Security=True"
-		}
-	}
-}
