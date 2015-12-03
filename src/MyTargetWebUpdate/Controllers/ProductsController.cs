@@ -14,9 +14,9 @@ namespace MyTargetWebUpdate.Controllers
     {
         private ApplicationDbContext DbContext { get; set; }
 
-        public ProductsController(ApplicationDbContext _dbContext)
+        public ProductsController(ApplicationDbContext dbContext)
         {
-            DbContext = _dbContext;
+            DbContext = dbContext;
         }
 
         // GET: api/values
@@ -28,15 +28,18 @@ namespace MyTargetWebUpdate.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Product Get(long id)
         {
-            return "value";
+            return DbContext.Products.FirstOrDefault(a => a.Id == id);
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public long Post([FromBody]Product value)
         {
+            DbContext.Products.Add(value);
+            DbContext.SaveChanges();
+            return value.Id;
         }
 
         // PUT api/values/5
