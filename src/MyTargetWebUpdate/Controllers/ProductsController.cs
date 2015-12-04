@@ -58,13 +58,12 @@ namespace MyTargetWebUpdate.Controllers
         public ActionResult Put(long id, [FromBody]Product value)
         {
 
-            DbContext.Products.Update(value, Microsoft.Data.Entity.GraphBehavior.SingleObject);
 
-            //var product = DbContext.Products.First(a => a.Id == id);
-            //product.Name = value.Name;
-            //product.Code = value.Code;
-            //product.Size = value.Size;
-            //product.NetPrice = value.NetPrice;
+            var product = DbContext.Products.First(a => a.Id == id);
+            product.Name = value.Name;
+            product.Code = value.Code;
+            product.Size = value.Size;
+            product.NetPrice = value.NetPrice;
 
             DbContext.SaveChanges();
 

@@ -5,8 +5,6 @@ namespace MyTargetWebUpdate.Models
     public class Product
     {
         public long Id { get; set; }
-        [Timestamp]
-        public byte[] RowVersion { get; set; }
 
         [MaxLength(20), Required]
         public string Code { get; set; }
