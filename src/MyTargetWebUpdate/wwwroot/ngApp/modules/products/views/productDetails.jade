@@ -2,7 +2,7 @@
   .modal-backdrop.fade.in
   .modal.fade.in(style="display:block;")
     .modal-dialog(role='document')
-      .modal-content
+      .modal-content.load-content(ng-model="vm.model.$resolved")
         .modal-header
           h4.modal-title Dodaj produkt
         .modal-body

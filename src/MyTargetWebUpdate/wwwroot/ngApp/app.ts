@@ -33,3 +33,19 @@ app.directive('myApp', () => {
     `
   };
 });
+
+app.directive('loadContent', () => {
+  return {
+    restrict : "C",
+    transclude : true,
+    scope : { 'ngModel' : '='},
+    template : `
+      <div>
+        <div class="loading_placeholder" ng-show="!ngModel">
+          <div class="loading embeded"></div>
+        </div>
+        <ng-transclude ng-show="ngModel"></ng-transclude>
+      </div>
+    `
+  };
+});

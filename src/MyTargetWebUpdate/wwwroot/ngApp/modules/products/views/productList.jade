@@ -1,6 +1,6 @@
 .card.page
   ui-view
-  div
+  div.load-content(ng-model="vm.model.$resolved")
     .card-block.text-right
       .btn-group
         button.btn.btn-success(ui-sref='.add') 

@@ -1,15 +1,32 @@
 #just_move{
-  .loading.main{
-    margin : 0 auto;
-    width : 124px;
-    height: 124px;
-    background-image: url('/images/logo_124.png');
-  }
-
   #logo{
-    background-image: url('/images/logo_38.png'); 
+    background-image: url('/images/logo_38.png');
     background-position: left;
     background-repeat: no-repeat;
     padding-left: 40px;
+  }
+
+  .loading_placeholder{
+    height: 124px;
+    width : 100%;
+    padding: 20px 0;
+      .loading
+      {
+          -webkit-animation-name:             rotate;
+          -webkit-animation-duration:         2.5s;
+          -webkit-animation-iteration-count:  infinite;
+          -webkit-animation-timing-function: linear;
+          margin : 0 auto;
+          &.main{
+            width : 124px;
+            background-image: url('/images/logo_124.png');
+            height: 124px;
+          }
+          &.embeded{
+            width : 64px;
+            height: 64px;
+            background-image: url('/images/logo_64.png');
+          }
+      }
   }
 }
