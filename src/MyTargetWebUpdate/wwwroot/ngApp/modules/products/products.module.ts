@@ -23,4 +23,11 @@ app.config(($stateProvider : ng.ui.IStateProvider) => {
   $stateProvider.state(`${name}.edit`, { url : "/edit/:id", controller : editController, controllerAs : 'vm', templateUrl : viewTemplateUrl('products', 'productDetails')});
 });
 
+
+app.filter('searchProducts', () => {
+  return (products : arbor.products.IProduct[], searchCriteria : arbor.products.ISearchCriteria) => {
+    return (products || [])
+    .filter((p : arbor.products.IProduct) => (!searchCriteria.FreeText || searchCriteria.FreeText.length  === 0) || `${p.Code} ${p.Name}`.indexOf(searchCriteria.FreeText) !== -1);
+  }
+});
 export default name;

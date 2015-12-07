@@ -1,16 +1,18 @@
 .card.page
   ui-view
-  div.load-content(ng-model="vm.model.$resolved")
+  div
+    .card-block
+      include ./filterForm
     .card-block.text-right
       .btn-group
         button.btn.btn-success(ui-sref='.add') 
           span.fa.fa-plus
           span.sm-hide Dodaj nowy
-        button.btn.btn-info(ng-click="openFilter()") 
-          span.fa.fa-filter
-          span.sm-hide Filtruj
+    i(ng-show="(vm.model | searchProducts:vm.search).length == 0") 
+      span Nie znaleziono produktow 
+      b(ng-show="vm.search.FreeText") '{{vm.search.FreeText}}'
     .list-group.list-group-flush
-      a.list-group-item(ui-sref=".edit({ id : product.Id})", ng-repeat="product in vm.model")
+      a.list-group-item(ui-sref=".edit({ id : product.Id})", ng-repeat="product in vm.model | searchProducts:vm.search")
         span 
           span {{product.Name}} 
           b ({{product.Size}})

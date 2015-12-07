@@ -1,0 +1,8 @@
+div
+  nav.navbar.navbar-light.bg-faded
+    a#logo.navbar-brand(href='#')
+      span.md-hide JustMove
+    ul.nav.navbar-nav
+      li.nav-item(ui-sref-active='active', ng-repeat='item in vm.menuItems')
+        a.nav-link(ui-sref='{{item.name}}') {{item.display}}
+  ui-view

@@ -1,11 +1,8 @@
-.modal-open
-  .modal-backdrop.fade.in
-  .modal.fade.in(style="display:block;")
-    .modal-dialog(role='document')
-      .modal-content.load-content(ng-model="vm.model.$resolved")
-        .modal-header
-          h4.modal-title Dodaj produkt
-        .modal-body
+extends ../../shared/views/_dialog
+
+block title 
+  span Dodaj produkt
+block content
           form(name="dialogForm")
             .form-group
               label.control-label(for="product-code") Kod produktu
@@ -25,6 +22,6 @@
             .form-group
               label.control-label(for="product-net-price") Cena netto (szt.)
               input.form-control#product-net-price(type="number", ng-required="true", ng-model="vm.model.NetPrice")
-        .modal-footer
+block buttons
           a.btn.btn-secondary(ui-sref="^") Anuluj
           button.btn.btn-primary(type='button', ng-disabled="dialogForm.$invalid || !dialogForm.$dirty", ng-click="vm.saveToServer()") Zapisz

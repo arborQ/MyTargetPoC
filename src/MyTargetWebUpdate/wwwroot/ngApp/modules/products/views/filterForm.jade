@@ -1,0 +1,22 @@
+.row
+  .col.col-lg-12
+    label.control-label(for="search-text") Szukaj
+    input.form-control#search-text(type="text", ng-model="vm.search.FreeText", ng-show="vm.search.$showAdvanceSearch")
+    .input-group(ng-show="!vm.search.$showAdvanceSearch")
+      input.form-control#search-text(type='text', ng-model="vm.search.FreeText")
+      span.input-group-btn
+        button.btn.btn-secondary(type='button', ng-click="vm.search.$showAdvanceSearch = true") 
+          span.fa.fa-filter
+          span.sm-hide Wiecej...
+.row(ng-show="vm.search.$showAdvanceSearch")
+  .col.col-lg-6
+    .form-group
+      include ./price
+  .col.col-lg-6
+    .form-group
+      include ./size
+.row.text-right(ng-show="vm.search.$showAdvanceSearch")
+  .col-lg-12
+    button.btn.btn-secondary(ng-click="vm.search.$showAdvanceSearch = false") 
+      span.fa.fa-filter
+      span.sm-hide Mniej...
