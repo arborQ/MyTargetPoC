@@ -1,8 +1,9 @@
 export default class ProductList{
   model : ng.resource.IResourceArray<any>;
-  search : { $showAdvanceSearch : boolean }
+  search : arbor.products.ISearchCriteria;
+
     constructor(_service: any) {
-        this.search = { $showAdvanceSearch : false };
+        this.search = <arbor.products.ISearchCriteria>{ $showAdvanceSearch : false };
         this.model = _service.query();
     }
 

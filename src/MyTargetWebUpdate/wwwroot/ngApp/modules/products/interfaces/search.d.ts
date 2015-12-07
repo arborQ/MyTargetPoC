@@ -5,9 +5,11 @@ declare module arbor.products{
   }
   interface ISearchCriteria{
       FreeText : string;
-      Color : string;
-      Size : string[];
-      NetPrice: IRangeCriteria;
-      Quantity : IRangeCriteria;
+      Color? : string;
+      Size? : string[];
+      NetPrice?: IRangeCriteria;
+      Quantity? : IRangeCriteria;
+
+      $showAdvanceSearch : boolean;
   }
 }

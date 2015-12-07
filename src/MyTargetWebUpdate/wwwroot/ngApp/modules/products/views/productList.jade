@@ -8,6 +8,9 @@
         button.btn.btn-success(ui-sref='.add') 
           span.fa.fa-plus
           span.sm-hide Dodaj nowy
+    i(ng-show="(vm.model | searchProducts:vm.search).length == 0") 
+      span Nie znaleziono produktow 
+      b(ng-show="vm.search.FreeText") '{{vm.search.FreeText}}'
     .list-group.list-group-flush
       a.list-group-item(ui-sref=".edit({ id : product.Id})", ng-repeat="product in vm.model | searchProducts:vm.search")
         span 
