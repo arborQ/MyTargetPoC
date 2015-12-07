@@ -1,30 +1,27 @@
-.modal-open
-  .modal-backdrop.fade.in
-  .modal.fade.in(style="display:block;")
-    .modal-dialog(role='document')
-      .modal-content
-        .modal-header
-          h4.modal-title Dodaj produkt
-        .modal-body
-          form(name="dialogForm")
-            .form-group
-              label.control-label(for="product-code") Kod produktu
-              input.form-control#product-code(type="text", ng-required="true", ng-model="vm.model.Code")
-            .form-group
-              label.control-label(for="product-name") Nazwa produktu
-              input.form-control#product-name(type="text", ng-required="true", ng-model="vm.model.Name")
-            .form-group
-              label.control-label(for="product-size") Rozmiar
-              select.form-control#product-size(ng-required="true", ng-model="vm.model.Size")
-                option Wybierz
-                option(value="S") S
-                option(value="M") M
-                option(value="L") L
-                option(value="XL") XL
-                option(value="XXL") XXL
-            .form-group
-              label.control-label(for="product-net-price") Cena netto (szt.)
-              input.form-control#product-net-price(type="number", ng-required="true", ng-model="vm.model.NetPrice")
-        .modal-footer
-          a.btn.btn-secondary(ui-sref="^") Anuluj
-          button.btn.btn-primary(type='button', ng-disabled="dialogForm.$invalid || !dialogForm.$dirty", ng-click="vm.saveToServer()") Zapisz
+extends ../../shared/_dialog
+
+block title 
+  span Dodaj produkt
+block content
+  form(name="dialogForm")
+    .form-group
+      label.control-label(for="product-code") Kod produktu
+      input.form-control#product-code(type="text", ng-required="true", ng-model="vm.model.Code")
+    .form-group
+      label.control-label(for="product-name") Nazwa produktu
+      input.form-control#product-name(type="text", ng-required="true", ng-model="vm.model.Name")
+    .form-group
+      label.control-label(for="product-size") Rozmiar
+      select.form-control#product-size(ng-required="true", ng-model="vm.model.Size")
+        option Wybierz
+        option(value="S") S
+        option(value="M") M
+        option(value="L") L
+        option(value="XL") XL
+        option(value="XXL") XXL
+    .form-group
+      label.control-label(for="product-net-price") Cena netto (szt.)
+      input.form-control#product-net-price(type="number", ng-required="true", ng-model="vm.model.NetPrice")
+block buttons
+  a.btn.btn-secondary(ui-sref="^") Anuluj
+  button.btn.btn-primary(type='button', ng-disabled="dialogForm.$invalid || !dialogForm.$dirty", ng-click="vm.saveToServer()") Zapisz

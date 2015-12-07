@@ -1,0 +1,15 @@
+div
+  .input-group(ng-show="!vm.search.$showAdvanceSearch")
+    input.form-control(type='text', ng-model="vm.search.freeText" placeholder='Szukaj...')
+    span.input-group-btn
+      button.btn.btn-secondary(type='button', ng-click="vm.search.$showAdvanceSearch = true") 
+        span.fa.fa-filter
+        span.sm-hide Więcej...
+  div(ng-show="vm.search.$showAdvanceSearch") 
+    .form-group
+      label.control-label(for="search-text") Szukaj
+      input.form-control#search-text(type="text", ng-model="vm.search.freeText")
+    div.text-right
+      button.btn.btn-secondary(ng-click="vm.search.$showAdvanceSearch = false") 
+        span.fa.fa-filter
+        span.sm-hide Mniej...

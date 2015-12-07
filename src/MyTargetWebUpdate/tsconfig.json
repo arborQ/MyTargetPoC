@@ -29,6 +29,8 @@
         "./typings/tsd.d.ts",
         "./wwwroot/ngApp/modules/interfaces/IEntity.d.ts",
         "./wwwroot/ngApp/modules/interfaces/ui/ISelectable.d.ts",
+        "./wwwroot/ngApp/modules/products/interfaces/product.d.ts",
+        "./wwwroot/ngApp/modules/products/interfaces/search.d.ts",
         "./wwwroot/ngApp/modules/users/interfaces/user.d.ts",
         "./wwwroot/ngApp/app.ts",
         "./wwwroot/ngApp/modules/products/controllers/productCreate.ts",

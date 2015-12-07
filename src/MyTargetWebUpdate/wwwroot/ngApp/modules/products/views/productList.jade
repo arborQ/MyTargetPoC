@@ -1,16 +1,15 @@
 .card.page
   ui-view
   div
+    .card-block
+      include ./filterForm
     .card-block.text-right
       .btn-group
         button.btn.btn-success(ui-sref='.add') 
           span.fa.fa-plus
           span.sm-hide Dodaj nowy
-        button.btn.btn-info(ng-click="openFilter()") 
-          span.fa.fa-filter
-          span.sm-hide Filtruj
     .list-group.list-group-flush
-      a.list-group-item(ui-sref=".edit({ id : product.Id})", ng-repeat="product in vm.model")
+      a.list-group-item(ui-sref=".edit({ id : product.Id})", ng-repeat="product in vm.model | searchProducts:vm.search")
         span 
           span {{product.Name}} 
           b ({{product.Size}})
