@@ -4,6 +4,7 @@ import { module } from 'angular';
 import pages from './modules/setup/pages';
 import applicationConfig from './modules/setup/config';
 import applicationController from './modules/setup/controller';
+import { viewTemplateUrl } from './modules/setup/viewHelper';
 
 var pageCodes = pages.map((p) => p.name);
 pageCodes.push('ui.router');
@@ -18,18 +19,6 @@ app.directive('myApp', () => {
     restrict : 'E',
     controller : applicationController, resole : {},
     controllerAs : 'vm',
-    template : `
-    <div>
-      <nav class="navbar navbar-light bg-faded">
-        <a class="navbar-brand" id="logo" href="#"><span class="md-hide">JustMove</span>&nbsp;</a>
-        <ul class="nav navbar-nav">
-          <li class="nav-item" ui-sref-active="active" ng-repeat="item in vm.menuItems">
-            <a class="nav-link" ui-sref="{{item.name}}">{{item.display}}</a>
-          </li>
-        </ul>
-        </nav>
-        <ui-view></ui-view>
-      </div>
-    `
+    templateUrl : viewTemplateUrl("shared", "_master")
   };
 });
