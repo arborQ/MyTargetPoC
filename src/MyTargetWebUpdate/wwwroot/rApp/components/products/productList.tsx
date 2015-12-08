@@ -6,8 +6,7 @@ export default class productList extends React.Component<any, {products : arbor.
   componentWillMount(){
     this.setState({ products : [  ] })
     setTimeout(() => {
-      console.log('timeout');
-      var p = [ {  Code : '432', Name : '432', StoredQuantity : 10 } ]
+      var p = [ { Id : 1,  Code : '432', Name : '432', StoredQuantity : 10 },{ Id : 2,  Code : 'test_C', Name : 'test', StoredQuantity : 110 } ]
       this.setState({ products : p })
     }, 2000);
   }

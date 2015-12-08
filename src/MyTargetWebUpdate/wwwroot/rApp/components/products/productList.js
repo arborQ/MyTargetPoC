@@ -9,8 +9,7 @@ var productList = (function (_super) {
         var _this = this;
         this.setState({ products: [] });
         setTimeout(function () {
-            console.log('timeout');
-            var p = [{ Code: '432', Name: '432', StoredQuantity: 10 }];
+            var p = [{ Id: 1, Code: '432', Name: '432', StoredQuantity: 10 }, { Id: 2, Code: 'test_C', Name: 'test', StoredQuantity: 110 }];
             _this.setState({ products: p });
         }, 2000);
     };

@@ -9,16 +9,13 @@ import {Table,
  TableRowColumn, Card } from 'material-ui';
 
 export default class productListView extends React.Component<{ products : arbor.products.IProduct[] }, { products : arbor.products.IProduct[] }>{
-  componentWillMount(){
-    this.setState({ products : this.props.products })
-  }
   render(){
-    if(!this.state || !this.state.products){
+    if(!this.props || !this.props.products){
       return (<div>nope</div>);
     }
-    var productList = this.state.products.map((p) => {
+    var productList = this.props.products.map((p) => {
       return (
-        <TableRow>
+        <TableRow key={p.Id}>
           <TableRowColumn>{p.Name}</TableRowColumn>
           <TableRowColumn>{p.StoredQuantity}sz</TableRowColumn>
         </TableRow>
@@ -26,7 +23,7 @@ export default class productListView extends React.Component<{ products : arbor.
     });
 
     return (
-      <Card style={{width : '800px', margin : '0 auto', marginTop: '20px'}}>
+      <Card style={{ maxWidth : '800px', margin : '0 auto', marginTop: '20px'}}>
         <Table>
           <TableHeader>
           <TableRow>
