@@ -6,7 +6,8 @@ less = require('gulp-less')
 concatCss = require('gulp-concat-css'),
 ugly = require('gulp-minify-css'),
 jade = require('gulp-jade'),
-jspm = require('jspm')
+jspm = require('jspm'),
+autoprefixer = require('gulp-autoprefixer')
 ;
 
 var tsConfig = require('./tsconfig.json').compilerOptions;
@@ -35,6 +36,7 @@ gulp.task('less:compile', function(){
   gulp.src(['./wwwroot/less/**/*.less', '!./wwwwroot/bower_components/**/*.less'])
    .pipe(less())
    .pipe(concatCss('site.min.css'))
+   .pipe(autoprefixer())
    .pipe(ugly())
   .pipe(gulp.dest('./wwwroot'));
 });

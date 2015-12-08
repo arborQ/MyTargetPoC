@@ -23,24 +23,18 @@ app.directive('myApp', () => {
   };
 });
 
-app.directive('loadingPanel', () => {
+app.directive('loadContent', () => {
   return {
-    restrict : 'C',
+    restrict : "C",
     transclude : true,
-    require : 'ngModel',
-    scope : true,
-    link : (s, e, attrs) => {
-        s.$watch(attrs["ngModel"], (n : boolean) => {
-            s["isLoading"] = !n;
-        });
-    },
+    scope : { 'ngModel' : '='},
     template : `
       <div>
-        <div class="loading_placeholder" ng-show="isLoading">
-          <div class="loading secondary"></div>
+        <div class="loading_placeholder" ng-show="!ngModel">
+          <div class="loading embeded"></div>
         </div>
-        <ng-transclude ng-show="!isLoading"></ng-transclude>
+        <ng-transclude ng-show="ngModel"></ng-transclude>
       </div>
-    `,
+    `
   };
-})
+});

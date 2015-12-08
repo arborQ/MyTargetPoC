@@ -5,13 +5,16 @@
       include ./filterForm
     .card-footer.text-right
       .btn-group
+        button.btn.btn-info(ng-disabled="true")
+          span.fa.fa-terminal
+          span.sm-hide Czyść filtr
         button.btn.btn-info(ng-click="vm.search.$showAdvanceSearch = !vm.search.$showAdvanceSearch") 
           span.fa(ng-class="{ false : 'fa-search-plus', true : 'fa-search-minus' }[vm.search.$showAdvanceSearch]")
           span.sm-hide {{vm.search.$showAdvanceSearch ? 'Podstawowy filtr' : 'Zaawansowany filtr'}}
         button.btn.btn-success(ui-sref='.add') 
           span.fa.fa-plus
           span.sm-hide Dodaj nowy produkt
-.loadingPanel(ng-model="vm.model.$resolved")
+.loadContent(ng-model="vm.model.$resolved")
   .card.page
     .card-block 
       .row

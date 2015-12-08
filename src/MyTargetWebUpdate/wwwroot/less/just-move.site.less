@@ -5,21 +5,31 @@
 }
 
 #just_move{
-  .loading{
-    margin : 0 auto;
-    &.main{
-      .loader(124);
-    }
-    &.secondary{
-      .loader(64);
-    }
-  }
-
   #logo{
     background-image: url('/images/logo_38.png');
     background-position: left;
     background-repeat: no-repeat;
     padding-left: 40px;
     height: 40px;
+  }
+
+  .loading_placeholder{
+    height: 124px;
+    width : 100%;
+    padding: 20px 0;
+      .loading
+      {
+          animation-name:             rotate;
+          animation-duration:         2.5s;
+          animation-iteration-count:  infinite;
+          animation-timing-function: linear;
+          margin : 0 auto;
+          &.main{
+            .loader(124);
+          }
+          &.embeded{
+            .loader(64);
+          }
+      }
   }
 }
