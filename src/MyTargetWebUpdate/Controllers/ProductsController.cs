@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http;
 using Microsoft.AspNet.Mvc;
@@ -32,6 +33,7 @@ namespace MyTargetWebUpdate.Controllers
         [HttpGet]
         public ActionResult GetProduct(long? id)
         {
+            Thread.Sleep(2000);
             if (id.HasValue)
             {
                 var product = DbContext.Products.FirstOrDefault(a => a.Id == id);

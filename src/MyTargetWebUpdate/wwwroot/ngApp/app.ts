@@ -22,3 +22,25 @@ app.directive('myApp', () => {
     templateUrl : viewTemplateUrl("shared", "_master")
   };
 });
+
+app.directive('loadingPanel', () => {
+  return {
+    restrict : 'C',
+    transclude : true,
+    require : 'ngModel',
+    scope : true,
+    link : (s, e, attrs) => {
+        s.$watch(attrs["ngModel"], (n : boolean) => {
+            s["isLoading"] = !n;
+        });
+    },
+    template : `
+      <div>
+        <div class="loading_placeholder" ng-show="isLoading">
+          <div class="loading secondary"></div>
+        </div>
+        <ng-transclude ng-show="!isLoading"></ng-transclude>
+      </div>
+    `,
+  };
+})

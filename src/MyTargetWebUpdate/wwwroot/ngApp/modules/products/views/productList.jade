@@ -3,11 +3,20 @@
   div
     .card-block
       include ./filterForm
-    .card-block.text-right
+    .card-footer.text-right
       .btn-group
+        button.btn.btn-info(ng-click="vm.search.$showAdvanceSearch = !vm.search.$showAdvanceSearch") 
+          span.fa(ng-class="{ false : 'fa-search-plus', true : 'fa-search-minus' }[vm.search.$showAdvanceSearch]")
+          span.sm-hide {{vm.search.$showAdvanceSearch ? 'Podstawowy filtr' : 'Zaawansowany filtr'}}
         button.btn.btn-success(ui-sref='.add') 
           span.fa.fa-plus
-          span.sm-hide Dodaj nowy
+          span.sm-hide Dodaj nowy produkt
+.loadingPanel(ng-model="vm.model.$resolved")
+  .card.page
+    .card-block 
+      .row
+        .col-lg-12 
+          span Produkty 
     i(ng-show="(vm.model | searchProducts:vm.search).length == 0") 
       span Nie znaleziono produktow 
       b(ng-show="vm.search.FreeText") '{{vm.search.FreeText}}'

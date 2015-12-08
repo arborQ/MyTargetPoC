@@ -1,9 +1,18 @@
+.loader(@size){
+  width : unit(@size, px);
+  height: unit(@size, px);
+  background-image: url('/images/logo_@{size}.png');
+}
+
 #just_move{
-  .loading.main{
+  .loading{
     margin : 0 auto;
-    width : 124px;
-    height: 124px;
-    background-image: url('/images/logo_124.png');
+    &.main{
+      .loader(124);
+    }
+    &.secondary{
+      .loader(64);
+    }
   }
 
   #logo{
