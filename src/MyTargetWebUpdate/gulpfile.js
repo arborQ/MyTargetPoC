@@ -23,13 +23,13 @@ gulp.task('ts:watch', ['ts:compile'], function(){
 });
 
 gulp.task('tsx:compile', function(){
-  gulp.src(['./typings/**/*.d.ts', './wwwroot/ngApp/**/*.d.ts','./wwwroot/retApp/**/*.ts?'])
+  gulp.src(['./typings/**/*.d.ts', './wwwroot/ngApp/**/*.d.ts','./wwwroot/rApp/**/*.ts?'])
   .pipe(ts(tsConfig))
-  .pipe(gulp.dest('./wwwroot/retApp'));
+  .pipe(gulp.dest('./wwwroot/rApp'));
 });
 
 gulp.task('tsx:watch', ['tsx:compile'], function(){
-  gulp.watch('./wwwroot/retApp/**/*.ts?', ['tsx:compile']);
+  gulp.watch('./wwwroot/rApp/**/*.ts?', ['tsx:compile']);
 });
 
 gulp.task('less:compile', function(){
@@ -61,6 +61,6 @@ gulp.task('build', function () {
     jspm.bundleSFX('ngApp/app', 'wwwroot/bundle.angular.sfx.js', { mangle: false, minify : true });
 });
 
-gulp.task('all:watch', ['jade:watch', 'less:watch', 'ts:watch'] , function(){});
-gulp.task('all:compile', ['jade:compile', 'less:compile', 'ts:compile'] , function(){});
+gulp.task('all:watch', ['jade:watch', 'less:watch', 'ts:watch', 'tsx:watch'] , function(){});
+gulp.task('all:compile', ['jade:compile', 'less:compile', 'ts:compile', 'tsx:compile'] , function(){});
 //jspm bundle ngApp/app wwwroot/bundle.angular.min.js --minify --no-mangle
