@@ -20,6 +20,7 @@ export default class productListView extends React.Component<{ products : arbor.
     var productList = this.props.products.map((p) => {
       return (
         <TableRow key={p.Id}>
+          <TableRowColumn>{p.Code}</TableRowColumn>
           <TableRowColumn>{p.Name}</TableRowColumn>
           <TableRowColumn>{p.StoredQuantity}sz</TableRowColumn>
         </TableRow>
@@ -37,6 +38,9 @@ export default class productListView extends React.Component<{ products : arbor.
           <Table>
             <TableHeader displaySelectAll={false}>>
               <TableRow>
+                <TableHeaderColumn tooltip='Kod produktu'>
+                  Kod
+                </TableHeaderColumn>
                 <TableHeaderColumn tooltip='Nazwa produktu'>
                   Nazwa
                 </TableHeaderColumn>

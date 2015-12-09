@@ -19,7 +19,7 @@ var productList = (function (_super) {
     };
     productList.prototype.render = function () {
         var _this = this;
-        var products = (this.state.products || []).filter(function (p) { return p.Name.indexOf(_this.state.search) !== -1; });
+        var products = (this.state.products || []).filter(function (p) { return (p.Name + " " + p.Code).indexOf(_this.state.search) !== -1; });
         return (React.createElement("div", null, React.createElement("div", null, this.props.children), React.createElement(productSearchView_1.default, {"onChange": this.onSearchChange.bind(this), "search": this.state.search}), React.createElement(productListView_1.default, {"products": products})));
     };
     ;

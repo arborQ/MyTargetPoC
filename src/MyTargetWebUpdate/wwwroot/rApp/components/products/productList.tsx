@@ -15,7 +15,7 @@ export default class productList extends React.Component<any, {products? : arbor
       this.setState({ search : search })
   }
   render(){
-    var products = (this.state.products || []).filter((p : arbor.products.IProduct) => p.Name.indexOf(this.state.search) !== -1);
+    var products = (this.state.products || []).filter((p : arbor.products.IProduct) => `${p.Name} ${p.Code}`.indexOf(this.state.search) !== -1);
     return (
       <div>
       <div>{this.props.children}</div>
