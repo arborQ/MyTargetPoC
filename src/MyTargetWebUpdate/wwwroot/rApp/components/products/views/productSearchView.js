@@ -1,6 +1,5 @@
 var React = require('react');
 var material_ui_1 = require('material-ui');
-var react_router_1 = require('react-router');
 var productSearchView = (function (_super) {
     __extends(productSearchView, _super);
     function productSearchView() {
@@ -10,7 +9,7 @@ var productSearchView = (function (_super) {
         this.props.onChange(event.target.value);
     };
     productSearchView.prototype.render = function () {
-        return (React.createElement(material_ui_1.Card, {"style": { maxWidth: '800px', margin: '0 auto', marginTop: '20px' }}, React.createElement(material_ui_1.CardText, null, React.createElement(material_ui_1.TextField, {"hintText": "Szukaj...", "fullWidth": true, "value": this.props.search, "onChange": this.onSearchChange.bind(this)})), React.createElement(material_ui_1.CardActions, null, React.createElement(material_ui_1.RaisedButton, {"disabled": true, "label": "Zaawansowany filtr"}), React.createElement(react_router_1.Link, {"to": "/products/details"}, React.createElement(material_ui_1.RaisedButton, {"label": "Dodaj nowy produkt"})))));
+        return (React.createElement(material_ui_1.Card, {"style": { maxWidth: '800px', margin: '0 auto', marginTop: '20px' }}, React.createElement(material_ui_1.CardText, null, React.createElement(material_ui_1.TextField, {"hintText": "Szukaj...", "fullWidth": true, "value": this.props.search, "onChange": this.onSearchChange.bind(this)})), React.createElement(material_ui_1.CardActions, null, React.createElement(material_ui_1.RaisedButton, {"disabled": true, "label": "Zaawansowany filtr"}))));
     };
     return productSearchView;
 })(React.Component);

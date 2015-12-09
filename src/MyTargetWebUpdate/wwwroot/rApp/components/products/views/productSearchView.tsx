@@ -13,7 +13,6 @@ export default class productSearchView extends React.Component<{ onChange : (sea
           </CardText>
           <CardActions>
             <RaisedButton disabled={true} label="Zaawansowany filtr" />
-            <Link to="/products/details" ><RaisedButton label="Dodaj nowy produkt" /></Link>
           </CardActions>
         </Card>
       );

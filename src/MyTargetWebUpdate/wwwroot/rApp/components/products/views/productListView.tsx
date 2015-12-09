@@ -6,7 +6,11 @@ import {Table,
  TableHeader ,
  TableHeaderColumn ,
  TableRow ,
- TableRowColumn, Card } from 'material-ui';
+ TableRowColumn,
+ Card,
+ FloatingActionButton,
+ Avatar } from 'material-ui';
+import { Link } from 'react-router';
 
 export default class productListView extends React.Component<{ products : arbor.products.IProduct[] }, { products : arbor.products.IProduct[] }>{
   render(){
@@ -23,22 +27,29 @@ export default class productListView extends React.Component<{ products : arbor.
     });
 
     return (
-      <Card style={{ maxWidth : '800px', margin : '0 auto', marginTop: '20px'}}>
-        <Table>
-          <TableHeader displaySelectAll={false}>>
-            <TableRow>
-              <TableHeaderColumn tooltip='Nazwa produktu'>
-                Nazwa
-              </TableHeaderColumn>
-              <TableHeaderColumn tooltip='Dostępne?'>
-                Ile?
-              </TableHeaderColumn>
-            </TableRow>
-          </TableHeader>
-          <TableBody displayRowCheckbox={false}>
-            {productList}
-          </TableBody>
-        </Table>
-      </Card>);
+      <div>
+        <Link to="/products/details" style={{ position : 'fixed', bottom : "10px", right: "10px"}} >
+          <FloatingActionButton secondary={false}>
+            +
+          </FloatingActionButton>
+        </Link>
+        <Card style={{ maxWidth : '800px', margin : '0 auto', marginTop: '20px'}}>
+          <Table>
+            <TableHeader displaySelectAll={false}>>
+              <TableRow>
+                <TableHeaderColumn tooltip='Nazwa produktu'>
+                  Nazwa
+                </TableHeaderColumn>
+                <TableHeaderColumn tooltip='Dostępne?'>
+                  Ile?
+                </TableHeaderColumn>
+              </TableRow>
+            </TableHeader>
+            <TableBody displayRowCheckbox={false}>
+              {productList}
+            </TableBody>
+          </Table>
+        </Card>
+      </div>);
   }
 }
