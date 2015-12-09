@@ -25,17 +25,17 @@ export default class productListView extends React.Component<{ products : arbor.
     return (
       <Card style={{ maxWidth : '800px', margin : '0 auto', marginTop: '20px'}}>
         <Table>
-          <TableHeader>
-          <TableRow>
-            <TableHeaderColumn tooltip='Nazwa produktu'>
-              Nazwa
-            </TableHeaderColumn>
-            <TableHeaderColumn tooltip='Dostępne?'>
-              Ile?
-            </TableHeaderColumn>
-          </TableRow>
+          <TableHeader displaySelectAll={false}>>
+            <TableRow>
+              <TableHeaderColumn tooltip='Nazwa produktu'>
+                Nazwa
+              </TableHeaderColumn>
+              <TableHeaderColumn tooltip='Dostępne?'>
+                Ile?
+              </TableHeaderColumn>
+            </TableRow>
           </TableHeader>
-          <TableBody>
+          <TableBody displayRowCheckbox={false}>
             {productList}
           </TableBody>
         </Table>

@@ -52,8 +52,10 @@
         "./wwwroot/ngApp/modules/users/controllers/userList.ts",
         "./wwwroot/ngApp/modules/users/users.module.ts",
         "./wwwroot/rApp/app.tsx",
+        "./wwwroot/rApp/components/products/productDetails.tsx",
         "./wwwroot/rApp/components/products/productList.tsx",
         "./wwwroot/rApp/components/products/views/productListView.tsx",
+        "./wwwroot/rApp/components/products/views/productSearchView.tsx",
         "./wwwroot/rApp/components/shared/_master.tsx"
     ],
     "exclude": [],

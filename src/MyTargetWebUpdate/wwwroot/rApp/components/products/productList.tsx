@@ -1,16 +1,27 @@
 import * as React from 'react';
 import ListView from './views/productListView';
+import SearchForm  from './views/productSearchView';
+import { get } from 'jquery';
 
-export default class productList extends React.Component<any, {products : arbor.products.IProduct[]}>{
+export default class productList extends React.Component<any, {products? : arbor.products.IProduct[], search? : string}>{
 
   componentWillMount(){
-    this.setState({ products : [  ] })
-    setTimeout(() => {
-      var p = [ { Id : 1,  Code : '432', Name : '432', StoredQuantity : 10 },{ Id : 2,  Code : 'test_C', Name : 'test', StoredQuantity : 110 } ]
-      this.setState({ products : p })
-    }, 2000);
+    this.setState({ search : "" })
+    get("/api/products").then((products : arbor.products.IProduct[]) => {
+      this.setState({ products });
+    })
+  }
+  onSearchChange(search : string){
+      this.setState({ search : search })
   }
   render(){
-    return ( <ListView products={this.state.products} />)
+    var products = (this.state.products || []).filter((p : arbor.products.IProduct) => p.Name.indexOf(this.state.search) !== -1);
+    return (
+      <div>
+      <div>{this.props.children}</div>
+      <SearchForm onChange={this.onSearchChange.bind(this)} search={this.state.search} />
+      <ListView products={products} />
+      </div>
+      )
   };
 }
