@@ -52,6 +52,8 @@
         "./wwwroot/ngApp/modules/users/controllers/userList.ts",
         "./wwwroot/ngApp/modules/users/users.module.ts",
         "./wwwroot/rApp/app.tsx",
+        "./wwwroot/rApp/components/crud/get.tsx",
+        "./wwwroot/rApp/components/crud/query.tsx",
         "./wwwroot/rApp/components/products/productDetails.tsx",
         "./wwwroot/rApp/components/products/productList.tsx",
         "./wwwroot/rApp/components/products/views/productListView.tsx",

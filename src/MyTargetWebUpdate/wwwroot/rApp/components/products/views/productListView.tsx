@@ -12,18 +12,18 @@ import {Table,
  Avatar } from 'material-ui';
 import { Link } from 'react-router';
 
-export default class productListView extends React.Component<{ products : arbor.products.IProduct[] }, { products : arbor.products.IProduct[] }>{
+export default class productListView extends React.Component<{ products : arbor.products.IProduct[], onRowClick : (data : any) => void }, { products : arbor.products.IProduct[] }>{
   render(){
     if(!this.props || !this.props.products){
       return (<div>nope</div>);
     }
     var productList = this.props.products.map((p) => {
       return (
-        <TableRow key={p.Id}>
-          <TableRowColumn>{p.Code}</TableRowColumn>
-          <TableRowColumn>{p.Name}</TableRowColumn>
-          <TableRowColumn>{p.StoredQuantity}sz</TableRowColumn>
-        </TableRow>
+          <TableRow key={p.Id}>
+            <TableRowColumn>{p.Code}</TableRowColumn>
+            <TableRowColumn>{p.Name}</TableRowColumn>
+            <TableRowColumn>{p.StoredQuantity}sz</TableRowColumn>
+          </TableRow>
       );
     });
 
@@ -35,7 +35,7 @@ export default class productListView extends React.Component<{ products : arbor.
           </FloatingActionButton>
         </Link>
         <Card style={{ maxWidth : '800px', margin : '0 auto', marginTop: '20px'}}>
-          <Table>
+          <Table onRowSelection={this.props.onRowClick}>
             <TableHeader displaySelectAll={false}>>
               <TableRow>
                 <TableHeaderColumn tooltip='Kod produktu'>
