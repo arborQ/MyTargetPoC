@@ -198,12 +198,10 @@ FakesAssemblies/
 node_modules
 bower_components
 jspm_packages
-src/MyTargetWeb/wwwroot/ngApp/**/.js
-src/MyTargetWeb/wwwroot/retApp/**/.js
-src/MyTargetWeb/wwwroot/*.css
-src/MyTargetWeb/wwwroot/ngApp/**/*.html
 
-src/MyTargetWebUpdate/wwwroot/ngApp/**/*.js
-src/MyTargetWebUpdate/wwwroot/rApp/**/.js
-src/MyTargetWebUpdate/wwwroot/*.css
-src/MyTargetWebUpdate/wwwroot/ngApp/**/*.html
+src/MyTargetWebUpdate/sources/**/.js
+
+src/MyTargetWeb/wwwroot/bundles/**/.js
+src/MyTargetWeb/wwwroot/bundles/**/.html
+src/MyTargetWeb/wwwroot/bundles/**/.css
+

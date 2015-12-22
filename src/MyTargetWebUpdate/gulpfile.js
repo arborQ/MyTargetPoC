@@ -2,63 +2,65 @@
 var gulp = require('gulp'),
 ts = require('gulp-typescript'),
 ngAnnotate = require('gulp-ng-annotate'),
-less = require('gulp-less')
+less = require('gulp-less'),
 concatCss = require('gulp-concat-css'),
 ugly = require('gulp-minify-css'),
 jade = require('gulp-jade'),
 jspm = require('jspm'),
 autoprefixer = require('gulp-autoprefixer')
 ;
-
+var sourceDir = './sources';
+var targetDir = './wwwroot/dest';
+var bundleDir = './wwwroot/bundles';
 var tsConfig = require('./tsconfig.json').compilerOptions;
 
 gulp.task('ts:compile', function(){
-  gulp.src(['./typings/**/*.d.ts','./wwwroot/ngApp/**/*.ts'])
+  gulp.src(['./typings/**/*.d.ts', sourceDir + '/**/*.ts'])
   .pipe(ts(tsConfig))
-  .pipe(gulp.dest('./wwwroot/ngApp'));
+  .pipe(gulp.dest(targetDir));
 });
 
 gulp.task('ts:watch', ['ts:compile'], function(){
-  gulp.watch('./wwwroot/ngApp/**/*.ts', ['ts:compile']);
+  gulp.watch(sourceDir + '/**/*.ts', ['ts:compile']);
 });
 
 gulp.task('tsx:compile', function(){
-  gulp.src(['./typings/**/*.d.ts', './wwwroot/ngApp/**/*.d.ts','./wwwroot/rApp/**/*.ts?'])
+  gulp.src(['./typings/**/*.d.ts', sourceDir + '/**/*.d.ts', sourceDir + '/**/*.tsx'])
   .pipe(ts(tsConfig))
-  .pipe(gulp.dest('./wwwroot/rApp'));
+  .pipe(gulp.dest(targetDir));
 });
 
 gulp.task('tsx:watch', ['tsx:compile'], function(){
-  gulp.watch('./wwwroot/rApp/**/*.ts?', ['tsx:compile']);
+  gulp.watch(sourceDir + '/**/*.tsx', ['tsx:compile']);
 });
 
 gulp.task('less:compile', function(){
-  gulp.src(['./wwwroot/less/**/*.less', '!./wwwwroot/bower_components/**/*.less'])
+  gulp.src([sourceDir + '/**/*.less'])
    .pipe(less())
    .pipe(concatCss('site.min.css'))
    .pipe(autoprefixer())
    .pipe(ugly())
-  .pipe(gulp.dest('./wwwroot'));
+  .pipe(gulp.dest(bundleDir));
 });
 
 gulp.task('less:watch', ['less:compile'], function(){
-  gulp.watch('./wwwroot/**/*.less', ['less:compile']);
+  gulp.watch(sourceDir + '/**/*.less', ['less:compile']);
 });
 
 gulp.task('jade:compile', function(){
-  gulp.src('./wwwroot/ngApp/**/*.jade')
+  gulp.src(sourceDir + '/**/*.jade')
   .pipe(jade())
-  .pipe(gulp.dest('./wwwroot/ngApp'));
+  .pipe(gulp.dest(targetDir));
 });
 
 gulp.task('jade:watch', ['jade:compile'], function(){
-  gulp.watch('./wwwroot/ngApp/**/*.jade', ['jade:compile']);
+  gulp.watch(sourceDir + '/**/*.jade', ['jade:compile']);
 });
 
-gulp.task('build', function () {
+gulp.task('build:angular', function () {
     jspm.install(true, { lock: true });
     jspm.setPackagePath('.');
-    jspm.bundleSFX('ngApp/app', 'wwwroot/bundle.angular.sfx.js', { mangle: false, minify : true });
+    jspm.bundleSFX('dest/application.angular/app', bundleDir + '/bundle.angular.sfx.js', { mangle: false, minify : true });
 });
 
 gulp.task('all:watch', ['jade:watch', 'less:watch', 'ts:watch', 'tsx:watch'] , function(){});

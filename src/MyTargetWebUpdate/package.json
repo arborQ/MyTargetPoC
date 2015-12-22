@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "tsd reinstall --overwrite --save",
-    "start": "gulp build"
+    "build:angular": "jspm bundle-sfx dest/application.angular/app wwwroot/bundles/angular.bundle.sfx.js --minify --no-mangle",
+    "web:build" : "dnu build",
+    "web:listen" : "dnx web Hosting:Environment=Development",
+    "web" : "npm run web:build || npm run web:listen"
   },
   "repository": {
     "type": "git",

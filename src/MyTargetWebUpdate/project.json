@@ -48,6 +48,6 @@
     "**.vspscc"
   ],
   "scripts": {
-    "prepublish": [ "npm install", "bower install", "gulp all:compile", "jspm bundle-sfx ngApp/app wwwroot/bundle.angular.sfx.js --minify --no-mangle" ]
+    "prepublish": [ "npm install", "bower install", "gulp all:compile", "npm run build:angular" ]
   }
 }

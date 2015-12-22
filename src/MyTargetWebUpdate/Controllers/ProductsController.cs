@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using Microsoft.AspNet.Mvc;
 using MyTargetWebUpdate.Models;
-using System.Threading;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -23,18 +22,17 @@ namespace MyTargetWebUpdate.Controllers
         }
 
         //// GET: api/values
-        //[HttpGet]
-        //public IEnumerable<Product> Get()
-        //{
+        // [HttpGet]
+        // public IEnumerable<Product> Get()
+        // {
         //    var products =  DbContext.Products.ToList();
-        //    return Ok(product);
-        //}
+        //    return Ok(products);
+        // }
 
         // GET api/values/5
         [HttpGet]
         public ActionResult GetProduct(long? id)
         {
-            Thread.Sleep(2000);
             if (id.HasValue)
             {
                 var product = DbContext.Products.FirstOrDefault(a => a.Id == id);
