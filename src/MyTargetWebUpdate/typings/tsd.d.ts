@@ -8,3 +8,4 @@
 /// <reference path="history/history.d.ts" />
 /// <reference path="react-router/history.d.ts" />
 /// <reference path="material-ui/material-ui.d.ts" />
+/// <reference path="q/Q.d.ts" />

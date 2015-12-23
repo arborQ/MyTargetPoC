@@ -1,11 +1,12 @@
 var angular = require('angular');
 require('angular-resource');
+require('angular-messages');
 var viewHelper_1 = require('../setup/viewHelper');
 var productList_1 = require('./controllers/productList');
 var productCreate_1 = require('./controllers/productCreate');
 var productEdit_1 = require('./controllers/productEdit');
 var name = "arbor-products-module";
-var app = angular.module(name, ['ui.router', 'ngResource']);
+var app = angular.module(name, ['ui.router', 'ngResource', 'ngMessages']);
 app.config(function ($stateProvider) {
     $stateProvider.state(name, {
         url: '/products',

@@ -38,3 +38,13 @@ app.directive('loadContent', () => {
     `
   };
 });
+
+app.filter('danger', () => {
+  return (validation : angular.IFormController) : string => {
+    if(validation.$invalid && validation.$dirty){
+      return "has-danger";
+    }else{
+      return "";
+    }
+  };
+});

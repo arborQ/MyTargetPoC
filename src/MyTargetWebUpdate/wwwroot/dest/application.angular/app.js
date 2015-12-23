@@ -25,3 +25,13 @@ app.directive('loadContent', function () {
         template: "\n      <div>\n        <div class=\"loading_placeholder\" ng-show=\"!ngModel\">\n          <div class=\"loading embeded\"></div>\n        </div>\n        <ng-transclude ng-show=\"ngModel\"></ng-transclude>\n      </div>\n    "
     };
 });
+app.filter('danger', function () {
+    return function (validation) {
+        if (validation.$invalid && validation.$dirty) {
+            return "has-danger";
+        }
+        else {
+            return "";
+        }
+    };
+});

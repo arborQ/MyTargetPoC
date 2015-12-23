@@ -1,12 +1,13 @@
 import * as angular from 'angular';
 import 'angular-resource';
+import 'angular-messages';
 import { viewTemplateUrl } from '../setup/viewHelper';
 import controller from './controllers/productList';
 import createController from './controllers/productCreate';
 import editController from './controllers/productEdit';
 
 var name = "arbor-products-module";
-var app = angular.module(name, [ 'ui.router', 'ngResource']);
+var app = angular.module(name, [ 'ui.router', 'ngResource', 'ngMessages']);
 
 app.config(($stateProvider : ng.ui.IStateProvider) => {
   $stateProvider.state(name, {

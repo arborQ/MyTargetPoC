@@ -14,14 +14,18 @@ System.config({
   },
 
   map: {
+    "Bonsanto/simple-http": "github:Bonsanto/simple-http@master",
     "angular": "npm:angular@1.4.8",
+    "angular-messages": "github:angular/bower-angular-messages@1.4.8",
     "angular-resource": "npm:angular-resource@1.4.8",
     "angular-ui-router": "github:angular-ui/ui-router@0.2.15",
     "babel": "npm:babel-core@5.8.34",
     "babel-runtime": "npm:babel-runtime@5.8.34",
     "core-js": "npm:core-js@1.2.6",
-    "jquery": "npm:jquery@2.1.4",
+    "dimitrinicolas/marmottajax": "github:dimitrinicolas/marmottajax@master",
+    "jquery": "github:components/jquery@2.1.4",
     "material-ui": "npm:material-ui@0.13.4",
+    "q": "npm:q@1.4.1",
     "react": "npm:react@0.14.3",
     "react-dom": "npm:react-dom@0.14.3",
     "react-router": "npm:react-router@1.0.0",
@@ -154,9 +158,6 @@ System.config({
       "loose-envify": "npm:loose-envify@1.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:jquery@2.1.4": {
-      "process": "github:jspm/nodelibs-process@0.1.2"
-    },
     "npm:jstransform@10.1.0": {
       "base62": "npm:base62@0.1.1",
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
@@ -245,6 +246,9 @@ System.config({
     "npm:promise@7.0.4": {
       "asap": "npm:asap@2.0.3",
       "fs": "github:jspm/nodelibs-fs@0.1.2"
+    },
+    "npm:q@1.4.1": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:query-string@3.0.0": {
       "strict-uri-encode": "npm:strict-uri-encode@1.0.2"

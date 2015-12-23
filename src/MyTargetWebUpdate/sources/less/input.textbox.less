@@ -1,0 +1,15 @@
+@dangerColor : #d9534f;
+ng-messages {
+  display: none;
+}
+.has-danger {
+  .control-label{
+    color : @dangerColor;
+  }
+  .form-control {
+      border-color: @dangerColor;
+  }
+  ng-messages{
+    display: inline;
+  }
+}
