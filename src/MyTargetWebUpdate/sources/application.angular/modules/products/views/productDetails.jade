@@ -24,4 +24,4 @@ block content
       input.form-control#product-net-price(type="number", min="0", name="productNetPrice", ng-required="true", ng-model="vm.model.NetPrice")
 block buttons
   a.btn.btn-secondary(ui-sref="^") Anuluj
-  button.btn.btn-primary(type='submit', ng-disabled="dialogForm.$invalid || !dialogForm.$dirty", ng-click="vm.saveToServer()") Zapisz
+  button.btn.btn-primary(type='submit', ng-disabled="dialogForm.$invalid || !dialogForm.$dirty", ng-click="vm.saveToServer(dialogForm)") Zapisz

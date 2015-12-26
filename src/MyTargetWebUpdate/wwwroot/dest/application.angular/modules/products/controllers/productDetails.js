@@ -2,7 +2,6 @@ var productDetails = (function () {
     function productDetails() {
         this.sizes = new Array();
         this.sizes = [
-            { id: null, name: "Wybierz" },
             { id: 'S', name: "S" },
             { id: 'M', name: "M" },
             { id: 'L', name: "L" },

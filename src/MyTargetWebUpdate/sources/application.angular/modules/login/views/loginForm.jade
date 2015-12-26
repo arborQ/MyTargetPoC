@@ -1,0 +1,11 @@
+.card.with-form.card-block
+  h4.card-title Zaloguj sie do systemu
+  .card-text
+    form(name="loginForm", ng-submit="vm.saveToServer(loginForm, vm.model)")
+      .form-group(ng-class="loginForm.login | danger")
+        label.control-label(for="login") Login
+        input.form-control.form-control-danger#login(type="text", name="login", ng-required="true", ng-maxlength="20", ng-model="vm.model.Login")
+      .form-group(ng-class="loginForm.password | danger")
+        label.control-label(for="password") Haslo
+        input.form-control.form-control-danger#password(type="password", name="password", ng-required="true", ng-model="vm.model.Password")
+      input.btn.btn-primary(type="submit", ng-disabled="loginForm.$invalid", value="Zaloguj")

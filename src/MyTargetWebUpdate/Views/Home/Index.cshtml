@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="~/bundles/site.min.css" charset="utf-8">
     <link rel="shortcut icon" type="image/ico" href="/images/logo_16.ico">
 </head>
+@{
+  var appName = "anonymous.app";
+}
 <body id="just_move">
     <my-app my-navigations="vm.navigations">
         <div class="loading_placeholder"><div class="loading main"></div></div>
@@ -18,7 +21,7 @@
     <script src="~/common.js" charset="utf-8"></script>
 
     <environment names="Production">
-        <script src="~/bundles/bundle.angular.sfx.js" charset="utf-8"></script>
+        <script src='@string.Format("~/bundles/angular/{0}.bundle.sfx.js", appName)' charset="utf-8"></script>
         <script type="text/javascript">
           angular.bootstrap(document, ['app']);
         </script>
@@ -27,7 +30,7 @@
         <script src="~/jspm_packages/system.js" charset="utf-8"></script>
         <script src="~/config.js" charset="utf-8"></script>
         <script type="text/javascript">
-        System.import('dest/application.angular/app').then(function(){
+        System.import('dest/application.angular/@appName').then(function(){
           angular.bootstrap(document, ['app']);
         });
         </script>

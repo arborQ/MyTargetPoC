@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "tsd reinstall --overwrite --save",
-    "build:angular": "jspm bundle-sfx dest/application.angular/app wwwroot/bundles/angular.bundle.sfx.js --minify --no-mangle",
+    "build:angular:application" : "jspm bundle-sfx dest/application.angular/app wwwroot/bundles/angular/app.bundle.sfx.js --minify --no-mangle",
+    "build:angular:anonymous" : "jspm bundle-sfx dest/application.angular/anonymous.app wwwroot/bundles/angular/anonymous.app.bundle.sfx.js --minify --no-mangle",
+    "build:angular": "npm run build:angular:application && npm run build:angular:anonymous",
     "web:build": "dnu build",
     "web:listen": "dnx web Hosting:Environment=Development",
     "web": "npm run web:build || npm run web:listen"
@@ -21,9 +23,6 @@
   },
   "homepage": "https://github.com/arborQ/ReactAngular#readme",
   "dependencies": {
-    "angular": "^1.4.8",
-    "angular-resource": "^1.4.8",
-    "angular-ui-router": "^0.2.15",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-concat-css": "^2.2.0",
@@ -44,23 +43,8 @@
       "baseURL": "wwwroot"
     },
     "dependencies": {
-      "Bonsanto/simple-http": "github:Bonsanto/simple-http@master",
-      "angular": "npm:angular@^1.4.8",
-      "angular-messages": "github:angular/bower-angular-messages@^1.4.8",
-      "angular-resource": "npm:angular-resource@^1.4.8",
-      "angular-ui-router": "github:angular-ui/ui-router@0.2.15",
-      "dimitrinicolas/marmottajax": "github:dimitrinicolas/marmottajax@master",
-      "jquery": "github:components/jquery@^2.1.4",
-      "material-ui": "npm:material-ui@0.13.4",
-      "q": "npm:q@^1.4.1",
-      "react": "npm:react@0.14",
-      "react-dom": "npm:react-dom@0.14",
-      "react-router": "npm:react-router@1.0.0"
     },
     "devDependencies": {
-      "babel": "npm:babel-core@^5.8.24",
-      "babel-runtime": "npm:babel-runtime@^5.8.24",
-      "core-js": "npm:core-js@^1.1.4"
     }
   }
 }
