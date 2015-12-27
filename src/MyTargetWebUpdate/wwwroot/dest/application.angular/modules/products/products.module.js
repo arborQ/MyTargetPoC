@@ -17,8 +17,8 @@ app.config(function ($stateProvider) {
         controller: productList_1.default,
         controllerAs: 'vm'
     });
-    $stateProvider.state(name + ".add", { url: "/add", controller: productCreate_1.default, controllerAs: 'vm', templateUrl: viewHelper_1.viewTemplateUrl('products', 'productDetails') });
-    $stateProvider.state(name + ".edit", { url: "/edit/:id", controller: productEdit_1.default, controllerAs: 'vm', templateUrl: viewHelper_1.viewTemplateUrl('products', 'productDetails') });
+    $stateProvider.state(name + ".add", { url: "/add", controller: productCreate_1.default, controllerAs: 'vm', templateUrl: viewHelper_1.viewTemplateUrl('products', 'productCreate') });
+    $stateProvider.state(name + ".edit", { url: "/edit/:id", controller: productEdit_1.default, controllerAs: 'vm', templateUrl: viewHelper_1.viewTemplateUrl('products', 'productEdit') });
 });
 app.filter('searchProducts', function () {
     return function (products, searchCriteria) {

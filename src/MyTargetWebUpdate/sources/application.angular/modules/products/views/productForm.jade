@@ -1,0 +1,18 @@
+.form-group(ng-class="dialogForm.productCode | danger")
+  label.control-label(for="product-code") Kod produktu
+  input.form-control.form-control-danger#product-code(type="text", name="productCode", ng-required="true", ng-maxlength="20", ng-model="vm.model.Code")
+  ng-messages(for="dialogForm.productCode.$error")
+    span.label.label-danger(ng-message="required") Kod jest wymagany
+    span.label.label-danger(ng-message="maxlength") Kod nie może być dłuższy niż 20 znakow
+.form-group(ng-class="dialogForm.productName | danger")
+  label.control-label(for="product-name") Nazwa produktu
+  input.form-control#product-name(type="text", name="productName", ng-required="true", ng-maxlength="20", ng-model="vm.model.Name")
+  ng-messages(for="dialogForm.productName.$error")
+    span.label.label-danger(ng-message="required") Nazwa jest wymagana
+    span.label.label-danger(ng-message="maxlength") Nazwa nie może być dłuższa niż 20 znakow
+.form-group(ng-class="dialogForm.productSize | danger")
+  label.control-label(for="product-size") Rozmiar
+  select.form-control#product-size(ng-required="true", name="productSize", ng-model="vm.model.Size", ng-options="option.id as option.name for option in vm.sizes track by option.id")
+.form-group(ng-class="dialogForm.productNetPrice | danger")
+  label.control-label(for="product-net-price") Cena netto (szt.)
+  input.form-control#product-net-price(type="number", min="0", name="productNetPrice", ng-required="true", ng-model="vm.model.NetPrice")

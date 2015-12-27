@@ -1,0 +1,7 @@
+extends ../../shared/views/_dialog
+
+block content
+  include ./productForm.jade
+block buttons
+  a.btn.btn-secondary(ui-sref="^") Anuluj
+  button.btn.btn-primary(type='submit', ng-disabled="formDialog.$invalid") Dodaj produkt
