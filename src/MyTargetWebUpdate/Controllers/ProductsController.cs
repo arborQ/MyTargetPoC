@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using Microsoft.AspNet.Mvc;
 using MyTargetWebUpdate.Models;
+using Microsoft.AspNet.Authorization;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,11 +15,12 @@ namespace MyTargetWebUpdate.Controllers
     [Route("api/[controller]")]
     public class ProductsController : ApiController
     {
-        private ApplicationDbContext DbContext { get; set; }
-
-        public ProductsController(ApplicationDbContext dbContext)
+        private readonly ApplicationDbContext DbContext;
+        private readonly IAuthorizationService AuthService;
+        public ProductsController(ApplicationDbContext dbContext, IAuthorizationService authService)
         {
             DbContext = dbContext;
+            AuthService = authService;
         }
 
         //// GET: api/values

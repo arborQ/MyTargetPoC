@@ -1,13 +1,14 @@
 import detailsBase from './productDetails'
 export default class productCreate extends detailsBase{
-  model : ng.resource.IResource<any>;
-  constructor(_service: ng.resource.IResourceClass<ng.resource.IResource<any>>, private $state : ng.ui.IStateService){
+  model : arbor.products.IProduct;
+  constructor(private $http : ng.IHttpService, private $state : ng.ui.IStateService){
     super();
-    this.model = new _service();
-    this.model.$resolved = true;
-    this.model["Size"] = null;
+    this.model = <arbor.products.IProduct>{};
+    this.model.Size = null;
   }
-  saveToServer(){
-    var id = this.model.$save(() => { this.$state.go('^', null , { reload : true});  });
+  saveToServer(form : ng.IFormController , model : arbor.products.IProduct){
+      this.$http.post<number>("/api/products", model).then((id) => {
+          this.$state.go('^.edit', { id : id.data });
+      });
   }
 }

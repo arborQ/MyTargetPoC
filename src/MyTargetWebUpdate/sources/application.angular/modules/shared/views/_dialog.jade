@@ -1,13 +1,14 @@
-.modal-open
-  .modal-backdrop.fade.in
-  .modal.fade.in(style="display:block;")
-    .modal-dialog(role='document')
-      .modal-content
-        .modal-header
-          h4.modal-title
-            block title 
-              span Default title
-        .modal-body
-          block content
-        .modal-footer
-          block buttons
+form(name="formDialog", ng-submit="vm.saveToServer(dialogForm, vm.model)")
+  .modal-open
+    .modal-backdrop.fade.in
+    .modal.fade.in(style="display:block;")
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header
+            h4.modal-title
+              block title 
+                span {{vm.PageTitle}}
+          .modal-body
+            block content
+          .modal-footer
+            block buttons

@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using MyTargetWebUpdate.Models;
+using Microsoft.AspNet.Authorization;
+using Microsoft.AspNet.Mvc.Filters;
 
 namespace MyTargetWebUpdate
 {
@@ -42,12 +44,32 @@ namespace MyTargetWebUpdate
                 .AddSqlServer()
                 .AddDbContext<ApplicationDbContext>(options =>
                     options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
+            
+            var defaultPolicy = new AuthorizationPolicyBuilder()
+            .RequireAuthenticatedUser()
+            .Build();
 
             //services.AddIdentity<ApplicationUser, IdentityRole>()
             //    .AddEntityFrameworkStores<ApplicationDbContext>()
             //    .AddDefaultTokenProviders();
-
-            services.AddMvc();
+            services.AddMvc(setup =>
+            {
+               setup.Filters.Add(new AuthorizeFilter(defaultPolicy));
+            });
+            // services.AddMvc();
+            services.AddAuthorization(options =>
+            {
+                // inline policies
+                options.AddPolicy("SalesOnly", policy =>
+                {
+                    policy.RequireClaim("department", "sales");
+                });
+                options.AddPolicy("SalesSenior", policy =>
+                {
+                    policy.RequireClaim("department", "sales");
+                    policy.RequireClaim("status", "senior");
+                });
+            });
 
             // Add application services.
             //services.AddTransient<IEmailSender, AuthMessageSender>();
@@ -86,6 +108,16 @@ namespace MyTargetWebUpdate
             app.UseIISPlatformHandler(options => options.AuthenticationDescriptions.Clear());
 
             app.UseStaticFiles();
+
+            app.UseCookieAuthentication(options =>
+            {
+                options.LoginPath = "/account/login";
+                options.AccessDeniedPath = "/account/forbidden";
+
+                options.AuthenticationScheme = "Cookies";
+                options.AutomaticAuthenticate = true;
+                options.AutomaticChallenge = true;
+            });
 
            // app.UseIdentity();
 

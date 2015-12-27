@@ -1,16 +1,18 @@
 var productDetails_1 = require('./productDetails');
 var productCreate = (function (_super) {
     __extends(productCreate, _super);
-    function productCreate(_service, $state) {
+    function productCreate($http, $state) {
         _super.call(this);
+        this.$http = $http;
         this.$state = $state;
-        this.model = new _service();
-        this.model.$resolved = true;
-        this.model["Size"] = null;
+        this.model = {};
+        this.model.Size = null;
     }
-    productCreate.prototype.saveToServer = function () {
+    productCreate.prototype.saveToServer = function (form, model) {
         var _this = this;
-        var id = this.model.$save(function () { _this.$state.go('^', null, { reload: true }); });
+        this.$http.post("/api/products", model).then(function (id) {
+            _this.$state.go('^.edit', { id: id.data });
+        });
     };
     return productCreate;
 })(productDetails_1.default);
