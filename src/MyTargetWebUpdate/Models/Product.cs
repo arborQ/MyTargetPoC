@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace MyTargetWebUpdate.Models
 {
@@ -22,5 +23,7 @@ namespace MyTargetWebUpdate.Models
         public decimal Tax { get; set; }
 
         public int StoredQuantity { get; set; }
+        
+        public List<StockChange> StockChanges { get; set; }
     }
 }

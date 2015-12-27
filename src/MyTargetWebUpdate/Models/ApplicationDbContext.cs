@@ -10,5 +10,7 @@ namespace MyTargetWebUpdate.Models
     public class ApplicationDbContext : DbContext
     {
         public DbSet<Product> Products { get; set; }
+        
+        public DbSet<StockChange> StockChanges { get; set; }
     }
 }
