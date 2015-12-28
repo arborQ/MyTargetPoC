@@ -1,5 +1,15 @@
-.card.page
+ui-view
+.card.page(ng-if="vm.model.length === 0")
+  .card-block
+    i Nie ma zmian w magazynie
+.card.page(ng-if="vm.model.length !== 0")
   .card-block 
     .row
       .col-lg-12 
-        span Bilans 
+        span Aktywnosc 
+  .list-group.list-group-flush
+    a.list-group-item(ui-sref=".edit({ id : product.Id})", ng-repeat="product in vm.model")
+      span 
+        span {{product.Name}} 
+        b ({{product.Size}})
+ 

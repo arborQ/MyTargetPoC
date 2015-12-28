@@ -1,0 +1,10 @@
+ul.nav.nav-tabs
+  li.nav-item
+    button.nav-link(ng-class="{ active : vm.model.AddProducts }", ng-click="vm.model.AddProducts = true") Dodaj
+  li.nav-item
+    button.nav-link(ng-class="{ active : !vm.model.AddProducts }", ng-click="vm.model.AddProducts = false") Sprzedaj
+.form-group(ng-class="dialogForm.quantity | danger")
+  label.control-label(for="quantity") Ilosc
+  input.form-control.form-control-danger#quantity(type="number", name="quantity", ng-required="true", min="1", ng-model="vm.model.Quantity")
+
+  

@@ -52,11 +52,11 @@ namespace MyTargetWebUpdate
             //services.AddIdentity<ApplicationUser, IdentityRole>()
             //    .AddEntityFrameworkStores<ApplicationDbContext>()
             //    .AddDefaultTokenProviders();
-            services.AddMvc(setup =>
-            {
-               setup.Filters.Add(new AuthorizeFilter(defaultPolicy));
-            });
-            // services.AddMvc();
+            // services.AddMvc(setup =>
+            // {
+            //    setup.Filters.Add(new AuthorizeFilter(defaultPolicy));
+            // });
+            services.AddMvc();
             services.AddAuthorization(options =>
             {
                 // inline policies

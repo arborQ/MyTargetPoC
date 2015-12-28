@@ -1,5 +1,7 @@
 var bilansCreate = (function () {
     function bilansCreate() {
+        this.model = { AddProducts: true, Quantity: 1 };
+        this.PageTitle = 'Dodaj bilans';
     }
     return bilansCreate;
 })();

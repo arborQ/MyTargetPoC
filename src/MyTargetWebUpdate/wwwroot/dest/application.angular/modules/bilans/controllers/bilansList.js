@@ -1,5 +1,6 @@
 var bilansList = (function () {
     function bilansList() {
+        this.model = [];
     }
     return bilansList;
 })();

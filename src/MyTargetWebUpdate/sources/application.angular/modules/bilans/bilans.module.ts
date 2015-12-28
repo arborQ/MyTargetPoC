@@ -10,7 +10,7 @@ var app = angular.module(name, [ 'ui.router', 'ngResource', 'ngMessages']);
 
 app.config(($stateProvider : ng.ui.IStateProvider) => {
   $stateProvider.state(name, {
-    url : '/bilans/:code/:id',
+    url : '/bilans/:id',
     resolve : {
       _serviceUrl : () => 'api/StockChange'
     },
@@ -18,8 +18,8 @@ app.config(($stateProvider : ng.ui.IStateProvider) => {
     controller : controller,
     controllerAs : 'vm'
   });
-
-  $stateProvider.state(`${name}.change`, { url : "/change", controller : createController, controllerAs : 'vm', templateUrl : viewTemplateUrl('bilans', 'bilansCreate')});
+  
+  $stateProvider.state(`${name}.change`, { url : "/change/:id", controller : createController, controllerAs : 'vm', templateUrl : viewTemplateUrl('bilans', 'bilansCreate')});
 });
 
 export default name;

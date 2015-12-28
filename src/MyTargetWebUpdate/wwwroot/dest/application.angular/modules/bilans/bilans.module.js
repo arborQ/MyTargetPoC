@@ -8,7 +8,7 @@ var name = "arbor-bilans-module";
 var app = angular.module(name, ['ui.router', 'ngResource', 'ngMessages']);
 app.config(function ($stateProvider) {
     $stateProvider.state(name, {
-        url: '/bilans/:code/:id',
+        url: '/bilans/:id',
         resolve: {
             _serviceUrl: function () { return 'api/StockChange'; }
         },
@@ -16,7 +16,7 @@ app.config(function ($stateProvider) {
         controller: bilansList_1.default,
         controllerAs: 'vm'
     });
-    $stateProvider.state(name + ".change", { url: "/change", controller: bilansCreate_1.default, controllerAs: 'vm', templateUrl: viewHelper_1.viewTemplateUrl('bilans', 'bilansCreate') });
+    $stateProvider.state(name + ".change", { url: "/change/:id", controller: bilansCreate_1.default, controllerAs: 'vm', templateUrl: viewHelper_1.viewTemplateUrl('bilans', 'bilansCreate') });
 });
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = name;
