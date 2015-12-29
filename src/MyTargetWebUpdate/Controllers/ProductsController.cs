@@ -49,11 +49,11 @@ namespace MyTargetWebUpdate.Controllers
 
         // POST api/values
         [HttpPost]
-        public long Post([FromBody]Product value)
+        public ActionResult Post([FromBody]Product value)
         {
             DbContext.Products.Add(value);
             DbContext.SaveChanges();
-            return value.Id;
+            return Ok(value);
         }
 
         // PUT api/values/5

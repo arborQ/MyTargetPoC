@@ -1,6 +1,11 @@
 var bilansList = (function () {
-    function bilansList() {
+    function bilansList($http) {
+        var _this = this;
+        this.$http = $http;
         this.model = [];
+        $http.get('/api/stockChange').then(function (data) {
+            _this.model = data.data;
+        });
     }
     return bilansList;
 })();

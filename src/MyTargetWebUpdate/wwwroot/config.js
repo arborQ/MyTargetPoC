@@ -14,6 +14,7 @@ System.config({
   },
 
   map: {
+    "arbor.controllers" : "dest/application.angular/modules/shared/modelController",
     "Bonsanto/simple-http": "github:Bonsanto/simple-http@master",
     "angular": "npm:angular@1.4.8",
     "angular-messages": "github:angular/bower-angular-messages@1.4.8",

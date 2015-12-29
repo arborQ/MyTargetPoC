@@ -7,6 +7,13 @@ var productCreate_1 = require('./controllers/productCreate');
 var productEdit_1 = require('./controllers/productEdit');
 var name = "arbor-products-module";
 var app = angular.module(name, ['ui.router', 'ngResource', 'ngMessages']);
+app.constant('productSizes', [
+    { id: 'S', name: "S" },
+    { id: 'M', name: "M" },
+    { id: 'L', name: "L" },
+    { id: 'XL', name: "XL" },
+    { id: 'XXL', name: "XXL" },
+]);
 app.config(function ($stateProvider) {
     $stateProvider.state(name, {
         url: '/products',

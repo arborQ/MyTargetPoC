@@ -1,19 +1,18 @@
 import detailsBase from './productDetails'
-export default class productEdit extends detailsBase implements arbor.ui.IDialogPage {
+import { EditModelController } from "arbor.controllers";
+
+export default class productEdit extends EditModelController<arbor.products.IProduct> implements arbor.ui.IDialogPage {
   model : any;
   PageTitle : string;
-  constructor(private $http : ng.IHttpService, private $state : any, private $stateParams : ng.ui.IStateService){
-    super();
-    $http.get<arbor.products.IProduct>(`/api/products`, { params : { id : $stateParams["id"] } })
-      .then((result) => {
-        this.PageTitle = `Edytuj produkt "${result.data.Name}"`;
-        this.model = result.data;
-      });
-  }
-  saveToServer(form : ng.IFormController , model : arbor.products.IProduct){
-    this.$http.put('/api/products', model, { params : { id : this.$stateParams["id"] } })
-    .then(() => {
-      this.$state.go('^', {}, { reload: true });
-    });
+  sizes : any;
+  constructor(
+    $http : ng.IHttpService,
+    $state : ng.ui.IStateService,
+    $stateParams : ng.ui.IStateService,
+    productSizes : any) {
+    super('/api/products', $http, { id : $stateParams["id"] });
+    this.sizes = productSizes;
+
+    this.onServerSaved = () => { $state.go('^', {}, { reload: true }); };
   }
 }

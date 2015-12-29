@@ -1,10 +1,15 @@
-export default class ProductList{
-  model : ng.resource.IResourceArray<any>;
+import { ModelController } from "arbor.controllers";
+
+export default class ProductList extends ModelController<arbor.products.IProduct[]>{
   search : arbor.products.ISearchCriteria;
 
-    constructor(_service: any) {
-        this.search = <arbor.products.ISearchCriteria>{ $showAdvanceSearch : false };
-        this.model = _service.query();
-    }
+  constructor($http : ng.IHttpService) {
+      super("/api/products", $http)
+      this.search = <arbor.products.ISearchCriteria>{ $showAdvanceSearch : false };
+  }
+  defaultModel(){
+    return new Array<arbor.products.IProduct>();
+  }
+
 
 }

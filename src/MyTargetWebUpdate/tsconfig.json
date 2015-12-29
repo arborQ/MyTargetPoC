@@ -14,8 +14,8 @@
         "emitDecoratorMetadata": true
     },
     "filesGlob": [
-        "!./node_modules/**/*",
-        "!./wwwroot/jspm_packages/**/*",
+        "!./node_modules",
+        "!./wwwroot/jspm_packages",
         "./typings/**/*.d.ts",
         "./sources/**/*.ts",
         "./sources/**/*.tsx"
@@ -35,6 +35,9 @@
         "./typings/tsd.d.ts",
         "./sources/application.angular/anonymous.app.ts",
         "./sources/application.angular/app.ts",
+        "./sources/application.angular/modules/bilans/bilans.module.ts",
+        "./sources/application.angular/modules/bilans/controllers/bilansCreate.ts",
+        "./sources/application.angular/modules/bilans/controllers/bilansList.ts",
         "./sources/application.angular/modules/interfaces/IEntity.d.ts",
         "./sources/application.angular/modules/interfaces/ui/ISelectable.d.ts",
         "./sources/application.angular/modules/login/controllers/loginPage.ts",
@@ -52,7 +55,11 @@
         "./sources/application.angular/modules/setup/pages.ts",
         "./sources/application.angular/modules/setup/viewHelper.ts",
         "./sources/application.angular/modules/shared/common.ts",
+        "./sources/application.angular/modules/shared/controllers/editModelController.ts",
+        "./sources/application.angular/modules/shared/controllers/modelController.ts",
         "./sources/application.angular/modules/shared/interfaces/dialogPage.d.ts",
+        "./sources/application.angular/modules/shared/interfaces/modelController.d.ts",
+        "./sources/application.angular/modules/shared/modelController.ts",
         "./sources/application.angular/modules/users/controllers/userDisplay.ts",
         "./sources/application.angular/modules/users/controllers/userList.ts",
         "./sources/application.angular/modules/users/interfaces/user.d.ts",

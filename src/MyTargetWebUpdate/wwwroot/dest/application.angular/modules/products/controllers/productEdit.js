@@ -1,26 +1,12 @@
-var productDetails_1 = require('./productDetails');
+var arbor_controllers_1 = require("arbor.controllers");
 var productEdit = (function (_super) {
     __extends(productEdit, _super);
-    function productEdit($http, $state, $stateParams) {
-        var _this = this;
-        _super.call(this);
-        this.$http = $http;
-        this.$state = $state;
-        this.$stateParams = $stateParams;
-        $http.get("/api/products", { params: { id: $stateParams["id"] } })
-            .then(function (result) {
-            _this.PageTitle = "Edytuj produkt \"" + result.data.Name + "\"";
-            _this.model = result.data;
-        });
+    function productEdit($http, $state, $stateParams, productSizes) {
+        _super.call(this, '/api/products', $http, { id: $stateParams["id"] });
+        this.sizes = productSizes;
+        this.onServerSaved = function () { $state.go('^', {}, { reload: true }); };
     }
-    productEdit.prototype.saveToServer = function (form, model) {
-        var _this = this;
-        this.$http.put('/api/products', model, { params: { id: this.$stateParams["id"] } })
-            .then(function () {
-            _this.$state.go('^', {}, { reload: true });
-        });
-    };
     return productEdit;
-})(productDetails_1.default);
+})(arbor_controllers_1.EditModelController);
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = productEdit;

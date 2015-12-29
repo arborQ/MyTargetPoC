@@ -1,20 +1,14 @@
-var productDetails_1 = require('./productDetails');
+var productEdit_1 = require('./productEdit');
 var productCreate = (function (_super) {
     __extends(productCreate, _super);
-    function productCreate($http, $state) {
-        _super.call(this);
-        this.$http = $http;
-        this.$state = $state;
-        this.model = {};
-        this.model.Size = null;
+    function productCreate($http, $state, $stateParams, productSizes) {
+        this.onServerSaved = function (data) {
+            $state.go('^.edit', { id: data.data.Id });
+        };
+        _super.call(this, $http, $state, $stateParams, productSizes);
     }
-    productCreate.prototype.saveToServer = function (form, model) {
-        var _this = this;
-        this.$http.post("/api/products", model).then(function (id) {
-            _this.$state.go('^.edit', { id: id.data });
-        });
-    };
+    productCreate.prototype.loadData = function () { };
     return productCreate;
-})(productDetails_1.default);
+})(productEdit_1.default);
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = productCreate;

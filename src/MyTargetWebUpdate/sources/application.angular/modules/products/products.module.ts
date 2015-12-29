@@ -9,6 +9,14 @@ import editController from './controllers/productEdit';
 var name = "arbor-products-module";
 var app = angular.module(name, [ 'ui.router', 'ngResource', 'ngMessages']);
 
+app.constant('productSizes', [
+  { id : 'S', name : "S"},
+  { id : 'M', name : "M"},
+  { id : 'L', name : "L"},
+  { id : 'XL', name : "XL"},
+  { id : 'XXL', name : "XXL"},
+]);
+
 app.config(($stateProvider : ng.ui.IStateProvider) => {
   $stateProvider.state(name, {
     url : '/products',

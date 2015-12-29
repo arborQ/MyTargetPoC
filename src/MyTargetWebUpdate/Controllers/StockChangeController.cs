@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Web.Http;
 using Microsoft.AspNet.Mvc;
+using MyTargetWebUpdate.Controllers.Models;
 using MyTargetWebUpdate.Models;
 
 namespace MyTargetWebUpdate.Controllers
@@ -21,6 +22,24 @@ namespace MyTargetWebUpdate.Controllers
         {
           var changes = DbContext.StockChanges.ToList();
           return Ok(changes);
+        }
+        
+        [HttpPost]
+        public ActionResult AddChange([FromBody]StockChangeModel model)
+        {
+          
+          var product = DbContext.Products.FirstOrDefault(p => p.Id == model.ProductId);
+          if (product == null)
+          {
+            return Ok(model);
+          }
+          
+          DbContext.StockChanges.Add(new StockChange {
+             RelatedProduct = product, Value = model.Quantity
+          });
+          
+          DbContext.SaveChanges();
+          return Ok();
         }
     }
 }
