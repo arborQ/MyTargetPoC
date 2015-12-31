@@ -1,13 +1,11 @@
-var bilansList = (function () {
+var arbor_controllers_1 = require('arbor.controllers');
+var bilansList = (function (_super) {
+    __extends(bilansList, _super);
     function bilansList($http) {
-        var _this = this;
+        _super.call(this, '/api/stockChange', $http);
         this.$http = $http;
-        this.model = [];
-        $http.get('/api/stockChange').then(function (data) {
-            _this.model = data.data;
-        });
     }
     return bilansList;
-})();
+})(arbor_controllers_1.ModelController);
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = bilansList;

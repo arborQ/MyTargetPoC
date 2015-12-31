@@ -8,10 +8,12 @@ var modelController = (function () {
     }
     modelController.prototype.loadData = function () {
         var _this = this;
-        return this.$http.get(this.serviceUrl, { params: this.params })
+        this.$isLoading = true;
+        this.$http.get(this.serviceUrl, { params: this.params })
             .then(function (result) {
             _this.model = result.data;
-            return result;
+        }).finally(function () {
+            _this.$isLoading = false;
         });
     };
     modelController.prototype.defaultModel = function () {

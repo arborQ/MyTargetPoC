@@ -8,25 +8,28 @@
         button.btn.btn-info(ng-disabled="true")
           span.fa.fa-terminal
           span.sm-hide Czyść filtr
-        button.btn.btn-info(ng-click="vm.search.$showAdvanceSearch = !vm.search.$showAdvanceSearch") 
+        button.btn.btn-info(ng-click="vm.search.$showAdvanceSearch = !vm.search.$showAdvanceSearch")
           span.fa(ng-class="{ false : 'fa-search-plus', true : 'fa-search-minus' }[vm.search.$showAdvanceSearch]")
           span.sm-hide {{vm.search.$showAdvanceSearch ? 'Podstawowy filtr' : 'Zaawansowany filtr'}}
-        button.btn.btn-success(ui-sref='.add') 
+        button.btn.btn-success(ui-sref='.add')
           span.fa.fa-plus
           span.sm-hide Dodaj nowy produkt
-.card.page(ng-if="(vm.model | searchProducts:vm.search).length == 0")
-  .card-block
-    i
-      span Nie znaleziono produktow 
-      b(ng-show="vm.search.FreeText") '{{vm.search.FreeText}}'
-.card.page(ng-if="!(vm.model | searchProducts:vm.search).length == 0")
-  .card-block 
-    .row
-      .col-lg-12 
-        span Produkty 
-  .list-group.list-group-flush
-    a.list-group-item(ui-sref=".edit({ id : product.Id})", ng-repeat="product in vm.model | searchProducts:vm.search")
-      span 
-        span {{product.Name}} 
-        b ({{product.Size}})
-      span.label.label-default.label-pill.pull-right {{product.StoredQuantity}} szt.
+.loading_placeholder(ng-if="vm.$isLoading")
+  .loading.main
+div(ng-if="!vm.$isLoading")
+  .card.page(ng-if="(vm.model | searchProducts:vm.search).length == 0")
+    .card-block
+      i
+        span Nie znaleziono produktow
+        b(ng-show="vm.search.FreeText") '{{vm.search.FreeText}}'
+  .card.page(ng-if="!(vm.model | searchProducts:vm.search).length == 0")
+    .card-block
+      .row
+        .col-lg-12
+          span Produkty
+    .list-group.list-group-flush
+      a.list-group-item(ui-sref=".edit({ id : product.Id})", ng-repeat="product in vm.model | searchProducts:vm.search")
+        span
+          span {{product.Name}}
+          b ({{product.Size}})
+        span.label.label-default.label-pill.pull-right {{product.StoredQuantity}} szt.

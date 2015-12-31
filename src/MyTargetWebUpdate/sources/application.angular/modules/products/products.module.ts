@@ -5,6 +5,7 @@ import { viewTemplateUrl } from '../setup/viewHelper';
 import controller from './controllers/productList';
 import createController from './controllers/productCreate';
 import editController from './controllers/productEdit';
+import changeBilnasController from '../bilans/controllers/bilansCreate';
 
 var name = "arbor-products-module";
 var app = angular.module(name, [ 'ui.router', 'ngResource', 'ngMessages']);
@@ -30,6 +31,7 @@ app.config(($stateProvider : ng.ui.IStateProvider) => {
 
   $stateProvider.state(`${name}.add`, { url : "/add", controller : createController, controllerAs : 'vm', templateUrl : viewTemplateUrl('products', 'productCreate')});
   $stateProvider.state(`${name}.edit`, { url : "/edit/:id", controller : editController, controllerAs : 'vm', templateUrl : viewTemplateUrl('products', 'productEdit')});
+  $stateProvider.state(`${name}.change`, { url : "/change/:id", controller : changeBilnasController, controllerAs : 'vm', templateUrl : viewTemplateUrl('products', 'bilansChange')});
 });
 
 

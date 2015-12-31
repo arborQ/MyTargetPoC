@@ -10,6 +10,4 @@ export default class ProductList extends ModelController<arbor.products.IProduct
   defaultModel(){
     return new Array<arbor.products.IProduct>();
   }
-
-
 }

@@ -3,7 +3,11 @@ form(name="formDialog", ng-submit="vm.saveToServer(formDialog, vm.model)")
     .modal-backdrop.fade.in
     .modal.fade.in(style="display:block;")
       .modal-dialog(role='document')
-        .modal-content
+        .modal-content(ng-show="vm.$isLoading")
+          .modal-body
+            .loading_placeholder
+              .loading.main
+        .modal-content(ng-show="!vm.$isLoading")
           .modal-header
             h4.modal-title
               block title

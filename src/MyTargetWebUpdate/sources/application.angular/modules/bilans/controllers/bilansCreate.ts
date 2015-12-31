@@ -1,18 +1,16 @@
-export default class bilansCreate implements arbor.ui.IDialogPage {
+import { CreateModelController } from 'arbor.controllers';
+export default class bilansCreate extends CreateModelController<any> implements arbor.ui.IDialogPage {
   PageTitle : string;
-  model : { AddProducts : boolean, Quantity : number, ProductId : number }
-  constructor(private $http : ng.IHttpService, private $state : ng.ui.IStateService, $stateParams : ng.ui.IStateParamsService){
-    this.model = { AddProducts : true, Quantity : 1, ProductId : $stateParams["id"] };
+  constructor($http : ng.IHttpService, $stateParams : ng.ui.IStateService, private $state : ng.ui.IStateService){
+    super('/api/stockChange', $http, { ProductId : $stateParams["id"] });
     this.PageTitle = 'Dodaj bilans';
+
+    this.onServerSaved = () => {
+      this.$state.go('^', {}, { reload : true });
+    };
   }
-  
-  saveToServer(form : ng.IFormController, data : any){
-    console.log(form);
-    console.log(data);
-    if(form.$valid){
-      this.$http.post('/api/stockChange', data).then(() => {
-          this.$state.go('arbor-bilans-module', {}, { reload : true });
-      });
-    }
+
+  defaultModel() {
+    return { AddProducts : true, Quantity : 1, ProductId : this.params["ProductId"] };
   }
 }

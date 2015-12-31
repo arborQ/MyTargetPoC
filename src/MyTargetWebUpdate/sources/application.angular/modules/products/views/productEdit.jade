@@ -3,6 +3,6 @@ extends ../../shared/views/_dialog
 block content
   include ./productForm.jade
 block buttons
-  a.btn.btn-secondary(ui-sref="arbor-bilans-module.change({ id : vm.model.Id, code : vm.model.Code })") Zobacz bilans
+  a.btn.btn-secondary(ui-sref="^.change({ id : vm.model.Id, code : vm.model.Code })") Zmień stan magazynu
   a.btn.btn-secondary(ui-sref="^") Anuluj
   button.btn.btn-primary(type='submit', ng-disabled="formDialog.$invalid") Zapisz zmiany

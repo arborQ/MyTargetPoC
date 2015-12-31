@@ -5,7 +5,13 @@ var editModelController = (function (_super) {
         _super.apply(this, arguments);
     }
     editModelController.prototype.saveToServer = function (form, model) {
-        this.$http.put(this.serviceUrl, model, { params: this.params }).then(this.onServerSaved);
+        var _this = this;
+        this.$isLoading = true;
+        this.$http.put(this.serviceUrl, model, { params: this.params })
+            .then(this.onServerSaved)
+            .finally(function () {
+            _this.$isLoading = false;
+        });
     };
     editModelController.prototype.onServerSaved = function (data) { };
     ;

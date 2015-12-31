@@ -1,4 +1,3 @@
-import detailsBase from './productDetails'
 import { EditModelController } from "arbor.controllers";
 
 export default class productEdit extends EditModelController<arbor.products.IProduct> implements arbor.ui.IDialogPage {

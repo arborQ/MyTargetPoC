@@ -5,6 +5,7 @@ var viewHelper_1 = require('../setup/viewHelper');
 var productList_1 = require('./controllers/productList');
 var productCreate_1 = require('./controllers/productCreate');
 var productEdit_1 = require('./controllers/productEdit');
+var bilansCreate_1 = require('../bilans/controllers/bilansCreate');
 var name = "arbor-products-module";
 var app = angular.module(name, ['ui.router', 'ngResource', 'ngMessages']);
 app.constant('productSizes', [
@@ -26,6 +27,7 @@ app.config(function ($stateProvider) {
     });
     $stateProvider.state(name + ".add", { url: "/add", controller: productCreate_1.default, controllerAs: 'vm', templateUrl: viewHelper_1.viewTemplateUrl('products', 'productCreate') });
     $stateProvider.state(name + ".edit", { url: "/edit/:id", controller: productEdit_1.default, controllerAs: 'vm', templateUrl: viewHelper_1.viewTemplateUrl('products', 'productEdit') });
+    $stateProvider.state(name + ".change", { url: "/change/:id", controller: bilansCreate_1.default, controllerAs: 'vm', templateUrl: viewHelper_1.viewTemplateUrl('products', 'bilansChange') });
 });
 app.filter('searchProducts', function () {
     return function (products, searchCriteria) {
