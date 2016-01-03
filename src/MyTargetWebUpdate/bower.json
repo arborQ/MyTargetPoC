@@ -22,6 +22,8 @@
     "bootstrap": "^4.0.0-alpha",
     "holderjs": "~2.9.0",
     "headroom.js": "~0.7.0",
-    "font-awesome": "~4.5.0"
+    "font-awesome": "~4.5.0",
+    "angular-loading-bar": "~0.8.0",
+    "AngularJS-Toaster": "angularjs-toaster#~0.4.181"
   }
 }

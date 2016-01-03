@@ -21,7 +21,9 @@
         "./sources/**/*.tsx"
     ],
     "files": [
+        "./typings/angular-loading-bar/angular-loading-bar.d.ts",
         "./typings/angular-ui-router/angular-ui-router.d.ts",
+        "./typings/angularjs-toaster/angularjs-toaster.d.ts",
         "./typings/angularjs/angular-resource.d.ts",
         "./typings/angularjs/angular.d.ts",
         "./typings/history/history.d.ts",
@@ -58,7 +60,9 @@
         "./sources/application.angular/modules/shared/controllers/editModelController.ts",
         "./sources/application.angular/modules/shared/controllers/modelController.ts",
         "./sources/application.angular/modules/shared/interfaces/dialogPage.d.ts",
+        "./sources/application.angular/modules/shared/interfaces/loadingBar.d.ts",
         "./sources/application.angular/modules/shared/interfaces/modelController.d.ts",
+        "./sources/application.angular/modules/shared/interfaces/toaster.d.ts",
         "./sources/application.angular/modules/shared/modelController.ts",
         "./sources/application.angular/modules/users/controllers/userDisplay.ts",
         "./sources/application.angular/modules/users/controllers/userList.ts",

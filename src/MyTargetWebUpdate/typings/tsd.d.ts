@@ -9,3 +9,5 @@
 /// <reference path="react-router/history.d.ts" />
 /// <reference path="material-ui/material-ui.d.ts" />
 /// <reference path="q/Q.d.ts" />
+/// <reference path="angular-loading-bar/angular-loading-bar.d.ts" />
+/// <reference path="angularjs-toaster/angularjs-toaster.d.ts" />

@@ -23,14 +23,6 @@ namespace MyTargetWebUpdate.Controllers
             AuthService = authService;
         }
 
-        //// GET: api/values
-        // [HttpGet]
-        // public IEnumerable<Product> Get()
-        // {
-        //    var products =  DbContext.Products.ToList();
-        //    return Ok(products);
-        // }
-
         // GET api/values/5
         [HttpGet]
         public ActionResult GetProduct(long? id)

@@ -37,6 +37,12 @@
     },
     "q/Q.d.ts": {
       "commit": "5e960679e6f9ae6ce905b1db0ad36fc189cd2eca"
+    },
+    "angular-loading-bar/angular-loading-bar.d.ts": {
+      "commit": "fe563dff3428bac1260d1794e2c2ecf8f097535a"
+    },
+    "angularjs-toaster/angularjs-toaster.d.ts": {
+      "commit": "fe563dff3428bac1260d1794e2c2ecf8f097535a"
     }
   }
 }

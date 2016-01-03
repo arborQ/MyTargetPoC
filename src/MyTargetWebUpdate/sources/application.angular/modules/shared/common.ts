@@ -1,6 +1,7 @@
 import 'angular-ui-router';
 import { module } from 'angular';
-
+import 'angularjs-toaster';
+import * as loadingBar from "angular-loading-bar";
 import applicationController from '../../modules/setup/controller';
 import { viewTemplateUrl } from '../../modules/setup/viewHelper';
 
@@ -40,18 +41,36 @@ var registerFilters = (app : ng.IModule) => {
       }
     };
   });
-}
+};
 
+var registerProviders = (app : ng.IModule) => {
+  app.factory('arborInterceptor', ['$q','toaster', ($q : ng.IQService, toaster : ngtoaster.IToasterService) => {
+    return {
+      'response': function(res : any) {
+      if(res.data._messageData && res.data._contentData){
+        toaster.info("info", res.data._messageData);
+        res.data = res.data._contentData;
+      }
+      return res;
+    }
+    };
+  }]);
+};
 export default function registerApplication({ pages, applicationConfig, itemDictionary }){
   var pageCodes = pages.map((p : any) => p.name);
   pageCodes.push('ui.router');
+  pageCodes.push('toaster');
+  pageCodes.push(loadingBar);
   var app = module("app", pageCodes);
   app.config(applicationConfig);
-
+  app.config(['$httpProvider', ($httpProvider : ng.IHttpProvider) => {
+    $httpProvider.interceptors.push('arborInterceptor');
+  }]);
   var menuOptions = pages.filter((p : any) => p.showNavigation).map((p : any) => p.name);
   app.constant('menuOptions', menuOptions);
   app.constant('itemDictionary', itemDictionary);
 
   registerDirectives(app);
   registerFilters(app);
+  registerProviders(app);
 }

@@ -14,12 +14,14 @@ System.config({
   },
 
   map: {
-    "arbor.controllers" : "dest/application.angular/modules/shared/modelController",
     "Bonsanto/simple-http": "github:Bonsanto/simple-http@master",
     "angular": "npm:angular@1.4.8",
+    "angular-loading-bar": "npm:angular-loading-bar@0.8.0",
     "angular-messages": "github:angular/bower-angular-messages@1.4.8",
     "angular-resource": "npm:angular-resource@1.4.8",
     "angular-ui-router": "github:angular-ui/ui-router@0.2.15",
+    "angularjs-toaster": "npm:angularjs-toaster@0.4.15",
+    "arbor.controllers": "dest/application.angular/modules/shared/modelController",
     "babel": "npm:babel-core@5.8.34",
     "babel-runtime": "npm:babel-runtime@5.8.34",
     "core-js": "npm:core-js@1.2.6",
