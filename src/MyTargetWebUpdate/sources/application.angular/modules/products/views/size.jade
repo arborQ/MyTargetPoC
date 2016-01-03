@@ -2,7 +2,4 @@
   .col-lg-12
     label.control-label(for="search-price-to") Wybierz rozmiary
     .btn-group(style="width : 100%;")
-      button.btn.btn-secondary M
-      button.btn.btn-secondary L
-      button.btn.btn-secondary XL
-      button.btn.btn-secondary XXL
+      button.btn.btn-secondary(ng-repeat="size in vm.productSizes", ng-class="{ 'active' : (vm.search.Size | sizeSelected:size) }", ng-click="vm.toggleSizeFilter(size)") {{size}}

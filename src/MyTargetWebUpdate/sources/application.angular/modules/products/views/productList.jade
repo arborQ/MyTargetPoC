@@ -5,7 +5,7 @@
       include ./filterForm
     .card-footer.text-right
       .btn-group
-        button.btn.btn-info(ng-disabled="true")
+        button.btn.btn-default(ng-click="vm.setDefaultFilerState()")
           span.fa.fa-terminal
           span.sm-hide Czyść filtr
         button.btn.btn-info(ng-click="vm.search.$showAdvanceSearch = !vm.search.$showAdvanceSearch")
@@ -33,4 +33,4 @@ div(ng-if="!vm.$isLoading")
         span
           span {{product.Name}}
           b ({{product.Size}})
-        span.label.label-default.label-pill.pull-right {{product.StoredQuantity}} szt.
+        span.label.label-default.label-pill.pull-right {{product.StoredQuantity}} szt. / {{product.NetPrice}}zł

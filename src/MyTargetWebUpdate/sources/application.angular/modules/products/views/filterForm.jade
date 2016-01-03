@@ -11,7 +11,7 @@
 .row(ng-show="vm.search.$showAdvanceSearch")
   .col.col-lg-6
     .form-group
-      include ./price
+      product-range-filter(from="vm.search.NetPrice.MinValue", to="vm.search.NetPrice.MaxValue", name="Cena")
   .col.col-lg-6
     .form-group
-      include ./price
+      product-range-filter(from="vm.search.Quantity.MinValue", to="vm.search.Quantity.MaxValue", name="Ilość")

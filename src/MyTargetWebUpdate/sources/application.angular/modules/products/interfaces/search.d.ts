@@ -1,7 +1,7 @@
 declare module arbor.products{
   interface IRangeCriteria{
-    MinValue: number;
-    MaxValue: number;
+    MinValue?: number;
+    MaxValue?: number;
   }
   interface ISearchCriteria{
       FreeText : string;
