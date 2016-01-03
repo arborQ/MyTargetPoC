@@ -5,6 +5,7 @@ declare namespace __arborApp{
     loadData() : void;
     defaultModel() : T;
     $isLoading : boolean;
+    PageTitle : string;
   }
 
   export class editModelController<T> extends modelController<T>{

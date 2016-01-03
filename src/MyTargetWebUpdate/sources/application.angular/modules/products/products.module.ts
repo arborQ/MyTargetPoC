@@ -10,13 +10,7 @@ import changeBilnasController from '../bilans/controllers/bilansCreate';
 var name = "arbor-products-module";
 var app = angular.module(name, [ 'ui.router', 'ngResource', 'ngMessages']);
 
-app.constant('productSizes', [
-  { id : 'S', name : "S"},
-  { id : 'M', name : "M"},
-  { id : 'L', name : "L"},
-  { id : 'XL', name : "XL"},
-  { id : 'XXL', name : "XXL"},
-]);
+app.constant('productSizes', [ "XS", "S", "M","L", "XL", "XXL", "Inny" ]);
 
 app.config(($stateProvider : ng.ui.IStateProvider) => {
   $stateProvider.state(name, {

@@ -21,7 +21,8 @@ div(ng-if="!vm.$isLoading")
     .card-block
       i
         span Nie znaleziono produktow
-        b(ng-show="vm.search.FreeText") '{{vm.search.FreeText}}'
+        b(ng-show="vm.search.FreeText") &nbsp;'{{vm.search.FreeText}}'
+        a(ui-sref=".add") &nbsp;Dodaj nowy
   .card.page(ng-if="!(vm.model | searchProducts:vm.search).length == 0")
     .card-block
       .row

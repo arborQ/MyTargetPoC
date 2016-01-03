@@ -6,6 +6,7 @@ export default class productCreate extends CreateModelController<arbor.products.
     $state : ng.ui.IStateService,
     $stateParams : ng.ui.IStateService,
     productSizes : any) {
+      this.PageTitle = "Dodaj produkt";
       this.sizes = productSizes;
 
       this.onServerSaved = (data : ng.IHttpPromiseCallbackArg<arbor.products.IProduct>) => {

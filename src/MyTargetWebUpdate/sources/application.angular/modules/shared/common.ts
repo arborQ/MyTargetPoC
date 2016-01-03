@@ -30,6 +30,14 @@ var registerDirectives = (app : ng.IModule) => {
       `
     };
   });
+
+  app.directive("validateInput", () => {
+    return {
+      restrict : 'E',
+      scope : { 'error' : '=' },
+      templateUrl : viewTemplateUrl('shared', '_validate')
+    }
+  });
 }
 var registerFilters = (app : ng.IModule) => {
   app.filter('danger', () => {
