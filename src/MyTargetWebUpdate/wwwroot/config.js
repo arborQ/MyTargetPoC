@@ -16,6 +16,7 @@ System.config({
   map: {
     "Bonsanto/simple-http": "github:Bonsanto/simple-http@master",
     "angular": "npm:angular@1.4.8",
+    "angular-bootstrap": "npm:angular-bootstrap@0.12.2",
     "angular-loading-bar": "npm:angular-loading-bar@0.8.0",
     "angular-messages": "github:angular/bower-angular-messages@1.4.8",
     "angular-resource": "npm:angular-resource@1.4.8",
