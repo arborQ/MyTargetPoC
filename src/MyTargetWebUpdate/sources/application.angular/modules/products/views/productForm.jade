@@ -1,14 +1,20 @@
 .form-group(ng-class="formDialog.productCode | danger")
   label.control-label(for="product-code") Kod produktu
-  input.form-control.form-control-danger#product-code(type="text", name="productCode", ng-required="true", ng-maxlength="20", ng-model="vm.model.Code")
+  input.form-control.form-control-danger#product-code(type="text", name="productCode", ng-required="true", ng-maxlength="50", ng-model="vm.model.Code")
   validate-input(error="formDialog.productCode")
 .form-group(ng-class="formDialog.productName | danger")
   label.control-label(for="product-name") Nazwa produktu
-  input.form-control#product-name(type="text", name="productName", ng-required="true", ng-maxlength="20", ng-model="vm.model.Name")
+  input.form-control#product-name(type="text", name="productName", ng-required="true", ng-maxlength="100", ng-model="vm.model.Name")
   validate-input(error="formDialog.productName")
 .form-group(ng-class="formDialog.productSize | danger")
   label.control-label(for="product-size") Rozmiar
   select.form-control#product-size(ng-required="true", name="productSize", ng-model="vm.model.Size", ng-options="option as option for option in vm.sizes")
+  validate-input(error="formDialog.productSize")
+ .form-group(ng-class="formDialog.color | danger")
+  label.control-label(for="color") Kolor
+  .input-group
+    input.form-control#color(type="text", name="color", ng-maxlength="20", ng-model="vm.model.Color")
+    span#basic-addon1.input-group-addon(ng-style="{backgroundColor : vm.model.Color}") &nbsp;
   validate-input(error="formDialog.productSize")
 .form-group(ng-class="formDialog.productNetPrice | danger")
   label.control-label(for="product-net-price") Cena netto (szt.)

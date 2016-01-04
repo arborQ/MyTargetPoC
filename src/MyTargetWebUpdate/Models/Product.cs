@@ -7,9 +7,9 @@ namespace MyTargetWebUpdate.Models
     {
         public long Id { get; set; }
 
-        [MaxLength(20), Required]
-        public string Code { get; set; }
         [MaxLength(50), Required]
+        public string Code { get; set; }
+        [MaxLength(100), Required]
         public string Name { get; set; }
 
         [MaxLength(20)]
