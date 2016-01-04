@@ -11,5 +11,10 @@ export default class productEdit extends EditModelController<arbor.products.IPro
     super('/api/products', $http, { id : $stateParams["id"] });
     this.PageTitle = "Edytuj produkt";
     this.sizes = productSizes;
+    this.onServerSaved = ()=>{
+      $state.go('^', {}, { reload : true });
+    }
   }
+  
+  
 }

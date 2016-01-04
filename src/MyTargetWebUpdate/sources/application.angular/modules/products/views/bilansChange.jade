@@ -3,5 +3,5 @@ extends ../../shared/views/_dialog
 block content
   include ../../bilans/views/bilansForm.jade
 block buttons
-  a.btn.btn-secondary(ui-sref="^.edit({ id : 1 })") Anuluj
+  a.btn.btn-secondary(ui-sref="^.edit({ id : vm.model.ProductId })") Anuluj
   button.btn.btn-primary(type='submit', ng-disabled="formDialog.$invalid") {{ vm.model.AddProducts ? 'Dodaj produkty' : 'Sprzedaj produkty' }}

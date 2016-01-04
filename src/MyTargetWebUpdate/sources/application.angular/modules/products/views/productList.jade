@@ -33,4 +33,4 @@ div(ng-if="!vm.$isLoading")
         span
           span {{product.Name}}
           b ({{product.Size}})
-        span.label.label-default.label-pill.pull-right {{product.StoredQuantity}} szt. / {{product.NetPrice}}zł
+        span.label.label-default.label-pill.pull-right(ng-class="{ 'label-danger' : product.StoredQuantity < 0 }") {{product.StoredQuantity}} szt. / {{product.NetPrice}}zł

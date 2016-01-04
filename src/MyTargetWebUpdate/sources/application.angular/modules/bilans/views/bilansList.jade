@@ -10,6 +10,7 @@ ui-view
   .list-group.list-group-flush
     a.list-group-item(ng-repeat="product in vm.model")
       span 
-        span {{product.Name}} 
-        b ({{product.Value}})
+        span {{product.ProductName}} 
+      span.label.label-default.label-pill.pull-right(ng-class="{ 'label-success' : product.Value > 0 }") {{product.Value}} szt.
+
  
