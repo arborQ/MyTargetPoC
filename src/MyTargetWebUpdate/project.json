@@ -48,6 +48,6 @@
     "**.vspscc"
   ],
   "scripts": {
-    "prepublish": [ "npm install", "bower install", "gulp all:compile" ]
+    "prepublish": [ "npm install", "bower install", "gulp all:compile", "npm run build:angular" ]
   }
 }

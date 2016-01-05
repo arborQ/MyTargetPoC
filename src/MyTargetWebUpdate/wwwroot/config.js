@@ -29,6 +29,7 @@ System.config({
     "dimitrinicolas/marmottajax": "github:dimitrinicolas/marmottajax@master",
     "jquery": "github:components/jquery@2.1.4",
     "material-ui": "npm:material-ui@0.13.4",
+    "moment": "npm:moment@2.11.0",
     "q": "npm:q@1.4.1",
     "react": "npm:react@0.14.3",
     "react-dom": "npm:react-dom@0.14.3",
@@ -237,6 +238,9 @@ System.config({
       "react-dom": "npm:react-dom@0.14.3",
       "react-tap-event-plugin": "npm:react-tap-event-plugin@0.2.1",
       "warning": "npm:warning@2.1.0"
+    },
+    "npm:moment@2.11.0": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:os-browserify@0.1.2": {
       "os": "github:jspm/nodelibs-os@0.1.0"

@@ -1,4 +1,5 @@
 import 'angular-ui-router';
+import * as moment from 'moment';
 import { module } from 'angular';
 import 'angularjs-toaster';
 import * as loadingBar from "angular-loading-bar";
@@ -40,6 +41,7 @@ var registerDirectives = (app : ng.IModule) => {
   });
 }
 var registerFilters = (app : ng.IModule) => {
+  app.filter('arborDate', (dateFilter : ng.IFilterDate) => (date : string) => moment.utc(date, "YYYY-MM-DD HH:mm").format("YYYY-MM-DD HH:mm");
   app.filter('danger', () => {
     return (validation : angular.IFormController) : string => {
       if(validation && validation.$invalid && validation.$dirty){

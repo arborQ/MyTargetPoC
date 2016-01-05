@@ -11,3 +11,5 @@
 /// <reference path="q/Q.d.ts" />
 /// <reference path="angular-loading-bar/angular-loading-bar.d.ts" />
 /// <reference path="angularjs-toaster/angularjs-toaster.d.ts" />
+/// <reference path="moment/moment.d.ts" />
+/// <reference path="moment/moment-node.d.ts" />

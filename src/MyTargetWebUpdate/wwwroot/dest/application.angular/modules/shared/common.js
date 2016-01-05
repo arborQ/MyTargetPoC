@@ -1,4 +1,5 @@
 require('angular-ui-router');
+var moment = require('moment');
 var angular_1 = require('angular');
 require('angularjs-toaster');
 var loadingBar = require("angular-loading-bar");
@@ -30,6 +31,7 @@ var registerDirectives = function (app) {
     });
 };
 var registerFilters = function (app) {
+    app.filter('arborDate', function (dateFilter) { return function (date) { return moment.utc(date, "YYYY-MM-DD HH:mm").format("YYYY-MM-DD HH:mm"); }; });
     app.filter('danger', function () {
         return function (validation) {
             if (validation && validation.$invalid && validation.$dirty) {

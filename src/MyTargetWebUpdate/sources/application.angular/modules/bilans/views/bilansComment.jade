@@ -1,0 +1,7 @@
+extends ../../shared/views/_dialog
+
+block content
+  i(ng-show="!vm.model.Comment || vm.model.Comment.length == 0") Brak komentarza
+  div {{vm.model.Comment}}
+block buttons
+  a.btn.btn-secondary(ui-sref="^") Zamknij

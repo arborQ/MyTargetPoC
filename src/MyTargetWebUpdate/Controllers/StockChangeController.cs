@@ -27,7 +27,7 @@ namespace MyTargetWebUpdate.Controllers
           }
           else
           {
-            var changes = DbContext.StockChanges.OrderByDescending(c => c.Created).Select(c => new { c.Value, ProductName  = c.RelatedProduct.Name }).ToList();
+            var changes = DbContext.StockChanges.OrderByDescending(c => c.Created).Select(c => new { c.Id, c.Value, c.Comment, c.Created, ProductName  = c.RelatedProduct.Name }).ToList();
             return Ok(changes);
           }
         }
@@ -42,7 +42,10 @@ namespace MyTargetWebUpdate.Controllers
           }
           product.StoredQuantity += model.Value * (model.AddProducts ? 1 : -1);
           DbContext.StockChanges.Add(new StockChange {
-             RelatedProduct = product, Value = model.Value * (model.AddProducts ? 1 : -1), Created = DateTime.UtcNow
+             RelatedProduct = product,
+             Value = model.Value * (model.AddProducts ? 1 : -1),
+             Created = DateTime.UtcNow,
+             Comment = model.Comment
           });
 
           DbContext.SaveChanges();
