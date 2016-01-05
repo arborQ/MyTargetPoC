@@ -25,21 +25,21 @@ namespace MyTargetWebUpdate.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public ActionResult Login([FromBody]LoginModel model)
+        public async Task<ActionResult> Login(string userName, string password)
         {
-            if (model != null && model.Login == "arbor" && model.Password == "arbor")
+            if (userName == "arbor" && password == "arbor")
             {
                 var claims = new List<Claim> {
                     new Claim("id", "1"),
                     new Claim("isAdmin", true.ToString())
                 };
                 var id = new ClaimsIdentity(claims, "local", "name", "role");
-                //await HttpContext.Authentication.SignInAsync("Cookies", new ClaimsPrincipal(id));
+                await HttpContext.Authentication.SignInAsync("Cookies", new ClaimsPrincipal(id));
 
                 return Ok(new { success = true, key = id });
             }
             else {
-                return Ok(new { success = false });
+                return Ok(new { success = false, userName, password });
             }
         }
     }
