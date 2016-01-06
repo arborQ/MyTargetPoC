@@ -1,0 +1,32 @@
+form(name="dialogForm", ng-submit="vm.navigateToResults(dialogForm)")
+  .card.page(ng-if="vm.model.length !== 0")
+    .card-block 
+      //- .row
+      //-   .col.col-lg-12
+      //-     .form-group(ng-class="dialogForm.search | danger")
+      //-       label.control-label(for="search") Szukaj
+      //-       input.form-control#search(type="text", name="search", ng-maxlength="100", ng-model="vm.model.search")
+      //-       validate-input(error="dialogForm.search")
+      .row
+        .col.col-sm-6
+          .form-group(ng-class="dialogForm.dateFrom | danger")
+            label.control-label(for="dateFrom") Od
+            p.input-group
+              input.form-control(type='text',name="dateFrom", ng-model='vm.model.dateFrom', uib-datepicker-popup="{{vm.dateFormat}}", max-date="vm.model.dateTo" is-open='$fromIsOpen', ng-required='true', close-text='Zamknij')
+              span.input-group-btn
+                button.btn.btn-default#dateFrom(type='button', ng-click='$fromIsOpen = true')
+                  i.fa.fa-calendar
+        .col.col-sm-6
+          .form-group(ng-class="dialogForm.dateTo | danger")
+            label.control-label(for="dateTo") Do
+            p.input-group
+              input.form-control(type='text', name="dateTo" ng-model='vm.model.dateTo', uib-datepicker-popup="{{vm.dateFormat}}", min-date="vm.model.dateFrom" is-open='$toIsOpen', ng-required='true', close-text='Zamknij')
+              span.input-group-btn
+                button.btn.btn-default#dateTo(type='button', ng-click='$toIsOpen = true')
+                  i.fa.fa-calendar
+      div
+        button.btn.btn-default(type="submit", ng-disabled="dialogForm.$invalid") Szukaj
+ui-view 
+  .card.page
+    .card-block 
+      i Aby wyświetlić zmiany magazynowe podaj przedział czasu i kliknij przycisk szukaj szukaj

@@ -1,6 +1,8 @@
-require('angular-ui-router');
-var moment = require('moment');
 var angular_1 = require('angular');
+require('angular-ui-router');
+require('angular-ui');
+require('angular-ui-templates');
+var moment = require('moment');
 require('angularjs-toaster');
 var loadingBar = require("angular-loading-bar");
 var controller_1 = require('../../modules/setup/controller');
@@ -31,7 +33,7 @@ var registerDirectives = function (app) {
     });
 };
 var registerFilters = function (app) {
-    app.filter('arborDate', function (dateFilter) { return function (date) { return moment.utc(date, "YYYY-MM-DD HH:mm").format("YYYY-MM-DD HH:mm"); }; });
+    app.filter('arborDate', function (dateTimeFormat, timeZoneDiff) { return function (date) { return moment(date, dateTimeFormat).add(timeZoneDiff, "minutes").format(dateTimeFormat); }; });
     app.filter('danger', function () {
         return function (validation) {
             if (validation && validation.$invalid && validation.$dirty) {
@@ -59,6 +61,7 @@ var registerProviders = function (app) {
 function registerApplication(_a) {
     var pages = _a.pages, applicationConfig = _a.applicationConfig, itemDictionary = _a.itemDictionary;
     var pageCodes = pages.map(function (p) { return p.name; });
+    pageCodes.push('ui.bootstrap');
     pageCodes.push('ui.router');
     pageCodes.push('toaster');
     pageCodes.push(loadingBar);
@@ -70,6 +73,9 @@ function registerApplication(_a) {
     var menuOptions = pages.filter(function (p) { return p.showNavigation; }).map(function (p) { return p.name; });
     app.constant('menuOptions', menuOptions);
     app.constant('itemDictionary', itemDictionary);
+    app.constant('dateFormat', 'yyyy-MM-dd');
+    app.constant('dateTimeFormat', 'YYYY-MM-DD HH:mm');
+    app.constant('timeZoneDiff', -1 * (new Date().getTimezoneOffset()));
     registerDirectives(app);
     registerFilters(app);
     registerProviders(app);

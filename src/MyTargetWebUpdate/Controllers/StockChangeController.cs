@@ -18,7 +18,7 @@ namespace MyTargetWebUpdate.Controllers
         }
 
         [HttpGet]
-        public ActionResult GetStockChanges(long? id)
+        public ActionResult GetStockChanges(long? id, DateTime? dateFrom, DateTime? dateTo)
         {
           if(id.HasValue)
           {
@@ -27,7 +27,15 @@ namespace MyTargetWebUpdate.Controllers
           }
           else
           {
-            var changes = DbContext.StockChanges.OrderByDescending(c => c.Created).Select(c => new { c.Id, c.Value, c.Comment, c.Created, ProductName  = c.RelatedProduct.Name }).ToList();
+                var from = dateFrom.Value.ToUniversalTime();
+                var to = dateTo.Value.ToUniversalTime();
+
+            var changes = DbContext.StockChanges
+            .Where(c => c.Created >= from)
+            .Where(c => c.Created <= to)
+            .OrderByDescending(c => c.Created)
+            .Select(c => new { c.Id, c.Value, c.Comment, Created = c, ProductName  = c.RelatedProduct.Name })
+            .ToList();
             return Ok(changes);
           }
         }

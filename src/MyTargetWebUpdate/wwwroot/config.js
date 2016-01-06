@@ -14,6 +14,8 @@ System.config({
   },
 
   map: {
+    "angular-ui" : "bundles/angular/ui-bootstrap-custom-build/ui-bootstrap-custom-0.14.3",
+    "angular-ui-templates" : "bundles/angular/ui-bootstrap-custom-build/ui-bootstrap-custom-tpls-0.14.3",
     "Bonsanto/simple-http": "github:Bonsanto/simple-http@master",
     "angular": "npm:angular@1.4.8",
     "angular-bootstrap": "npm:angular-bootstrap@0.12.2",

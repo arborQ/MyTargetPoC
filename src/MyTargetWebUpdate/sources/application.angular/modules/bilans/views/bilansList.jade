@@ -9,8 +9,9 @@ ui-view
         span Aktywnosc 
   .list-group.list-group-flush
     a.list-group-item(ng-repeat="product in vm.model", ui-sref=".comment({ commentId : product.Id })")
-      i.fa.fa-commenting-o(ng-if="product.Comment") &nbsp;
-      span {{ product.Created | arborDate }}
-      span.label.label-default.label-pill.pull-right(ng-class="{ 'label-success' : product.Value > 0 }")  {{product.ProductName}} / {{product.Value}} szt.
+      .row
+        span.col.col-lg-3  {{ product.Created | arborDate }} 
+        span.col.col-lg-8 {{product.ProductName}}
+        span.col.col-sm-1.label.label-default.label-pill.pull-right(ng-class="{ 'label-success' : product.Value > 0 }") {{product.Value}} szt.
 
  

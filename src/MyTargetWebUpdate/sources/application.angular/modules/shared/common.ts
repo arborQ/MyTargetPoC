@@ -1,6 +1,9 @@
-import 'angular-ui-router';
-import * as moment from 'moment';
 import { module } from 'angular';
+import 'angular-ui-router';
+import 'angular-ui';
+import 'angular-ui-templates';
+
+import * as moment from 'moment';
 import 'angularjs-toaster';
 import * as loadingBar from "angular-loading-bar";
 import applicationController from '../../modules/setup/controller';
@@ -41,7 +44,7 @@ var registerDirectives = (app : ng.IModule) => {
   });
 }
 var registerFilters = (app : ng.IModule) => {
-  app.filter('arborDate', (dateFilter : ng.IFilterDate) => (date : string) => moment.utc(date, "YYYY-MM-DD HH:mm").format("YYYY-MM-DD HH:mm");
+  app.filter('arborDate', (dateTimeFormat : string, timeZoneDiff : number) => (date : string) => moment(date, dateTimeFormat).add(timeZoneDiff, "minutes").format(dateTimeFormat));
   app.filter('danger', () => {
     return (validation : angular.IFormController) : string => {
       if(validation && validation.$invalid && validation.$dirty){
@@ -68,6 +71,7 @@ var registerProviders = (app : ng.IModule) => {
 };
 export default function registerApplication({ pages, applicationConfig, itemDictionary }){
   var pageCodes = pages.map((p : any) => p.name);
+  pageCodes.push('ui.bootstrap');
   pageCodes.push('ui.router');
   pageCodes.push('toaster');
   pageCodes.push(loadingBar);
@@ -79,7 +83,9 @@ export default function registerApplication({ pages, applicationConfig, itemDict
   var menuOptions = pages.filter((p : any) => p.showNavigation).map((p : any) => p.name);
   app.constant('menuOptions', menuOptions);
   app.constant('itemDictionary', itemDictionary);
-
+  app.constant('dateFormat', 'yyyy-MM-dd');
+  app.constant('dateTimeFormat', 'YYYY-MM-DD HH:mm');
+  app.constant('timeZoneDiff', -1 * (new Date().getTimezoneOffset()));
   registerDirectives(app);
   registerFilters(app);
   registerProviders(app);
