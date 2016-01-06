@@ -31,8 +31,9 @@ app.config(($stateProvider : ng.ui.IStateProvider) => {
 
 app.filter('searchProducts', () => {
   return (products : arbor.products.IProduct[], searchCriteria : arbor.products.ISearchCriteria) => {
+    var searchText = (searchCriteria.FreeText || "").toLowerCase();
     return (products || [])
-    .filter((p : arbor.products.IProduct) => (!searchCriteria.FreeText || searchCriteria.FreeText.length  === 0) || `${p.Code} ${p.Name}`.indexOf(searchCriteria.FreeText) !== -1)
+    .filter((p : arbor.products.IProduct) => (!searchCriteria.FreeText || searchCriteria.FreeText.length  === 0) || `${p.Code} ${p.Name} ${p.Supplier}`.toLowerCase().indexOf(searchText) !== -1)
     .filter((p : arbor.products.IProduct) => (!searchCriteria.Size || searchCriteria.Size.length === 0) || searchCriteria.Size.indexOf(p.Size) !== -1)
     .filter((p : arbor.products.IProduct) => (!searchCriteria.Quantity.MinValue) || searchCriteria.Quantity.MinValue <= p.StoredQuantity)
     .filter((p : arbor.products.IProduct) => (!searchCriteria.Quantity.MaxValue) || searchCriteria.Quantity.MaxValue >= p.StoredQuantity)
@@ -41,6 +42,23 @@ app.filter('searchProducts', () => {
   }
 });
 
+app.filter('productCostSummary', () => {
+  return (p : arbor.products.IProduct) => `${p.StoredQuantity} szt. * ${p.NetPrice} PLN = ${(p.StoredQuantity*p.NetPrice).toFixed(2)} PLN`;
+});
+app.filter('totalProductCost', () => {
+  return (products : arbor.products.IProduct[]) => {
+    if(!products || products.length === 0){
+      return "0";
+    }
+    var result = 0;
+    for(let i = 0; i < products.length ;i++){
+      result += products[i].NetPrice * products[i].StoredQuantity;
+    }
+    var realValue = result.toString();
+    var fixedValue = result.toFixed(2);
+    return fixedValue ;
+  };
+});
 app.filter('sizeSelected', () => {
   return (sizes : string[], size : string) => {
     if(!sizes || !size){

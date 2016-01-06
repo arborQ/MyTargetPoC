@@ -7,5 +7,6 @@ declare module arbor.products{
       NetPrice?: number;
       Tax? : number;
       StoredQuantity : number;
+      Supplier : string;
   }
 }

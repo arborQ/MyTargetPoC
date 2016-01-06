@@ -34,7 +34,7 @@ namespace MyTargetWebUpdate.Controllers
             .Where(c => c.Created >= from)
             .Where(c => c.Created <= to)
             .OrderByDescending(c => c.Created)
-            .Select(c => new { c.Id, c.Value, c.Comment, Created = c, ProductName  = c.RelatedProduct.Name })
+            .Select(c => new { c.Id, c.StoredQuantity, c.NetPrice, c.Comment, c.Created, ProductName = c.RelatedProduct.Name })
             .ToList();
             return Ok(changes);
           }
@@ -48,10 +48,11 @@ namespace MyTargetWebUpdate.Controllers
           {
             return BadRequest();
           }
-          product.StoredQuantity += model.Value * (model.AddProducts ? 1 : -1);
+          product.StoredQuantity += model.StoredQuantity * (model.AddProducts ? 1 : -1);
           DbContext.StockChanges.Add(new StockChange {
              RelatedProduct = product,
-             Value = model.Value * (model.AddProducts ? 1 : -1),
+             NetPrice = product.NetPrice,
+              StoredQuantity = model.StoredQuantity * (model.AddProducts ? 1 : -1),
              Created = DateTime.UtcNow,
              Comment = model.Comment
           });

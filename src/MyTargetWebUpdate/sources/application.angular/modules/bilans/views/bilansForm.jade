@@ -5,7 +5,7 @@ ul.nav.nav-tabs
     button.nav-link(type="button", ng-class="{ active : !vm.model.AddProducts }", ng-click="vm.model.AddProducts = false") Sprzedaj
 .form-group(ng-class="dialogForm.quantity | danger")
   label.control-label(for="quantity") Ilosc
-  input.form-control.form-control-danger#quantity(type="number", name="quantity", ng-required="true", min="1", ng-model="vm.model.Value")
+  input.form-control.form-control-danger#quantity(type="number", name="quantity", ng-required="true", min="1", ng-model="vm.model.StoredQuantity")
 .form-group(ng-class="dialogForm.comment | danger")
   label.control-label(for="comment") Komentarz
   textarea.form-control#comment(rows="3", ng-maxlength="2000", name="comment", ng-model="vm.model.Comment")

@@ -26,6 +26,31 @@ var ProductList = (function (_super) {
             this.search.Size = this.search.Size.filter(function (s) { return s !== size; });
         }
     };
+    ProductList.prototype.calculate = function (func) {
+        console.log(this.model);
+        if (!this.model) {
+            return null;
+        }
+        var sum = 0;
+        for (var i = 0; i < this.model.length; i++) {
+            sum += func(this.model[i]);
+        }
+        return sum;
+    };
+    Object.defineProperty(ProductList.prototype, "TotalStoredQuantity", {
+        get: function () {
+            return (function (c) { return c.StoredQuantity; });
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ProductList.prototype, "TotalNetPrice", {
+        get: function () {
+            return (function (c) { return c.StoredQuantity * c.NetPrice; });
+        },
+        enumerable: true,
+        configurable: true
+    });
     return ProductList;
 })(arbor_controllers_1.ModelController);
 Object.defineProperty(exports, "__esModule", { value: true });

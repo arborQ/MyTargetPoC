@@ -4,6 +4,8 @@ using Microsoft.AspNet.Mvc;
 using MyTargetWebUpdate.Controllers.Models;
 using MyTargetWebUpdate.Models;
 using System;
+using Microsoft.Data.Entity;
+
 namespace MyTargetWebUpdate.Controllers
 {
 
@@ -20,8 +22,16 @@ namespace MyTargetWebUpdate.Controllers
         [HttpGet]
         public ActionResult GetStockChanges(long id)
         {
-          var change = DbContext.StockChanges.FirstOrDefault(a => a.Id == id);
-          return Ok(change);
+            var change = DbContext.StockChanges.Include(d => d.RelatedProduct).FirstOrDefault(a => a.Id == id);
+            return Ok(new
+            {
+                change.Id,
+                change.Created,
+                change.Comment,
+                change.NetPrice,
+                change.StoredQuantity,
+                ProductName = change.RelatedProduct.Name
+            });
         }
     }
 }

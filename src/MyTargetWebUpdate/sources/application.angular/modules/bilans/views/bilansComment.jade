@@ -1,7 +1,16 @@
 extends ../../shared/views/_dialog
 
 block content
-  i(ng-show="!vm.model.Comment || vm.model.Comment.length == 0") Brak komentarza
-  div {{vm.model.Comment}}
+  .form-group.row
+    label.control-label.col.col-lg-2 Ilosc
+    span.col.col-lg-10 {{ vm.model.StoredQuantity }} szt. ( {{vm.model.NetPrice}} PLN )
+  .form-group.row
+    label.control-label.col.col-lg-2 Suma
+    span.col.col-lg-10 {{ vm.model.StoredQuantity * vm.model.NetPrice }} PLN
+  .form-group.row
+    label.control-label.col.col-lg-2 Komentarz
+    span.col.col-lg-10
+      i(ng-show="!vm.model.Comment || vm.model.Comment.length == 0") Brak komentarza
+      span(style="white-space: pre;") {{vm.model.Comment}}
 block buttons
   a.btn.btn-secondary(ui-sref="^") Zamknij

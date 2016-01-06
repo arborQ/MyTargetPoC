@@ -12,11 +12,12 @@ export default class modelController<T>{
     this.$http.get<T>(this.serviceUrl, { params : this.params })
       .then((result) => {
         this.model = result.data;
+        this.dataLoaded(result.data);
       }).finally(() => {
         this.$isLoading = false;
       });
   }
-
+  dataLoaded(data : T) : void{ }
   defaultModel() : T {
     return <T>{ };
   }

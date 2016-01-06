@@ -10,7 +10,11 @@
   label.control-label(for="product-size") Rozmiar
   select.form-control#product-size(ng-required="true", name="productSize", ng-model="vm.model.Size", ng-options="option as option for option in vm.sizes")
   validate-input(error="formDialog.productSize")
- .form-group(ng-class="formDialog.color | danger")
+.form-group(ng-class="formDialog.supplier | danger")
+  label.control-label(for="supplier") Dostawca
+  input.form-control#supplier(type="text", name="supplier", ng-maxlength="50", ng-model="vm.model.Supplier")
+  validate-input(error="formDialog.supplier")
+.form-group(ng-class="formDialog.color | danger")
   label.control-label(for="color") Kolor
   .input-group
     input.form-control#color(type="text", name="color", ng-maxlength="20", ng-model="vm.model.Color")

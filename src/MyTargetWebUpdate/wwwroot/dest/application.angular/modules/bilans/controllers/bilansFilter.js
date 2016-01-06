@@ -13,9 +13,12 @@ var bilansFilter = (function () {
     }
     bilansFilter.prototype.navigateToResults = function (form) {
         if (form.$valid) {
+            var from = moment(this.model.dateFrom).startOf("day").toDate().toISOString();
+            var to = moment(this.model.dateTo).endOf("day").toDate().toISOString();
             this.$state.go('arbor-bilans-module.results', {
-                dateFrom: Date.parse(this.model.dateFrom.toString()),
-                dateTo: Date.parse(this.model.dateTo.toString())
+                dateFrom: Date.parse(from),
+                dateTo: Date.parse(to),
+                search: this.model.search
             }, { reload: true });
         }
     };

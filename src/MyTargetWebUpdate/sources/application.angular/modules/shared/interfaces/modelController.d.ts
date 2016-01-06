@@ -1,9 +1,11 @@
 declare namespace __arborApp{
   export class modelController<T> {
+    model : T;
     params : {};
     constructor(serviceUrl : string, $http : ng.IHttpService, params? : {});
     loadData() : void;
     defaultModel() : T;
+    dataLoaded(data : T) : void;
     $isLoading : boolean;
     PageTitle : string;
   }

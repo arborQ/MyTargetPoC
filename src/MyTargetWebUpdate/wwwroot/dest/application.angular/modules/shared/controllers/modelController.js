@@ -12,10 +12,12 @@ var modelController = (function () {
         this.$http.get(this.serviceUrl, { params: this.params })
             .then(function (result) {
             _this.model = result.data;
+            _this.dataLoaded(result.data);
         }).finally(function () {
             _this.$isLoading = false;
         });
     };
+    modelController.prototype.dataLoaded = function (data) { };
     modelController.prototype.defaultModel = function () {
         return {};
     };

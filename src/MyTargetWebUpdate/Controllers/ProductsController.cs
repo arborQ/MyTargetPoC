@@ -52,14 +52,13 @@ namespace MyTargetWebUpdate.Controllers
         [HttpPut]
         public ActionResult Put(long id, [FromBody]Product value)
         {
-
-
             var product = DbContext.Products.First(a => a.Id == id);
             product.Name = value.Name;
             product.Code = value.Code;
             product.Size = value.Size;
             product.NetPrice = value.NetPrice;
             product.Color = value.Color;
+            product.Supplier = value.Supplier;
             DbContext.SaveChanges();
 
             return Ok();

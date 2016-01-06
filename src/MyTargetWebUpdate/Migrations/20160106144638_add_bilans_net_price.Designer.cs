@@ -8,9 +8,10 @@ using MyTargetWebUpdate.Models;
 namespace MyTargetWebUpdate.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20160106144638_add_bilans_net_price")]
+    partial class add_bilans_net_price
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.0-rc1-16348")
@@ -61,7 +62,7 @@ namespace MyTargetWebUpdate.Migrations
 
                     b.Property<long?>("RelatedProductId");
 
-                    b.Property<long>("StoredQuantity");
+                    b.Property<long>("Value");
 
                     b.HasKey("Id");
                 });

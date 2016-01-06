@@ -23,7 +23,10 @@ namespace MyTargetWebUpdate.Models
         public decimal Tax { get; set; }
 
         public int StoredQuantity { get; set; }
-        
+
+        [MaxLength(50)]
+        public string Supplier { get; set; }
+
         public List<StockChange> StockChanges { get; set; }
     }
 }

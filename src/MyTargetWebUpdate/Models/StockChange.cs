@@ -7,7 +7,9 @@ namespace MyTargetWebUpdate.Models
     {
         public long Id { get; set; }
 
-        public long Value { get; set; }
+        public long StoredQuantity { get; set; }
+
+        public decimal NetPrice { get; set; }
 
         public DateTime Created { get; set; }
 
