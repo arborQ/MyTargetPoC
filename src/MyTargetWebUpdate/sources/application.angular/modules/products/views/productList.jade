@@ -31,7 +31,9 @@ div(ng-if="!vm.$isLoading")
           span.label.label-default.label-pill.pull-right W sumie: {{vm.model | searchProducts:vm.search:false | totalProductCost}} PLN
     .list-group.list-group-flush
       a.list-group-item(ui-sref=".edit({ id : product.Id})", ng-repeat="product in vm.model | searchProducts:vm.search", ng-style="{ borderLeft: '3px solid ' + product.Color }")
-        span
-          span {{product.Code}}/{{product.Name}}
-          b ({{product.Size}})
-        span.label.label-default.label-pill.pull-right(ng-class="{ 'label-danger' : product.StoredQuantity < 0 }") {{ product | productCostSummary }}
+        .row
+          span.col.col-lg-8
+            span {{product.Code}}/{{product.Name}}
+            b ({{product.Size}})
+          span.col.col-lg-4
+            span.label.label-default.label-pill.pull-right(ng-class="{ 'label-danger' : product.StoredQuantity < 0 }") {{ product | productCostSummary }}
