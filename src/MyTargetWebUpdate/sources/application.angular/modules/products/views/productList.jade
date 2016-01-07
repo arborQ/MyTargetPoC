@@ -31,10 +31,19 @@ div(ng-if="!vm.$isLoading")
       span.label.label-default.label-pill(style="position: absolute; bottom : 0; right : 0;") W sumie: {{vm.model | searchProducts:vm.search:false | totalProductCost}} PLN
   .card.page(ng-show="!(vm.model | searchProducts:vm.search).length == 0")
     .list-group.list-group-flush
+      span.list-group-item
+        .row
+          span.col.col-lg-2 Kod
+          span.col.col-lg-4 
+            span Nazwa
+            b [Rozmiar]
+          span.col.col-lg-2 Dostawca
+          span.col.col-lg-4
       a.list-group-item(ui-sref=".edit({ id : product.Id})", ng-repeat="product in vm.model | searchProducts:vm.search | orderBy:vm.sortOptions:vm.sortDirection", ng-style="{ borderLeft: '3px solid ' + product.Color }")
         .row
-          span.col.col-lg-8
-            span {{product.Code}}/{{product.Name}}
-            b ({{product.Size}}) 
-          span.col.col-lg-4
-            span.label.label-default.label-pill.pull-right(ng-class="{ 'label-danger' : product.StoredQuantity < 0 }") {{ product | productCostSummary }}
+          span.col.col-lg-2 {{product.Code}}
+          span.col.col-lg-4 
+            span {{product.Name}} 
+            b [{{product.Size}}]
+          span.col.col-lg-2 {{product.Supplier}}
+          span.col.col-lg-4.label.label-default.label-pill.pull-right(ng-class="{ 'label-danger' : product.StoredQuantity < 0 }") {{ product | productCostSummary }}

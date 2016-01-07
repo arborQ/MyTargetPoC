@@ -7,6 +7,7 @@ var ProductList = (function (_super) {
         this.sortFields = [
             { key: "Code", name: "Kod" },
             { key: "Name", name: "Nazwa" },
+            { key: "Supplier", name: "Dostawca" },
             { key: "NetPrice", name: "Cena" },
             { key: "StoredQuantity", name: "Ilość" },
             { key: "Size", name: "Rozmiar" },
