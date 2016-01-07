@@ -1,0 +1,6 @@
+.row
+  .col.col-lg-10
+    .btn-group
+      button.btn.btn-secondary(ng-click="direction = !direction")
+        i.fa(ng-class="{ true : 'fa-sort-amount-desc', false : 'fa-sort-amount-asc' }[direction]")
+      button.btn.btn-secondary(ng-click="vm.selectOption(option)", ng-class="{ 'active' : vm.isOptionSelected(option)}", ng-repeat="option in options track by $index") {{option.name}}

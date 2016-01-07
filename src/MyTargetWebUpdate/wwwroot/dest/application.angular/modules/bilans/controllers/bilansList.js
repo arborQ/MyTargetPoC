@@ -7,8 +7,17 @@ var bilansList = (function (_super) {
             dateTo: new Date(parseInt($stateParams["dateTo"])).toISOString()
         });
         this.$http = $http;
+        this.sortFields = [
+            { key: "Created", name: "Data" },
+            { key: "StoredQuantity < 0", name: "Rodzaj" },
+            { key: "Code", name: "Kod" },
+            { key: "ProductName", name: "Nazwa" },
+            { key: "NetPrice", name: "Cena" },
+            { key: "StoredQuantity", name: "Ilość" },
+            { key: "NetPrice*StoredQuantity", name: "Wartość" }
+        ];
     }
     return bilansList;
-})(arbor_controllers_1.ModelController);
+})(arbor_controllers_1.SortModelController);
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = bilansList;

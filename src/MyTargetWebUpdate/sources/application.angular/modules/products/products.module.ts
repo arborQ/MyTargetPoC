@@ -32,13 +32,14 @@ app.config(($stateProvider : ng.ui.IStateProvider) => {
 app.filter('searchProducts', () => {
   return (products : arbor.products.IProduct[], searchCriteria : arbor.products.ISearchCriteria) => {
     var searchText = (searchCriteria.FreeText || "").toLowerCase();
-    return (products || [])
+    var result = (products || [])
     .filter((p : arbor.products.IProduct) => (!searchCriteria.FreeText || searchCriteria.FreeText.length  === 0) || `${p.Code} ${p.Name} ${p.Supplier}`.toLowerCase().indexOf(searchText) !== -1)
     .filter((p : arbor.products.IProduct) => (!searchCriteria.Size || searchCriteria.Size.length === 0) || searchCriteria.Size.indexOf(p.Size) !== -1)
     .filter((p : arbor.products.IProduct) => (!searchCriteria.Quantity.MinValue) || searchCriteria.Quantity.MinValue <= p.StoredQuantity)
     .filter((p : arbor.products.IProduct) => (!searchCriteria.Quantity.MaxValue) || searchCriteria.Quantity.MaxValue >= p.StoredQuantity)
     .filter((p : arbor.products.IProduct) => (!searchCriteria.NetPrice.MinValue) || searchCriteria.NetPrice.MinValue <= p.NetPrice)
     .filter((p : arbor.products.IProduct) => (!searchCriteria.NetPrice.MaxValue) || searchCriteria.NetPrice.MaxValue >= p.NetPrice);
+    return result;
   }
 });
 

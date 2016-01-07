@@ -2,6 +2,7 @@ var angular_1 = require('angular');
 require('angular-ui-router');
 require('angular-ui');
 require('angular-ui-templates');
+var sortDirective_1 = require('./directives/sortDirective');
 var moment = require('moment');
 require('angularjs-toaster');
 var loadingBar = require("angular-loading-bar");
@@ -16,6 +17,7 @@ var registerDirectives = function (app) {
             templateUrl: viewHelper_1.viewTemplateUrl("shared", "_master")
         };
     });
+    app.directive('sortDirective', function () { return sortDirective_1.default; });
     app.directive('loadContent', function () {
         return {
             restrict: "C",

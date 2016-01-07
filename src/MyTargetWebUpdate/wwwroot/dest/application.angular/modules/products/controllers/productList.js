@@ -4,6 +4,14 @@ var ProductList = (function (_super) {
     function ProductList($http, productSizes) {
         _super.call(this, "/api/products", $http);
         this.productSizes = productSizes;
+        this.sortFields = [
+            { key: "Code", name: "Kod" },
+            { key: "Name", name: "Nazwa" },
+            { key: "NetPrice", name: "Cena" },
+            { key: "StoredQuantity", name: "Ilość" },
+            { key: "Size", name: "Rozmiar" },
+            { key: "NetPrice*StoredQuantity", name: "Wartość" }
+        ];
         this.setDefaultFilerState();
     }
     ;
@@ -52,6 +60,6 @@ var ProductList = (function (_super) {
         configurable: true
     });
     return ProductList;
-})(arbor_controllers_1.ModelController);
+})(arbor_controllers_1.SortModelController);
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = ProductList;

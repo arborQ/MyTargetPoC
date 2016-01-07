@@ -1,8 +1,15 @@
-import { ModelController } from "arbor.controllers";
+import { SortModelController } from "arbor.controllers";
 
-export default class ProductList extends ModelController<arbor.products.IProduct[]>{
+export default class ProductList extends SortModelController<arbor.products.IProduct[]>{
   search : arbor.products.ISearchCriteria;
-
+  sortFields = [
+    { key : "Code", name : "Kod" },
+    { key : "Name", name : "Nazwa" },
+    { key : "NetPrice", name : "Cena" },
+    { key : "StoredQuantity", name : "Ilość" },
+    { key : "Size", name : "Rozmiar" },
+    { key : "NetPrice*StoredQuantity", name : "Wartość" }
+  ];
   constructor($http : ng.IHttpService, public productSizes : any) {
       super("/api/products", $http)
       this.setDefaultFilerState();

@@ -3,6 +3,8 @@ import 'angular-ui-router';
 import 'angular-ui';
 import 'angular-ui-templates';
 
+import sortDirective from './directives/sortDirective';
+
 import * as moment from 'moment';
 import 'angularjs-toaster';
 import * as loadingBar from "angular-loading-bar";
@@ -18,6 +20,8 @@ var registerDirectives = (app : ng.IModule) => {
       templateUrl : viewTemplateUrl("shared", "_master")
     };
   });
+
+  app.directive('sortDirective', () => sortDirective);
 
   app.directive('loadContent', () => {
     return {

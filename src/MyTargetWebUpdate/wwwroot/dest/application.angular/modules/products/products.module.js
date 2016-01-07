@@ -26,13 +26,14 @@ app.config(function ($stateProvider) {
 app.filter('searchProducts', function () {
     return function (products, searchCriteria) {
         var searchText = (searchCriteria.FreeText || "").toLowerCase();
-        return (products || [])
+        var result = (products || [])
             .filter(function (p) { return (!searchCriteria.FreeText || searchCriteria.FreeText.length === 0) || (p.Code + " " + p.Name + " " + p.Supplier).toLowerCase().indexOf(searchText) !== -1; })
             .filter(function (p) { return (!searchCriteria.Size || searchCriteria.Size.length === 0) || searchCriteria.Size.indexOf(p.Size) !== -1; })
             .filter(function (p) { return (!searchCriteria.Quantity.MinValue) || searchCriteria.Quantity.MinValue <= p.StoredQuantity; })
             .filter(function (p) { return (!searchCriteria.Quantity.MaxValue) || searchCriteria.Quantity.MaxValue >= p.StoredQuantity; })
             .filter(function (p) { return (!searchCriteria.NetPrice.MinValue) || searchCriteria.NetPrice.MinValue <= p.NetPrice; })
             .filter(function (p) { return (!searchCriteria.NetPrice.MaxValue) || searchCriteria.NetPrice.MaxValue >= p.NetPrice; });
+        return result;
     };
 });
 app.filter('productCostSummary', function () {
