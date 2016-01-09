@@ -14,8 +14,8 @@ app.config(function ($stateProvider) {
         controller: bilansFilter_1.default,
         controllerAs: 'vm'
     });
-    $stateProvider.state(name + ".results", { url: "/results", controller: bilansList_1.default, controllerAs: 'vm', templateUrl: viewHelper_1.viewTemplateUrl('bilans', 'bilansList') });
-    $stateProvider.state(name + ".results.comment", { url: "/comment/:commentId", controller: bilansComment_1.default, controllerAs: 'vm', templateUrl: viewHelper_1.viewTemplateUrl('bilans', 'bilansComment') });
+    $stateProvider.state(name + ".results", { data: { title: 'Bilans' }, url: "/results", controller: bilansList_1.default, controllerAs: 'vm', templateUrl: viewHelper_1.viewTemplateUrl('bilans', 'bilansList') });
+    $stateProvider.state(name + ".results.comment", { data: { isModal: true, title: 'Zmiana w magazynie' }, url: "/comment/:commentId", controller: bilansComment_1.default, controllerAs: 'vm', templateUrl: viewHelper_1.viewTemplateUrl('bilans', 'bilansComment') });
 });
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = name;

@@ -33,6 +33,39 @@ var registerDirectives = function (app) {
             templateUrl: viewHelper_1.viewTemplateUrl('shared', '_validate')
         };
     });
+    app.directive('pageModal', function ($rootScope) {
+        return {
+            restrict: 'A',
+            link: function (s, e) {
+                var className = 'modal-open';
+                $rootScope.$on('$stateChangeSuccess', function (evet, state) {
+                    if (state.data && state.data.isModal) {
+                        if (!e.hasClass(className)) {
+                            e.addClass(className);
+                        }
+                    }
+                    else {
+                        e.removeClass(className);
+                    }
+                });
+            }
+        };
+    });
+    app.directive('pageTitle', function ($rootScope) {
+        return {
+            restrict: 'A',
+            link: function (s, e) {
+                $rootScope.$on('$stateChangeSuccess', function (evet, state) {
+                    if (state.data && state.data.title) {
+                        e.text(state.data.title);
+                    }
+                    else {
+                        e.text('Just Move');
+                    }
+                });
+            }
+        };
+    });
 };
 var registerFilters = function (app) {
     app.filter('arborDate', function (dateTimeFormat, timeZoneDiff) { return function (date) { return moment(date, dateTimeFormat).add(timeZoneDiff, "minutes").format(dateTimeFormat); }; });

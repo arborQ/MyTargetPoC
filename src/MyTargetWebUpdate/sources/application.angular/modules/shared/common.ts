@@ -2,6 +2,7 @@ import { module } from 'angular';
 import 'angular-ui-router';
 import 'angular-ui';
 import 'angular-ui-templates';
+// import 'angular-sanitize';
 
 import sortDirective from './directives/sortDirective';
 
@@ -46,6 +47,38 @@ var registerDirectives = (app : ng.IModule) => {
       templateUrl : viewTemplateUrl('shared', '_validate')
     }
   });
+
+  app.directive('pageModal', ($rootScope : ng.IScope) => {
+    return {
+      restrict : 'A',
+      link : (s, e) => {
+        var className = 'modal-open';
+        $rootScope.$on('$stateChangeSuccess', (evet, state) => {
+            if(state.data && state.data.isModal){
+              if(!e.hasClass(className)){
+                e.addClass(className);
+              }
+            }else{
+              e.removeClass(className);
+            }
+        });
+      }
+    }
+  });
+  app.directive('pageTitle', ($rootScope : ng.IScope) => {
+    return {
+      restrict : 'A',
+      link : (s, e) => {
+        $rootScope.$on('$stateChangeSuccess', (evet, state) => {
+            if(state.data && state.data.title){
+              e.text(state.data.title);
+            }else{
+              e.text('Just Move');
+            }
+        });
+      }
+    }
+  });
 }
 var registerFilters = (app : ng.IModule) => {
   app.filter('arborDate', (dateTimeFormat : string, timeZoneDiff : number) => (date : string) => moment(date, dateTimeFormat).add(timeZoneDiff, "minutes").format(dateTimeFormat));
@@ -83,7 +116,16 @@ export default function registerApplication({ pages, applicationConfig, itemDict
   app.config(applicationConfig);
   app.config(['$httpProvider', ($httpProvider : ng.IHttpProvider) => {
     $httpProvider.interceptors.push('arborInterceptor');
+
+
   }]);
+
+  // app.run(($rootScope : ng.IScope) => {
+  //   var body = document.
+  //   $rootScope.$on("$stateChangeSuccess", (event, state) => {
+  //     console.log({ event, state});
+  //   });
+  // });
   var menuOptions = pages.filter((p : any) => p.showNavigation).map((p : any) => p.name);
   app.constant('menuOptions', menuOptions);
   app.constant('itemDictionary', itemDictionary);

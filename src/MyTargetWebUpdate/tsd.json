@@ -49,6 +49,9 @@
     },
     "moment/moment-node.d.ts": {
       "commit": "6a6ad7068a177c0d7a8a20830626cb63277191c5"
+    },
+    "angularjs/angular-sanitize.d.ts": {
+      "commit": "ba257a9b91bc0de1bdd9091b6723194c905a902a"
     }
   }
 }

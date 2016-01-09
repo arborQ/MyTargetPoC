@@ -14,15 +14,16 @@ System.config({
   },
 
   map: {
-    "angular-ui" : "bundles/angular/ui-bootstrap-custom-build/ui-bootstrap-custom-0.14.3",
-    "angular-ui-templates" : "bundles/angular/ui-bootstrap-custom-build/ui-bootstrap-custom-tpls-0.14.3",
     "Bonsanto/simple-http": "github:Bonsanto/simple-http@master",
     "angular": "npm:angular@1.4.8",
     "angular-bootstrap": "npm:angular-bootstrap@0.12.2",
     "angular-loading-bar": "npm:angular-loading-bar@0.8.0",
     "angular-messages": "github:angular/bower-angular-messages@1.4.8",
     "angular-resource": "npm:angular-resource@1.4.8",
+    "angular-sanitize": "github:angular/bower-angular-sanitize@1.4.8",
+    "angular-ui": "bundles/angular/ui-bootstrap-custom-build/ui-bootstrap-custom-0.14.3",
     "angular-ui-router": "github:angular-ui/ui-router@0.2.15",
+    "angular-ui-templates": "bundles/angular/ui-bootstrap-custom-build/ui-bootstrap-custom-tpls-0.14.3",
     "angularjs-toaster": "npm:angularjs-toaster@0.4.15",
     "arbor.controllers": "dest/application.angular/modules/shared/modelController",
     "babel": "npm:babel-core@5.8.34",
@@ -32,12 +33,16 @@ System.config({
     "jquery": "github:components/jquery@2.1.4",
     "material-ui": "npm:material-ui@0.13.4",
     "moment": "npm:moment@2.11.0",
+    "ng-csv": "npm:ng-csv@0.3.6",
     "q": "npm:q@1.4.1",
     "react": "npm:react@0.14.3",
     "react-dom": "npm:react-dom@0.14.3",
     "react-router": "npm:react-router@1.0.0",
     "github:angular-ui/ui-router@0.2.15": {
       "angular": "npm:angular@1.4.8"
+    },
+    "github:angular/bower-angular-sanitize@1.4.8": {
+      "angular": "github:angular/bower-angular@1.4.8"
     },
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"

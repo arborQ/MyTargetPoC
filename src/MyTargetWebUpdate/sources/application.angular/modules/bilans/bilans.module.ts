@@ -18,9 +18,9 @@ app.config(($stateProvider : ng.ui.IStateProvider) => {
     controllerAs : 'vm'
   });
 
-  $stateProvider.state(`${name}.results`, { url : "/results", controller : controller, controllerAs : 'vm', templateUrl : viewTemplateUrl('bilans', 'bilansList')});
+  $stateProvider.state(`${name}.results`, { data : { title : 'Bilans' },  url : "/results", controller : controller, controllerAs : 'vm', templateUrl : viewTemplateUrl('bilans', 'bilansList')});
   // $stateProvider.state(`${name}.change`, { url : "/change/:id", controller : createController, controllerAs : 'vm', templateUrl : viewTemplateUrl('bilans', 'bilansCreate')});
-  $stateProvider.state(`${name}.results.comment`, { url : "/comment/:commentId", controller : displayComment, controllerAs : 'vm', templateUrl : viewTemplateUrl('bilans', 'bilansComment')});
+  $stateProvider.state(`${name}.results.comment`, { data : { isModal : true, title : 'Zmiana w magazynie' },  url : "/comment/:commentId", controller : displayComment, controllerAs : 'vm', templateUrl : viewTemplateUrl('bilans', 'bilansComment')});
 });
 
 export default name;
