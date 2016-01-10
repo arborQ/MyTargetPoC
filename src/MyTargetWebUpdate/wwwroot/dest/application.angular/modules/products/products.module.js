@@ -21,7 +21,7 @@ app.config(function ($stateProvider) {
     });
     $stateProvider.state(name + ".add", { data: { isModal: true, title: 'Dodaj produkt' }, url: "/add", controller: productCreate_1.default, controllerAs: 'vm', templateUrl: viewHelper_1.viewTemplateUrl('products', 'productCreate') });
     $stateProvider.state(name + ".edit", { data: { isModal: true, title: 'Edytuj produkt' }, url: "/edit/:id", controller: productEdit_1.default, controllerAs: 'vm', templateUrl: viewHelper_1.viewTemplateUrl('products', 'productEdit') });
-    $stateProvider.state(name + ".change", { data: { isModal: true }, url: "/change/:id", controller: bilansCreate_1.default, controllerAs: 'vm', templateUrl: viewHelper_1.viewTemplateUrl('products', 'bilansChange') });
+    $stateProvider.state(name + ".change", { data: { isModal: true, title: 'Zmień stan magazynu' }, url: "/change/:id", controller: bilansCreate_1.default, controllerAs: 'vm', templateUrl: viewHelper_1.viewTemplateUrl('products', 'bilansChange') });
 });
 app.filter('searchProducts', function () {
     return function (products, searchCriteria) {

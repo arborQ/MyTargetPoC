@@ -7,8 +7,7 @@ var bilansFilter = (function () {
         var to = $stateParams["dateTo"] ? new Date(parseInt($stateParams["dateTo"])) : moment().toDate();
         this.model = {
             dateFrom: from,
-            dateTo: to,
-            type: { Add: true }
+            dateTo: to
         };
     }
     bilansFilter.prototype.navigateToResults = function (form) {

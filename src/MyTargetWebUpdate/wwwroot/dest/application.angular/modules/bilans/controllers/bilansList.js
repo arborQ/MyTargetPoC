@@ -1,4 +1,5 @@
 var arbor_controllers_1 = require('arbor.controllers');
+var BilansFilterOptions_1 = require('../enums/BilansFilterOptions');
 var bilansList = (function (_super) {
     __extends(bilansList, _super);
     function bilansList($http, $stateParams, timeZoneDiff) {
@@ -16,6 +17,7 @@ var bilansList = (function (_super) {
             { key: "StoredQuantity", name: "Ilość" },
             { key: "NetPrice*StoredQuantity", name: "Wartość" }
         ];
+        this.search = { Type: BilansFilterOptions_1.default.All, NetPrice: {}, Quantity: {} };
     }
     return bilansList;
 })(arbor_controllers_1.SortModelController);

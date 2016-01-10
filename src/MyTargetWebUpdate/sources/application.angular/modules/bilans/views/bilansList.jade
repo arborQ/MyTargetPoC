@@ -1,24 +1,30 @@
 ui-view
-.card.page(ng-if="vm.model.length === 0")
-  .card-block
-    i Nie ma zmian w magazynie
-.card.page
-  .card-block(style="position: relative;")
-    .row
-      .col.col-lg-12
-        sort-directive(options="vm.sortFields", selected-option="vm.sortOptions" direction="vm.sortDirection" )
-    span.label.label-default.label-pill(style="position: absolute; bottom : 0; right : 0;") W sumie: {{vm.model | totalProductCost}} PLN
-.card.page(ng-if="vm.model.length !== 0")
-  .list-group.list-group-flush
-    .list-group-item
+.loading_placeholder(ng-if="vm.$isLoading")
+  .loading.main
+div(ng-if="!vm.$isLoading")
+  .card.page(ng-if="vm.model.length === 0")
+    .card-block
+      i Nie ma zmian w magazynie
+  .card.page(ng-if="vm.model.length !== 0")
+    .card-block
+      include ./filterForm.jade
+  .card.page(ng-if="vm.model.length !== 0")
+    .card-block(style="position: relative;")
       .row
-        span.col.col-lg-3 Data
-        span.col.col-lg-6 Nazwa 
-        span.col.col-sm-3 
-    a.list-group-item(ng-repeat="product in vm.model | orderBy:vm.sortOptions:vm.sortDirection", ui-sref=".comment({ commentId : product.Id })")
-      .row
-        span.col.col-lg-3  {{ product.Created | arborDate }} 
-        span.col.col-lg-6 {{product.ProductName}}
-        span.col.col-sm-3.label.label-default.label-pill.pull-right(ng-class="{ 'label-success' : product.StoredQuantity > 0 }") {{product | productCostSummary}}
+        .col.col-lg-12
+          sort-directive(options="vm.sortFields", selected-option="vm.sortOptions" direction="vm.sortDirection" )
+      span.label.label-default.label-pill(style="position: absolute; bottom : 0; right : 0;") W sumie: {{vm.model | searchBilans:vm.search | totalProductCost}} PLN
+  .card.page(ng-if="vm.model.length !== 0")
+    .list-group.list-group-flush
+      .list-group-item
+        .row
+          span.col.col-lg-3 Data
+          span.col.col-lg-6 Nazwa 
+          span.col.col-sm-3 
+      a.list-group-item(ng-repeat="product in vm.model | searchBilans:vm.search | orderBy:vm.sortOptions:vm.sortDirection", ui-sref=".comment({ commentId : product.Id })")
+        .row
+          span.col.col-lg-3  {{ product.Created | arborDate }} 
+          span.col.col-lg-6 {{product.ProductName}}
+          span.col.col-sm-3.label.label-default.label-pill.pull-right(ng-class="{ 'label-success' : product.StoredQuantity > 0 }") {{product | productCostSummary}}
 
  

@@ -1,13 +1,10 @@
 declare module arbor.bilans{
   interface IBilansFilter{
-    Add? : boolean;
-    Sell? : boolean;
-    Print? : boolean;
-  }
-  interface IBilansFilter{
-    search? : string;
-    dateFrom? : Date;
-    dateTo? : Date;
-    type? : IBilansFilter;
+    FreeText? : string;
+    DateFrom? : Date;
+    DateTo? : Date;
+    Type? : number;
+    NetPrice : arbor.products.IRangeCriteria;
+    Quantity : arbor.products.IRangeCriteria;
   }
 }

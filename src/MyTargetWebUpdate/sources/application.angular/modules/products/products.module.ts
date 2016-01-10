@@ -20,12 +20,12 @@ app.config(($stateProvider : ng.ui.IStateProvider) => {
     templateUrl : viewTemplateUrl('products', 'productList'),
     controller : controller,
     controllerAs : 'vm',
-    data : { title : 'Produkty' }, 
+    data : { title : 'Produkty' },
   });
 
   $stateProvider.state(`${name}.add`, { data : { isModal : true, title : 'Dodaj produkt' }, url : "/add", controller : createController, controllerAs : 'vm', templateUrl : viewTemplateUrl('products', 'productCreate')});
   $stateProvider.state(`${name}.edit`, { data : { isModal : true , title : 'Edytuj produkt'}, url : "/edit/:id", controller : editController, controllerAs : 'vm', templateUrl : viewTemplateUrl('products', 'productEdit')});
-  $stateProvider.state(`${name}.change`, {data : { isModal : true },  url : "/change/:id", controller : changeBilnasController, controllerAs : 'vm', templateUrl : viewTemplateUrl('products', 'bilansChange')});
+  $stateProvider.state(`${name}.change`, {data : { isModal : true , title : 'Zmień stan magazynu' },  url : "/change/:id", controller : changeBilnasController, controllerAs : 'vm', templateUrl : viewTemplateUrl('products', 'bilansChange')});
 });
 
 

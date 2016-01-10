@@ -1,5 +1,6 @@
 import { SortModelController } from 'arbor.controllers';
 import * as moment from 'moment';
+import options from '../enums/BilansFilterOptions';
 export default class bilansList extends SortModelController<Array<arbor.products.IProduct>> {
 
   sortFields = [
@@ -11,11 +12,13 @@ export default class bilansList extends SortModelController<Array<arbor.products
     { key : "StoredQuantity", name : "Ilość" },
     { key : "NetPrice*StoredQuantity", name : "Wartość" }
   ];
-
+  search : arbor.bilans.IBilansFilter;
   constructor(private $http : ng.IHttpService, $stateParams : ng.ui.IStateParamsService, timeZoneDiff : number){
     super('/api/stockChange', $http, {
       dateFrom : new Date(parseInt($stateParams["dateFrom"])).toISOString(),
       dateTo : new Date(parseInt($stateParams["dateTo"])).toISOString()
     });
+
+    this.search = { Type : options.All, NetPrice : {}, Quantity : {}  };
   }
 }

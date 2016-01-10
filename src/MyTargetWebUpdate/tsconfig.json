@@ -45,6 +45,8 @@
         "./sources/application.angular/modules/bilans/controllers/bilansCreate.ts",
         "./sources/application.angular/modules/bilans/controllers/bilansFilter.ts",
         "./sources/application.angular/modules/bilans/controllers/bilansList.ts",
+        "./sources/application.angular/modules/bilans/enums/BilansFilterOptions.ts",
+        "./sources/application.angular/modules/bilans/interfaces/bilans.d.ts",
         "./sources/application.angular/modules/bilans/interfaces/bilansSearch.d.ts",
         "./sources/application.angular/modules/interfaces/IEntity.d.ts",
         "./sources/application.angular/modules/interfaces/ui/ISelectable.d.ts",

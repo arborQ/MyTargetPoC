@@ -108,7 +108,7 @@ namespace MyTargetWebUpdate
             app.UseIISPlatformHandler(options => options.AuthenticationDescriptions.Clear());
 
             app.UseStaticFiles();
-
+            app.UseClaimsTransformation(new Microsoft.AspNet.Authentication.ClaimsTransformationOptions { });
             app.UseCookieAuthentication(options =>
             {
                 options.LoginPath = "/account/login";

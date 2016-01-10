@@ -1,12 +1,6 @@
 form(name="dialogForm", ng-submit="vm.navigateToResults(dialogForm)")
   .card.page(ng-if="vm.model.length !== 0")
     .card-block 
-      //- .row
-      //-   .col.col-lg-12
-      //-     .form-group(ng-class="dialogForm.search | danger")
-      //-       label.control-label(for="search") Szukaj
-      //-       input.form-control#search(type="text", name="search", ng-maxlength="100", ng-model="vm.model.search")
-      //-       validate-input(error="dialogForm.search")
       .row
         .col.col-sm-6
           .form-group(ng-class="dialogForm.dateFrom | danger")
@@ -24,8 +18,10 @@ form(name="dialogForm", ng-submit="vm.navigateToResults(dialogForm)")
               span.input-group-btn
                 button.btn.btn-default#dateTo(type='button', ng-click='$toIsOpen = true')
                   i.fa.fa-calendar
-      div
-        button.btn.btn-default(type="submit", ng-disabled="dialogForm.$invalid") Szukaj
+    .card-footer.text-right
+      button.btn.btn-default(type="submit", ng-disabled="dialogForm.$invalid") 
+        span.fa.fa-search
+        span.sm-hide {{ vm.$state.current.name == 'arbor-bilans-module' ? 'Szukaj' : 'Szukaj i odśwież' }}
 ui-view 
   .card.page
     .card-block 
