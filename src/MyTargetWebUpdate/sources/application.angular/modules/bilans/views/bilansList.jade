@@ -23,7 +23,9 @@ div(ng-if="!vm.$isLoading")
           span.col.col-sm-3 
       a.list-group-item(ng-repeat="product in vm.model | searchBilans:vm.search | orderBy:vm.sortOptions:vm.sortDirection", ui-sref=".comment({ commentId : product.Id })")
         .row
-          span.col.col-lg-3  {{ product.Created | arborDate }} 
+          span.col.col-lg-3  
+            span.fa.fa-comment-o(ng-if="product.Comment") &nbsp;
+            span {{ product.Created | arborDate }} 
           span.col.col-lg-6 {{product.ProductName}}
           span.col.col-sm-3.label.label-default.label-pill.pull-right(ng-class="{ 'label-success' : product.StoredQuantity > 0 }") {{product | productCostSummary}}
 

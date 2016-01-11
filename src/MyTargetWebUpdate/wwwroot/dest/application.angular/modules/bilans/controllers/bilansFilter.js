@@ -7,7 +7,7 @@ var bilansFilter = (function () {
         var to = $stateParams["dateTo"] ? new Date(parseInt($stateParams["dateTo"])) : moment().toDate();
         this.model = {
             dateFrom: from,
-            dateTo: to
+            dateTo: to,
         };
     }
     bilansFilter.prototype.navigateToResults = function (form) {
@@ -16,8 +16,7 @@ var bilansFilter = (function () {
             var to = moment(this.model.dateTo).endOf("day").toDate().toISOString();
             this.$state.go('arbor-bilans-module.results', {
                 dateFrom: Date.parse(from),
-                dateTo: Date.parse(to),
-                search: this.model.search
+                dateTo: Date.parse(to)
             }, { reload: true });
         }
     };

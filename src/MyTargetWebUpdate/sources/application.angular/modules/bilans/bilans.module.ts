@@ -28,7 +28,7 @@ app.filter('searchBilans', () => {
     console.log(searchCriteria);
     var searchText = (searchCriteria.FreeText || "").toLowerCase();
     var result = (bilansList || [])
-    .filter((p : arbor.bilans.IBilans) => (searchText.length  === 0) || `${p.ProductName}`.toLowerCase().indexOf(searchText) !== -1)
+    .filter((p : arbor.bilans.IBilans) => (searchText.length  === 0) || `${p.ProductName} ${p.Comment}`.toLowerCase().indexOf(searchText) !== -1)
     .filter((p : arbor.bilans.IBilans) => (!searchCriteria.Type) || searchCriteria.Type === bilansFilterOptions.All || p.StoredQuantity === 0 || (searchCriteria.Type === bilansFilterOptions.Buy && p.StoredQuantity > 0) || (searchCriteria.Type === bilansFilterOptions.Sell && p.StoredQuantity < 0))
     .filter((p : arbor.bilans.IBilans) => (!searchCriteria.Quantity.MinValue) || searchCriteria.Quantity.MinValue <= Math.abs(p.StoredQuantity))
     .filter((p : arbor.bilans.IBilans) => (!searchCriteria.Quantity.MaxValue) || searchCriteria.Quantity.MaxValue >= Math.abs(p.StoredQuantity))

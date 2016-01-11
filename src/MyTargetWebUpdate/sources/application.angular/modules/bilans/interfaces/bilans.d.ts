@@ -3,6 +3,7 @@ declare module arbor.bilans{
     ProductName : string;
     NetPrice: number;
     StoredQuantity : number;
+    Comment : string;
   }
 
 }
