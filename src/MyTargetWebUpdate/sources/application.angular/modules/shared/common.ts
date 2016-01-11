@@ -4,6 +4,7 @@ import 'angular-ui';
 import 'angular-ui-templates';
 // import 'angular-sanitize';
 
+import remoteValidation from './directives/remoteValidation';
 import sortDirective from './directives/sortDirective';
 
 import * as moment from 'moment';
@@ -39,6 +40,7 @@ var registerDirectives = (app : ng.IModule) => {
       `
     };
   });
+  app.directive('remoteValidation', remoteValidation);
 
   app.directive("validateInput", () => {
     return {

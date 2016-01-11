@@ -1,7 +1,9 @@
 .form-group(ng-class="formDialog.productCode | danger")
   label.control-label(for="product-code") Kod produktu
-  input.form-control.form-control-danger#product-code(type="text", name="productCode", ng-required="true", ng-maxlength="50", ng-model="vm.model.Code")
+  input.form-control.form-control-danger#product-code(type="text", name="productCode", ng-required="true", ng-maxlength="50", ng-model="vm.model.Code", ng-model-options="{ debounce: { 'default': 500, 'blur': 0 } }" remote-validation="/api/ValidateProductCode", remote-name="uniqCode", remote-params="{ productId : vm.model.Id }")
   validate-input(error="formDialog.productCode")
+  ng-messages(for="formDialog.productCode.$error")
+    span.label.label-danger(ng-message="uniqCode") Kod musi być unikalny
 .form-group(ng-class="formDialog.productName | danger")
   label.control-label(for="product-name") Nazwa produktu
   input.form-control#product-name(type="text", name="productName", ng-required="true", ng-maxlength="100", ng-model="vm.model.Name")

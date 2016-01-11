@@ -2,6 +2,7 @@ var angular_1 = require('angular');
 require('angular-ui-router');
 require('angular-ui');
 require('angular-ui-templates');
+var remoteValidation_1 = require('./directives/remoteValidation');
 var sortDirective_1 = require('./directives/sortDirective');
 var moment = require('moment');
 require('angularjs-toaster');
@@ -26,6 +27,7 @@ var registerDirectives = function (app) {
             template: "\n        <div>\n          <div class=\"loading_placeholder\" ng-show=\"!ngModel\">\n            <div class=\"loading embeded\"></div>\n          </div>\n          <ng-transclude ng-show=\"ngModel\"></ng-transclude>\n        </div>\n      "
         };
     });
+    app.directive('remoteValidation', remoteValidation_1.default);
     app.directive("validateInput", function () {
         return {
             restrict: 'E',

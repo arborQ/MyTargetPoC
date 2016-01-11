@@ -69,6 +69,7 @@
         "./sources/application.angular/modules/shared/controllers/modelController.ts",
         "./sources/application.angular/modules/shared/controllers/sortController.ts",
         "./sources/application.angular/modules/shared/controllers/sortModelController.ts",
+        "./sources/application.angular/modules/shared/directives/remoteValidation.ts",
         "./sources/application.angular/modules/shared/directives/sortDirective.ts",
         "./sources/application.angular/modules/shared/interfaces/angular-ui.d.ts",
         "./sources/application.angular/modules/shared/interfaces/dialogPage.d.ts",
