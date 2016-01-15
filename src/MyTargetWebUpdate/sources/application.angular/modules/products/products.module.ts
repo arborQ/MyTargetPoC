@@ -6,6 +6,8 @@ import createController from './controllers/productCreate';
 import editController from './controllers/productEdit';
 import changeBilnasController from '../bilans/controllers/bilansCreate';
 
+import locationDirective from './directives/locationDIrective';
+
 var name = "arbor-products-module";
 var app = angular.module(name, [ 'ui.router', 'ngMessages']);
 
@@ -33,7 +35,7 @@ app.filter('searchProducts', () => {
   return (products : arbor.products.IProduct[], searchCriteria : arbor.products.ISearchCriteria) => {
     var searchText = (searchCriteria.FreeText || "").toLowerCase();
     var result = (products || [])
-    .filter((p : arbor.products.IProduct) => (!searchCriteria.FreeText || searchCriteria.FreeText.length  === 0) || `${p.Code} ${p.Name} ${p.Supplier}`.toLowerCase().indexOf(searchText) !== -1)
+    .filter((p : arbor.products.IProduct) => (!searchCriteria.FreeText || searchCriteria.FreeText.length  === 0) || `${p.Code} ${p.Name} ${p.Supplier} ${p.Location}`.toLowerCase().indexOf(searchText) !== -1)
     .filter((p : arbor.products.IProduct) => (!searchCriteria.Size || searchCriteria.Size.length === 0) || searchCriteria.Size.indexOf(p.Size) !== -1)
     .filter((p : arbor.products.IProduct) => (!searchCriteria.Quantity.MinValue) || searchCriteria.Quantity.MinValue <= p.StoredQuantity)
     .filter((p : arbor.products.IProduct) => (!searchCriteria.Quantity.MaxValue) || searchCriteria.Quantity.MaxValue >= p.StoredQuantity)
@@ -68,7 +70,7 @@ app.filter('sizeSelected', () => {
     return sizes.indexOf(size) !== -1;
   };
 });
-
+app.directive('loadLocations', locationDirective);
 app.directive('productRangeFilter', () => {
   return {
     restrict : 'E',

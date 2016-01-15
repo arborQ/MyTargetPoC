@@ -5,14 +5,17 @@
       include ./filterForm
     .card-footer.text-right
       .btn-group
+        button.btn.btn-info(ng-click="vm.loadData()")
+          span.fa.fa-refresh &nbsp;
+          span.sm-hide Odśwież
         button.btn.btn-default(ng-click="vm.setDefaultFilerState()")
-          span.fa.fa-terminal
+          span.fa.fa-terminal &nbsp;
           span.sm-hide Czyść filtr
         button.btn.btn-info(ng-click="vm.search.$showAdvanceSearch = !vm.search.$showAdvanceSearch")
-          span.fa(ng-class="{ false : 'fa-search-plus', true : 'fa-search-minus' }[vm.search.$showAdvanceSearch]")
+          span.fa(ng-class="{ false : 'fa-search-plus', true : 'fa-search-minus' }[vm.search.$showAdvanceSearch]") &nbsp;
           span.sm-hide {{vm.search.$showAdvanceSearch ? 'Podstawowy filtr' : 'Zaawansowany filtr'}}
         button.btn.btn-success(ui-sref='.add')
-          span.fa.fa-plus
+          span.fa.fa-plus &nbsp;
           span.sm-hide Dodaj nowy produkt
 .loading_placeholder(ng-if="vm.$isLoading")
   .loading.main

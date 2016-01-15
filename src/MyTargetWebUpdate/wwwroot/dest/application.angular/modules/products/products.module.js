@@ -5,6 +5,7 @@ var productList_1 = require('./controllers/productList');
 var productCreate_1 = require('./controllers/productCreate');
 var productEdit_1 = require('./controllers/productEdit');
 var bilansCreate_1 = require('../bilans/controllers/bilansCreate');
+var locationDIrective_1 = require('./directives/locationDIrective');
 var name = "arbor-products-module";
 var app = angular.module(name, ['ui.router', 'ngMessages']);
 app.constant('productSizes', ["XS", "S", "M", "L", "XL", "XXL"]);
@@ -27,7 +28,7 @@ app.filter('searchProducts', function () {
     return function (products, searchCriteria) {
         var searchText = (searchCriteria.FreeText || "").toLowerCase();
         var result = (products || [])
-            .filter(function (p) { return (!searchCriteria.FreeText || searchCriteria.FreeText.length === 0) || (p.Code + " " + p.Name + " " + p.Supplier).toLowerCase().indexOf(searchText) !== -1; })
+            .filter(function (p) { return (!searchCriteria.FreeText || searchCriteria.FreeText.length === 0) || (p.Code + " " + p.Name + " " + p.Supplier + " " + p.Location).toLowerCase().indexOf(searchText) !== -1; })
             .filter(function (p) { return (!searchCriteria.Size || searchCriteria.Size.length === 0) || searchCriteria.Size.indexOf(p.Size) !== -1; })
             .filter(function (p) { return (!searchCriteria.Quantity.MinValue) || searchCriteria.Quantity.MinValue <= p.StoredQuantity; })
             .filter(function (p) { return (!searchCriteria.Quantity.MaxValue) || searchCriteria.Quantity.MaxValue >= p.StoredQuantity; })
@@ -61,6 +62,7 @@ app.filter('sizeSelected', function () {
         return sizes.indexOf(size) !== -1;
     };
 });
+app.directive('loadLocations', locationDIrective_1.default);
 app.directive('productRangeFilter', function () {
     return {
         restrict: 'E',

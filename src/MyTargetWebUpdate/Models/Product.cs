@@ -27,6 +27,9 @@ namespace MyTargetWebUpdate.Models
         [MaxLength(50)]
         public string Supplier { get; set; }
 
+        [MaxLength(50)]
+        public string Location { get; set; }
+
         public List<StockChange> StockChanges { get; set; }
     }
 }

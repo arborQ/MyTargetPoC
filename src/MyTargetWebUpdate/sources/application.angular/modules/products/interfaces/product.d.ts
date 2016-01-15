@@ -8,5 +8,6 @@ declare module arbor.products{
       Tax? : number;
       StoredQuantity : number;
       Supplier : string;
+      Location : string;
   }
 }

@@ -59,6 +59,7 @@ namespace MyTargetWebUpdate.Controllers
             product.NetPrice = value.NetPrice;
             product.Color = value.Color;
             product.Supplier = value.Supplier;
+            product.Location = value.Location;
             DbContext.SaveChanges();
 
             return Ok();

@@ -16,8 +16,12 @@
   label.control-label(for="supplier") Dostawca
   input.form-control#supplier(type="text", name="supplier", ng-maxlength="50", ng-model="vm.model.Supplier")
   validate-input(error="formDialog.supplier")
+.form-group(ng-class="formDialog.location | danger")
+  label.control-label(for="location") Lokalizacja
+  input.form-control#location(type="text", name="location", ng-maxlength="50", autocomplete="off", ng-model="vm.model.Location", typeahead-select-on-blur="true", typeahead-min-length="0", uib-typeahead="state for state in [ 'pudło 1', 'pudło 2','pudło 3','pudło 4','pudło 5','pudło 6' ]  | filter:$viewValue", typeahead-show-hint="true")
+  validate-input(error="formDialog.location")
 .form-group(ng-class="formDialog.color | danger")
-  label.control-label(for="color") Kolor
+  label.control-label(for="color") Kolor 
   .input-group
     input.form-control#color(type="text", name="color", ng-maxlength="20", ng-model="vm.model.Color")
     span#basic-addon1.input-group-addon(ng-style="{backgroundColor : vm.model.Color}") &nbsp;
