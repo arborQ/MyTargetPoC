@@ -2,7 +2,7 @@ export default class modelController<T>{
   model : T;
   $isLoading : boolean;
   public PageTitle : string;
-  constructor(public serviceUrl : string, public $http : ng.IHttpService, public params? : {}){
+  constructor(public serviceUrl : string, public $http : ng.IHttpService, public toaster : ngtoaster.IToasterService, public params? : {}){
     this.model = this.defaultModel();
     this.loadData();
   }

@@ -1,0 +1,6 @@
+ul.nav.nav-tabs.page
+  li.nav-item(ng-repeat="item in vm.dictionaryTypes")
+    a.nav-link(ui-sref=".group({ id : item.groupKey })", ui-sref-active='active') {{ item.display }}
+ui-view.page
+  i Wybierz grupę ustawień ktrorą chcesz edytować.
+  

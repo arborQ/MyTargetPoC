@@ -1,8 +1,8 @@
 var modelController_1 = require('./modelController');
 var sortModelController = (function (_super) {
     __extends(sortModelController, _super);
-    function sortModelController(serviceUrl, $http, params) {
-        _super.call(this, serviceUrl, $http, params);
+    function sortModelController(serviceUrl, $http, toaster, params) {
+        _super.call(this, serviceUrl, $http, toaster, params);
         this.serviceUrl = serviceUrl;
         this.$http = $http;
         this.params = params;

@@ -1,7 +1,8 @@
 var modelController = (function () {
-    function modelController(serviceUrl, $http, params) {
+    function modelController(serviceUrl, $http, toaster, params) {
         this.serviceUrl = serviceUrl;
         this.$http = $http;
+        this.toaster = toaster;
         this.params = params;
         this.model = this.defaultModel();
         this.loadData();

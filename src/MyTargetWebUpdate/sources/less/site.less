@@ -1,6 +1,6 @@
 @fontSize: 0.9rem;
 @dangerColor : #d9534f;
-
+@pageWidth : 800px;
 @-webkit-keyframes rotate {
   from {
     -webkit-transform: rotate(0deg);
@@ -34,10 +34,15 @@ body{
     transform: translateY(-100%);
 }
 
-
+.page{
+  max-width : @pageWidth;
+  margin : 0 auto;
+  margin-top: 10px;
+  display: block;
+}
 .card{
   &.page{
-    max-width : 800px;
+    max-width : @pageWidth;
     margin : 0 auto;
     margin-top: 10px;
   }

@@ -17,15 +17,18 @@ System.config({
     "Bonsanto/simple-http": "github:Bonsanto/simple-http@master",
     "angular": "npm:angular@1.4.8",
     "angular-bootstrap": "npm:angular-bootstrap@0.12.2",
+    "angular-jwt": "npm:angular-jwt@0.0.9",
     "angular-loading-bar": "npm:angular-loading-bar@0.8.0",
     "angular-messages": "github:angular/bower-angular-messages@1.4.8",
     "angular-resource": "npm:angular-resource@1.4.8",
     "angular-sanitize": "github:angular/bower-angular-sanitize@1.4.8",
+    "angular-storage": "npm:angular-storage@0.0.13",
     "angular-ui": "bundles/angular/ui-bootstrap-custom-build/ui-bootstrap-custom-0.14.3",
     "angular-ui-router": "github:angular-ui/ui-router@0.2.15",
     "angular-ui-templates": "bundles/angular/ui-bootstrap-custom-build/ui-bootstrap-custom-tpls-0.14.3",
     "angularjs-toaster": "npm:angularjs-toaster@0.4.15",
     "arbor.controllers": "dest/application.angular/modules/shared/modelController",
+    "auth0-angular": "npm:auth0-angular@4.1.0",
     "babel": "npm:babel-core@5.8.34",
     "babel-runtime": "npm:babel-runtime@5.8.34",
     "core-js": "npm:core-js@1.2.6",
@@ -48,13 +51,21 @@ System.config({
       "assert": "npm:assert@1.3.0"
     },
     "github:jspm/nodelibs-buffer@0.1.0": {
-      "buffer": "npm:buffer@3.5.4"
+      "buffer": "npm:buffer@3.6.0"
     },
     "github:jspm/nodelibs-domain@0.1.0": {
       "domain-browser": "npm:domain-browser@1.1.4"
     },
     "github:jspm/nodelibs-events@0.1.1": {
       "events": "npm:events@1.0.2"
+    },
+    "github:jspm/nodelibs-http@1.7.1": {
+      "Base64": "npm:Base64@0.2.1",
+      "events": "github:jspm/nodelibs-events@0.1.1",
+      "inherits": "npm:inherits@2.0.1",
+      "stream": "github:jspm/nodelibs-stream@0.1.0",
+      "url": "github:jspm/nodelibs-url@0.1.0",
+      "util": "github:jspm/nodelibs-util@0.1.0"
     },
     "github:jspm/nodelibs-os@0.1.0": {
       "os-browserify": "npm:os-browserify@0.1.2"
@@ -68,12 +79,19 @@ System.config({
     "github:jspm/nodelibs-stream@0.1.0": {
       "stream-browserify": "npm:stream-browserify@1.0.0"
     },
+    "github:jspm/nodelibs-url@0.1.0": {
+      "url": "npm:url@0.10.3"
+    },
     "github:jspm/nodelibs-util@0.1.0": {
       "util": "npm:util@0.10.3"
     },
     "npm:amdefine@1.0.0": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "module": "github:jspm/nodelibs-module@0.1.0",
+      "path": "github:jspm/nodelibs-path@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:angular-storage@0.0.13": {
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
@@ -87,6 +105,13 @@ System.config({
     "npm:assert@1.3.0": {
       "util": "npm:util@0.10.3"
     },
+    "npm:auth0-angular@4.1.0": {
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
+      "http": "github:jspm/nodelibs-http@1.7.1",
+      "path": "github:jspm/nodelibs-path@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+    },
     "npm:babel-runtime@5.8.34": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
@@ -97,12 +122,12 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2",
       "systemjs-json": "github:systemjs/plugin-json@0.1.0"
     },
-    "npm:buffer@3.5.4": {
+    "npm:buffer@3.6.0": {
       "base64-js": "npm:base64-js@0.0.8",
       "child_process": "github:jspm/nodelibs-child_process@0.1.0",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "ieee754": "npm:ieee754@1.1.6",
-      "isarray": "npm:isarray@0.0.1",
+      "isarray": "npm:isarray@1.0.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:caniuse-api@1.4.1": {
@@ -262,6 +287,9 @@ System.config({
       "asap": "npm:asap@2.0.3",
       "fs": "github:jspm/nodelibs-fs@0.1.2"
     },
+    "npm:punycode@1.3.2": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
     "npm:q@1.4.1": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
@@ -338,6 +366,12 @@ System.config({
     },
     "npm:ua-parser-js@0.7.9": {
       "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+    },
+    "npm:url@0.10.3": {
+      "assert": "github:jspm/nodelibs-assert@0.1.0",
+      "punycode": "npm:punycode@1.3.2",
+      "querystring": "npm:querystring@0.2.0",
+      "util": "github:jspm/nodelibs-util@0.1.0"
     },
     "npm:util@0.10.3": {
       "inherits": "npm:inherits@2.0.1",

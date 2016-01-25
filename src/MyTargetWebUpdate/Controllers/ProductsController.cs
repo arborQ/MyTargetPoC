@@ -43,6 +43,10 @@ namespace MyTargetWebUpdate.Controllers
         [HttpPost]
         public ActionResult Post([FromBody]Product value)
         {
+            var codeExists = DbContext.Products.Any(p => p.Code == value.Code);
+            //if(codeExists){
+            //  return BadRequest(new { _messageData = string.Format("Produkt z kodem '{0}' już istnieje.", value.Code) });
+            //}
             DbContext.Products.Add(value);
             DbContext.SaveChanges();
             return Ok(value);
@@ -62,7 +66,7 @@ namespace MyTargetWebUpdate.Controllers
             product.Location = value.Location;
             DbContext.SaveChanges();
 
-            return Ok();
+            return Ok(new { _messageData = string.Format("Produkt '{0}' został zaktualizowany.", product.Code) });
         }
 
         // DELETE api/values/5

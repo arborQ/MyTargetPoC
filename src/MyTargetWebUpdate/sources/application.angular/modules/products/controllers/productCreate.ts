@@ -4,6 +4,7 @@ export default class productCreate extends CreateModelController<arbor.products.
   constructor(
     $http : ng.IHttpService,
     $state : ng.ui.IStateService,
+    toaster : ngtoaster.IToasterService,
     $stateParams : ng.ui.IStateService,
     productSizes : any) {
       this.PageTitle = "Dodaj produkt";
@@ -12,7 +13,7 @@ export default class productCreate extends CreateModelController<arbor.products.
       this.onServerSaved = (data : ng.IHttpPromiseCallbackArg<arbor.products.IProduct>) => {
         $state.go('^.edit', { id : data.data.Id})
       };
-      super('/api/products', $http);
+      super('/api/products', $http, toaster);
   }
 
   loadData(){ }

@@ -6,5 +6,6 @@ import baseApplication from './modules/shared/common';
 baseApplication({ pages, applicationConfig, itemDictionary :
   {
     'arbor-products-module' : 'Produkty',
-    'arbor-bilans-module' : 'Bilans'
+    'arbor-bilans-module' : 'Bilans',
+    'arbor-dictionary-module' : 'Ustawienia'
 } })

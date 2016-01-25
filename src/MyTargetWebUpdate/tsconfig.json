@@ -21,7 +21,9 @@
         "./sources/**/*.tsx"
     ],
     "files": [
+        "./typings/angular-jwt/angular-jwt.d.ts",
         "./typings/angular-loading-bar/angular-loading-bar.d.ts",
+        "./typings/angular-storage/angular-storage.d.ts",
         "./typings/angular-ui-router/angular-ui-router.d.ts",
         "./typings/angularjs-toaster/angularjs-toaster.d.ts",
         "./typings/angularjs/angular-resource.d.ts",
@@ -48,6 +50,9 @@
         "./sources/application.angular/modules/bilans/enums/BilansFilterOptions.ts",
         "./sources/application.angular/modules/bilans/interfaces/bilans.d.ts",
         "./sources/application.angular/modules/bilans/interfaces/bilansSearch.d.ts",
+        "./sources/application.angular/modules/dictionary/controllers/dictionaryList.ts",
+        "./sources/application.angular/modules/dictionary/dictionary.module.ts",
+        "./sources/application.angular/modules/dictionary/interfaces/dictionaryProperty.d.ts",
         "./sources/application.angular/modules/interfaces/IEntity.d.ts",
         "./sources/application.angular/modules/interfaces/ui/ISelectable.d.ts",
         "./sources/application.angular/modules/login/controllers/loginPage.ts",
@@ -73,6 +78,7 @@
         "./sources/application.angular/modules/shared/controllers/sortModelController.ts",
         "./sources/application.angular/modules/shared/directives/remoteValidation.ts",
         "./sources/application.angular/modules/shared/directives/sortDirective.ts",
+        "./sources/application.angular/modules/shared/interceptors/errorHandler.ts",
         "./sources/application.angular/modules/shared/interfaces/angular-ui.d.ts",
         "./sources/application.angular/modules/shared/interfaces/dialogPage.d.ts",
         "./sources/application.angular/modules/shared/interfaces/loadingBar.d.ts",

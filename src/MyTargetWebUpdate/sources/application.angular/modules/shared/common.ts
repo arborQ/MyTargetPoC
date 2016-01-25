@@ -7,6 +7,8 @@ import 'angular-ui-templates';
 import remoteValidation from './directives/remoteValidation';
 import sortDirective from './directives/sortDirective';
 
+import errorHandler from './interceptors/errorHandler'
+
 import * as moment from 'moment';
 import 'angularjs-toaster';
 import * as loadingBar from "angular-loading-bar";
@@ -96,15 +98,24 @@ var registerFilters = (app : ng.IModule) => {
 };
 
 var registerProviders = (app : ng.IModule) => {
+
+  app.factory('arborErrorInerceptor', (toaster : ngtoaster.IToasterService) => {
+    return new errorHandler(toaster);
+  });
+
   app.factory('arborInterceptor', ['$q','toaster', ($q : ng.IQService, toaster : ngtoaster.IToasterService) => {
-    return {
+    return <ng.IHttpInterceptor>{
       'response': function(res : any) {
-      if(res.data._messageData && res.data._contentData){
-        toaster.info("info", res.data._messageData);
-        res.data = res.data._contentData;
+        if(res.data._messageData){
+          toaster.info("info", res.data._messageData);
+          res.data = res.data._contentData;
+        }
+        return res;
+      },
+      'responseError' : (res : any) => {
+        toaster.error(res.statusText);
+        return res;
       }
-      return res;
-    }
     };
   }]);
 };
@@ -118,16 +129,10 @@ export default function registerApplication({ pages, applicationConfig, itemDict
   app.config(applicationConfig);
   app.config(['$httpProvider', ($httpProvider : ng.IHttpProvider) => {
     $httpProvider.interceptors.push('arborInterceptor');
-
-
+    // $httpProvider.interceptors.push('arborErrorInerceptor');
   }]);
 
-  // app.run(($rootScope : ng.IScope) => {
-  //   var body = document.
-  //   $rootScope.$on("$stateChangeSuccess", (event, state) => {
-  //     console.log({ event, state});
-  //   });
-  // });
+
   var menuOptions = pages.filter((p : any) => p.showNavigation).map((p : any) => p.name);
   app.constant('menuOptions', menuOptions);
   app.constant('itemDictionary', itemDictionary);

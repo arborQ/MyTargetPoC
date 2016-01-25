@@ -4,6 +4,7 @@ require('angular-ui');
 require('angular-ui-templates');
 var remoteValidation_1 = require('./directives/remoteValidation');
 var sortDirective_1 = require('./directives/sortDirective');
+var errorHandler_1 = require('./interceptors/errorHandler');
 var moment = require('moment');
 require('angularjs-toaster');
 var loadingBar = require("angular-loading-bar");
@@ -83,13 +84,20 @@ var registerFilters = function (app) {
     });
 };
 var registerProviders = function (app) {
+    app.factory('arborErrorInerceptor', function (toaster) {
+        return new errorHandler_1.default(toaster);
+    });
     app.factory('arborInterceptor', ['$q', 'toaster', function ($q, toaster) {
             return {
                 'response': function (res) {
-                    if (res.data._messageData && res.data._contentData) {
+                    if (res.data._messageData) {
                         toaster.info("info", res.data._messageData);
                         res.data = res.data._contentData;
                     }
+                    return res;
+                },
+                'responseError': function (res) {
+                    toaster.error(res.statusText);
                     return res;
                 }
             };

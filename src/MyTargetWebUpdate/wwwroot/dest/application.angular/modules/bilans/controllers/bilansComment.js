@@ -1,8 +1,8 @@
 var arbor_controllers_1 = require('arbor.controllers');
 var bilansComment = (function (_super) {
     __extends(bilansComment, _super);
-    function bilansComment($http, $stateParams, arborDateFilter) {
-        _super.call(this, '/api/stockChangeComment', $http, { id: $stateParams["commentId"] });
+    function bilansComment($http, $stateParams, toaster, arborDateFilter) {
+        _super.call(this, '/api/stockChangeComment', $http, toaster, { id: $stateParams["commentId"] });
         this.arborDateFilter = arborDateFilter;
         this.PageTitle = 'Komentarz';
     }

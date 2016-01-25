@@ -13,8 +13,8 @@ export default class bilansList extends SortModelController<Array<arbor.products
     { key : "NetPrice*StoredQuantity", name : "Wartość" }
   ];
   search : arbor.bilans.IBilansFilter;
-  constructor(private $http : ng.IHttpService, $stateParams : ng.ui.IStateParamsService, timeZoneDiff : number){
-    super('/api/stockChange', $http, {
+  constructor(private $http : ng.IHttpService, $stateParams : ng.ui.IStateParamsService, toaster : ngtoaster.IToasterService, timeZoneDiff : number){
+    super('/api/stockChange', $http, toaster, {
       dateFrom : new Date(parseInt($stateParams["dateFrom"])).toISOString(),
       dateTo : new Date(parseInt($stateParams["dateTo"])).toISOString()
     });

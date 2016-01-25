@@ -12,5 +12,7 @@ namespace MyTargetWebUpdate.Models
         public DbSet<Product> Products { get; set; }
         
         public DbSet<StockChange> StockChanges { get; set; }
+        
+        public DbSet<DictionaryProperty> DictionaryProperties { get; set; }
     }
 }

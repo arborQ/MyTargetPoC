@@ -14,3 +14,5 @@
 /// <reference path="moment/moment.d.ts" />
 /// <reference path="moment/moment-node.d.ts" />
 /// <reference path="angularjs/angular-sanitize.d.ts" />
+/// <reference path="angular-storage/angular-storage.d.ts" />
+/// <reference path="angular-jwt/angular-jwt.d.ts" />

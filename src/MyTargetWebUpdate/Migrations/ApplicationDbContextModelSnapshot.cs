@@ -16,6 +16,26 @@ namespace MyTargetWebUpdate.Migrations
                 .HasAnnotation("ProductVersion", "7.0.0-rc1-16348")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("MyTargetWebUpdate.Models.DictionaryProperty", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Description")
+                        .HasAnnotation("MaxLength", 200);
+
+                    b.Property<string>("GroupKey")
+                        .IsRequired()
+                        .HasAnnotation("MaxLength", 20);
+
+                    b.Property<int>("Order");
+
+                    b.Property<string>("PropertyValue")
+                        .IsRequired();
+
+                    b.HasKey("Id");
+                });
+
             modelBuilder.Entity("MyTargetWebUpdate.Models.Product", b =>
                 {
                     b.Property<long>("Id")

@@ -8,6 +8,7 @@ function default_1($http, $q) {
             ctrl.$asyncValidators[scope.remoteName] = function (modelValue, viewValue) {
                 var defer = $q.defer();
                 if (viewValue) {
+                    ctrl.$setValidity("remoteValidationInProgress", false);
                     var params = { value: viewValue };
                     angular_1.extend(params, scope.remoteParams);
                     $http.get(scope.remoteValidation, { params: params })
@@ -18,6 +19,8 @@ function default_1($http, $q) {
                         else {
                             defer.reject();
                         }
+                    }).finally(function () {
+                        ctrl.$setValidity("remoteValidationInProgress", true);
                     });
                 }
                 return defer.promise;

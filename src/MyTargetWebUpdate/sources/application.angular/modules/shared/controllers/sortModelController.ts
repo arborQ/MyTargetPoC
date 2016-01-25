@@ -4,8 +4,8 @@ export default class sortModelController<T> extends modelController<T>{
     sortDirection : boolean;
 
     sortFields : arbor.sortFilter.ISortKeyValue[];
-    constructor(public serviceUrl : string, public $http : ng.IHttpService, public params? : {}){
-      super(serviceUrl, $http, params);
+    constructor(public serviceUrl : string, public $http : ng.IHttpService, toaster : ngtoaster.IToasterService, public params? : {}){
+      super(serviceUrl, $http, toaster, params);
 
       this.sortDirection = false;
       this.sortOptions = [ ];

@@ -9,6 +9,7 @@ export default function($http : ng.IHttpService, $q : ng.IQService) {
         var defer = $q.defer();
 
           if(viewValue){
+            ctrl.$setValidity("remoteValidationInProgress", false);
             var params = { value : viewValue };
             extend(params, scope.remoteParams);
             $http.get(scope.remoteValidation, { params })
@@ -18,6 +19,8 @@ export default function($http : ng.IHttpService, $q : ng.IQService) {
                 }else{
                   defer.reject();
                 }
+            }).finally(() => {
+              ctrl.$setValidity("remoteValidationInProgress", true);
             });
           }
 

@@ -12,8 +12,8 @@ export default class ProductList extends SortModelController<arbor.products.IPro
         { key: "Location", name: "Lokacja" },
         { key: "NetPrice*StoredQuantity", name: "Wartość" }
     ];
-    constructor($http: ng.IHttpService, public productSizes: any) {
-        super("/api/products", $http)
+    constructor($http: ng.IHttpService, toaster : ngtoaster.IToasterService, public productSizes: any) {
+        super("/api/products", $http, toaster)
         this.setDefaultFilerState();
     };
 
