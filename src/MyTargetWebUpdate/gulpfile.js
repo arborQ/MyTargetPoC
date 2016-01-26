@@ -57,12 +57,21 @@ gulp.task('jade:watch', ['jade:compile'], function(){
   gulp.watch(sourceDir + '/**/*.jade', ['jade:compile']);
 });
 
+gulp.task('html:compile', function(){
+  gulp.src(sourceDir + '/**/*.html')
+  .pipe(gulp.dest(targetDir));
+});
+
+gulp.task('html:watch', ['html:compile'], function(){
+  gulp.watch(sourceDir + '/**/*.html', ['html:compile']);
+});
+
 gulp.task('build:angular', function () {
     jspm.install(true, { lock: true });
     jspm.setPackagePath('.');
     jspm.bundleSFX('dest/application.angular/app', bundleDir + '/bundle.angular.sfx.js', { mangle: false, minify : true });
 });
 
-gulp.task('all:watch', ['jade:watch', 'less:watch', 'ts:watch', 'tsx:watch'] , function(){});
-gulp.task('all:compile', ['jade:compile', 'less:compile', 'ts:compile', 'tsx:compile'] , function(){});
+gulp.task('all:watch', ['jade:watch', 'less:watch', 'ts:watch', 'tsx:watch', 'html:watch'] , function(){});
+gulp.task('all:compile', ['jade:compile', 'less:compile', 'ts:compile', 'tsx:compile', 'html:compile'] , function(){});
 //jspm bundle ngApp/app wwwroot/bundle.angular.min.js --minify --no-mangle

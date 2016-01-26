@@ -5,6 +5,9 @@
       include ./filterForm
     .card-footer.text-right
       .btn-group
+        button.btn.btn-info(ng-click="vm.exportExcel((vm.model | searchProducts:vm.search:false | orderBy:vm.sortOptions:vm.sortDirection))")
+          span.fa.fa-file-excel-o &nbsp;
+          span.sm-hide Excel
         button.btn.btn-info(ng-click="vm.loadData()")
           span.fa.fa-refresh &nbsp;
           span.sm-hide Odśwież

@@ -1,5 +1,5 @@
 import { SortModelController } from "arbor.controllers";
-
+import reportExcel from '../../shared/reports'
 export default class ProductList extends SortModelController<arbor.products.IProduct[]>{
     search: arbor.products.ISearchCriteria;
     sortFields = [
@@ -20,7 +20,9 @@ export default class ProductList extends SortModelController<arbor.products.IPro
     defaultModel() {
         return new Array<arbor.products.IProduct>();
     }
-
+    exportExcel(data : arbor.products.IProduct[]){
+      reportExcel('newName', data, { Code : 'Kod', Name : 'Nazwa', Supplier : 'Dostawca', NetPrice : 'Cena', StoredQuantity : 'Ilosc', Size : 'Rozmiar' });
+    }
     setDefaultFilerState() {
         this.search = <arbor.products.ISearchCriteria>{
             FreeText: "",

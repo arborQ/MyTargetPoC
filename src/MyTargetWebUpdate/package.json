@@ -4,7 +4,6 @@
   "description": "test React - Angular app",
   "main": "index.js",
   "scripts": {
-    "postinstall": "tsd reinstall --overwrite --save",
     "build:angular:application": "jspm bundle-sfx dest/application.angular/app wwwroot/bundles/angular/app.bundle.sfx.js --minify --no-mangle",
     "build:angular:anonymous": "jspm bundle-sfx dest/application.angular/anonymous.app wwwroot/bundles/angular/anonymous.app.bundle.sfx.js --minify --no-mangle",
     "build:angular": "npm run build:angular:application && npm run build:angular:anonymous",

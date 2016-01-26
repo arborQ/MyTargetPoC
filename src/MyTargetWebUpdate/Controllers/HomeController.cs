@@ -19,5 +19,10 @@ namespace MyTargetWebUpdate.Controllers
         {
             return View();
         }
+
+        public IActionResult Polymer()
+        {
+          return View();
+        }
     }
 }

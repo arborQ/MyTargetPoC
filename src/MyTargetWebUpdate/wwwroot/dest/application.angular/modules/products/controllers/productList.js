@@ -1,4 +1,5 @@
 var arbor_controllers_1 = require("arbor.controllers");
+var reports_1 = require('../../shared/reports');
 var ProductList = (function (_super) {
     __extends(ProductList, _super);
     function ProductList($http, toaster, productSizes) {
@@ -19,6 +20,9 @@ var ProductList = (function (_super) {
     ;
     ProductList.prototype.defaultModel = function () {
         return new Array();
+    };
+    ProductList.prototype.exportExcel = function (data) {
+        reports_1.default('newName', data, { Code: 'Kod', Name: 'Nazwa', Supplier: 'Dostawca', NetPrice: 'Cena', StoredQuantity: 'Ilosc', Size: 'Rozmiar' });
     };
     ProductList.prototype.setDefaultFilerState = function () {
         this.search = {

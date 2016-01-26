@@ -1,0 +1,10 @@
+link(rel="import" href="../../../bower_components/polymer/polymer.html")
+dom-module(id="products-list")
+  template
+    iron-ajax(url="/api/products", auto, handle-as="json", last-response="{{ajaxResponse}}")
+    paper-listbox(selected='0')
+      template(is="dom-repeat" items="[[ajaxResponse]]")
+        paper-item {{item.Code}}
+  script.
+    (() => { Polymer({ is : 'products-list', properties : { ajaxResponse : [{Code : 'test'}] } }) })();
+  

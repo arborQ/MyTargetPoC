@@ -24,6 +24,13 @@
     "headroom.js": "~0.7.0",
     "font-awesome": "~4.5.0",
     "angular-loading-bar": "~0.8.0",
-    "AngularJS-Toaster": "angularjs-toaster#~0.4.181"
+    "AngularJS-Toaster": "angularjs-toaster#~0.4.181",
+    "iron-elements": "PolymerElements/iron-elements#^1.0.0",
+    "neon-elements": "PolymerElements/neon-elements#^1.0.0",
+    "page": "visionmedia/page.js#~1.6.4",
+    "paper-elements": "PolymerElements/paper-elements#^1.0.1",
+    "platinum-elements": "PolymerElements/platinum-elements#^1.1.0",
+    "polymer": "Polymer/polymer#^1.2.0",
+    "app-router": "^2.6.1"
   }
 }
