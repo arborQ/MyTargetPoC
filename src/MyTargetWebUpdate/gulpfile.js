@@ -7,6 +7,7 @@ concatCss = require('gulp-concat-css'),
 ugly = require('gulp-minify-css'),
 jade = require('gulp-jade'),
 jspm = require('jspm'),
+htmlUgly = require('gulp-minify-html'),
 autoprefixer = require('gulp-autoprefixer')
 ;
 var sourceDir = './sources';
@@ -59,6 +60,7 @@ gulp.task('jade:watch', ['jade:compile'], function(){
 
 gulp.task('html:compile', function(){
   gulp.src(sourceDir + '/**/*.html')
+  .pipe(htmlUgly())
   .pipe(gulp.dest(targetDir));
 });
 

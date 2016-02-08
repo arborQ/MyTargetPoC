@@ -38,8 +38,8 @@ System.config({
     "moment": "npm:moment@2.11.0",
     "ng-csv": "npm:ng-csv@0.3.6",
     "q": "npm:q@1.4.1",
-    "react": "npm:react@0.14.3",
-    "react-dom": "npm:react-dom@0.14.3",
+    "react": "npm:react@0.14.7",
+    "react-dom": "npm:react-dom@0.14.7",
     "react-router": "npm:react-router@1.0.0",
     "github:angular-ui/ui-router@0.2.15": {
       "angular": "npm:angular@1.4.8"
@@ -173,6 +173,9 @@ System.config({
       "promise": "npm:promise@7.0.4",
       "ua-parser-js": "npm:ua-parser-js@0.7.9",
       "whatwg-fetch": "npm:whatwg-fetch@0.9.0"
+    },
+    "npm:fbjs@0.6.1": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:history@1.15.0": {
       "child_process": "github:jspm/nodelibs-child_process@0.1.0",
@@ -311,6 +314,9 @@ System.config({
     "npm:react-dom@0.14.3": {
       "react": "npm:react@0.14.3"
     },
+    "npm:react-dom@0.14.7": {
+      "react": "npm:react@0.14.7"
+    },
     "npm:react-router@1.0.0": {
       "child_process": "github:jspm/nodelibs-child_process@0.1.0",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
@@ -326,6 +332,10 @@ System.config({
     "npm:react@0.14.3": {
       "envify": "npm:envify@3.4.0",
       "fbjs": "npm:fbjs@0.3.2",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:react@0.14.7": {
+      "fbjs": "npm:fbjs@0.6.1",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:readable-stream@1.1.13": {

@@ -92,7 +92,11 @@
         "./sources/application.angular/modules/users/controllers/userList.ts",
         "./sources/application.angular/modules/users/interfaces/user.d.ts",
         "./sources/application.angular/modules/users/users.module.ts",
-        "./sources/application/resourceService.ts"
+        "./sources/application/resourceService.ts",
+        "./sources/application.react/app.tsx",
+        "./sources/application.react/components/master/navigation.tsx",
+        "./sources/application.react/components/master/routing.tsx",
+        "./sources/application.react/components/products/productsList.tsx"
     ],
     "exclude": [],
     "atom": {

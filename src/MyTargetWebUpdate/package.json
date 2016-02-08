@@ -8,8 +8,8 @@
     "build:angular:anonymous": "jspm bundle-sfx dest/application.angular/anonymous.app wwwroot/bundles/angular/anonymous.app.bundle.sfx.js --minify --no-mangle",
     "build:angular": "npm run build:angular:application && npm run build:angular:anonymous",
     "web:build": "dnu build",
-    "web:listen": "dnx web Hosting:Environment=Development",
-    "web": "npm run web:build || npm run web:listen"
+    "prod": "dnx web",
+    "dev": "dnx web Hosting:Environment=Development"
   },
   "repository": {
     "type": "git",
@@ -29,15 +29,24 @@
     "gulp-jade": "^1.1.0",
     "gulp-less": "^3.0.5",
     "gulp-minify-css": "^1.2.1",
+    "gulp-minify-html": "^1.0.5",
     "gulp-ng-annotate": "^1.1.0",
     "gulp-typescript": "^2.9.2",
     "history": "^1.13.1",
     "jquery": "^2.1.4",
     "jspm": "^0.16.15",
+    "material-ui": "^0.13.4",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-router": "^1.0.3",
+    "react-tap-event-plugin": "^0.2.2",
+    "ts-loader": "^0.8.0",
     "tsd": "^0.6.5",
     "typescript": "^1.7.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "webpack": "^2.0.7-beta"
+  },
   "jspm": {
     "directories": {
       "baseURL": "wwwroot"
@@ -51,7 +60,9 @@
       "angularjs-toaster": "npm:angularjs-toaster@^0.4.15",
       "auth0-angular": "npm:auth0-angular@^4.1.0",
       "moment": "npm:moment@^2.11.0",
-      "ng-csv": "npm:ng-csv@^0.3.6"
+      "ng-csv": "npm:ng-csv@^0.3.6",
+      "react": "npm:react@^0.14.7",
+      "react-dom": "npm:react-dom@^0.14.7"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",

@@ -1,1 +1,14 @@
-<link rel="import" href="../../../bower_components/polymer/polymer.html"/><dom-module id="products-list"><template><iron-ajax url="/api/products" auto="auto" handle-as="json" last-response="{{ajaxResponse}}"></iron-ajax><paper-listbox selected="0"><template is="dom-repeat" items="[[ajaxResponse]]"><paper-item>{{item.Code}}</paper-item></template></paper-listbox></template><script>(() => { Polymer({ is : 'products-list', properties : { ajaxResponse : [{Code : 'test'}] } }) })();</script></dom-module>
+<link rel=import href=../../../bower_components/polymer/polymer.html><dom-module id=products-list><template><iron-ajax url=/api/products auto=auto handle-as=json last-response={{ajaxResponse}}></iron-ajax><paper-header-panel><div class=paper-header><paper-card style="width : 100%;"><div class=card-content><paper-input name=name label="Szukaj ..." value={{searchString::input}}></paper-input></div></paper-card></div><div class=fit><paper-listbox selected=0><template is=dom-repeat as=item items=[[ajaxResponse]] filter={{searchResult(searchString)}}><paper-item>{{item.Code}} - {{item.Name}}</paper-item></template></paper-listbox></div></paper-header-panel></template><script>
+    (() => {
+      Polymer({
+        is : 'products-list',
+        searchResult : (searchText) => {
+          if(!searchText){
+            return null;
+          }else{
+            return (item) => item.Code.includes(searchText)
+          }
+        }
+      })
+    })();
+  </script></dom-module>
