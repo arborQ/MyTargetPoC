@@ -96,6 +96,7 @@
         "./sources/application.react/app.tsx",
         "./sources/application.react/components/master/navigation.tsx",
         "./sources/application.react/components/master/routing.tsx",
+        "./sources/application.react/components/products/productDetails.tsx",
         "./sources/application.react/components/products/productsList.tsx"
     ],
     "exclude": [],

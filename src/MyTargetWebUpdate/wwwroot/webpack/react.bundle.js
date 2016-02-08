@@ -12537,6 +12537,7 @@
 	var React = __webpack_require__(5);
 	var react_router_1 = __webpack_require__(146);
 	var productsList_1 = __webpack_require__(209);
+	var productDetails_1 = __webpack_require__(210);
 	var cc = (function (_super) {
 	    __extends(cc, _super);
 	    function cc() {
@@ -12553,7 +12554,7 @@
 	        _super.apply(this, arguments);
 	    }
 	    routingMap.prototype.render = function () {
-	        return (React.createElement(react_router_1.Router, {"history": react_router_1.browserHistory}, React.createElement(react_router_1.Route, {"path": "/", "component": cc}, React.createElement(react_router_1.Route, {"path": "products", "component": productsList_1.default}))));
+	        return (React.createElement(react_router_1.Router, {"history": react_router_1.browserHistory}, React.createElement(react_router_1.Route, {"path": "/", "component": cc}, React.createElement(react_router_1.Route, {"path": "products", "component": productsList_1.default}, React.createElement(react_router_1.Route, {"path": "details/:id", "component": productDetails_1.default}, " ")))));
 	    };
 	    return routingMap;
 	})(React.Component);
@@ -33277,13 +33278,32 @@
 	        var _this = this;
 	        var renderItems = this.state.list
 	            .filter(function (item) { return !_this.state.search || (item.Code + " " + item.Name + " " + item.Supplier + " " + item.Location).indexOf(_this.state.search) !== -1; })
-	            .map(function (item) { return React.createElement("a", {"key": item.Id, "className": "list-group-item", "href": "/products/details/" + item.Id}, item.Code); });
-	        return (React.createElement("div", null, React.createElement("div", {"className": "card"}, React.createElement("div", {"className": "card-block"}, React.createElement("div", {"className": "row"}, React.createElement("div", {"className": "col col-lg-12"}, React.createElement("label", {"htmlFor": "search-text", "className": "control-label"}, "Szukaj"), React.createElement("input", {"id": "search-text", "type": "text", "className": "form-control", "value": this.state.search, "onChange": function (event) { _this.searchFiler(event.target["value"]); }}))))), React.createElement("div", {"className": "card"}, React.createElement("div", {"className": "list-group list-group-flush"}, React.createElement("span", {"className": "list-group-item"}, "Kod"), renderItems))));
+	            .map(function (item) { return React.createElement("a", {"key": item.Id, "className": "list-group-item", "href": "#/products/details/" + item.Id}, item.Code); });
+	        return (React.createElement("div", null, React.createElement("div", {"className": "card"}, React.createElement("div", {"className": "card-block"}, React.createElement("div", {"className": "row"}, React.createElement("div", {"className": "col col-lg-12"}, React.createElement("label", {"htmlFor": "search-text", "className": "control-label"}, "Szukaj"), React.createElement("input", {"id": "search-text", "type": "text", "className": "form-control", "value": this.state.search, "onChange": function (event) { _this.searchFiler(event.target["value"]); }}))))), React.createElement("div", {"className": "card"}, React.createElement("div", {"className": "list-group list-group-flush"}, React.createElement("span", {"className": "list-group-item"}, "Kod"), renderItems)), this.props.children));
 	    };
 	    return productsList;
 	})(React.Component);
 	Object.defineProperty(exports, "__esModule", { value: true });
 	exports.default = productsList;
+
+
+/***/ },
+/* 210 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(5);
+	var productDetails = (function (_super) {
+	    __extends(productDetails, _super);
+	    function productDetails() {
+	        _super.apply(this, arguments);
+	    }
+	    productDetails.prototype.render = function () {
+	        return React.createElement("div", null, "details");
+	    };
+	    return productDetails;
+	})(React.Component);
+	Object.defineProperty(exports, "__esModule", { value: true });
+	exports.default = productDetails;
 
 
 /***/ }

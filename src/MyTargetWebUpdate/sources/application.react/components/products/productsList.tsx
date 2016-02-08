@@ -19,7 +19,7 @@ export default class productsList extends React.Component<any, { list : arbor.pr
 
     var renderItems = this.state.list
     .filter((item) => !this.state.search || `${item.Code} ${item.Name} ${item.Supplier} ${item.Location}`.indexOf(this.state.search) !== -1)
-    .map((item) =>  <a key={item.Id} className="list-group-item" href={`/products/details/${item.Id}`}>{item.Code}</a>);
+    .map((item) =>  <a key={item.Id} className="list-group-item" href={`#/products/details/${item.Id}`}>{item.Code}</a>);
 
     return (
       <div>
@@ -39,6 +39,7 @@ export default class productsList extends React.Component<any, { list : arbor.pr
             {renderItems}
           </div>
         </div>
+        {this.props.children}
       </div>
     )
   }
