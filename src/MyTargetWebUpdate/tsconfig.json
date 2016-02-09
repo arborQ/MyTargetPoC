@@ -31,6 +31,7 @@
         "./typings/angularjs/angular.d.ts",
         "./typings/history/history.d.ts",
         "./typings/jquery/jquery.d.ts",
+        "./typings/lodash/lodash.d.ts",
         "./typings/material-ui/material-ui.d.ts",
         "./typings/moment/moment-node.d.ts",
         "./typings/moment/moment.d.ts",
@@ -97,7 +98,9 @@
         "./sources/application.react/components/master/navigation.tsx",
         "./sources/application.react/components/master/routing.tsx",
         "./sources/application.react/components/products/productDetails.tsx",
-        "./sources/application.react/components/products/productsList.tsx"
+        "./sources/application.react/components/products/productForm.tsx",
+        "./sources/application.react/components/products/productsList.tsx",
+        "./sources/application.react/components/shared/dialog.tsx"
     ],
     "exclude": [],
     "atom": {
