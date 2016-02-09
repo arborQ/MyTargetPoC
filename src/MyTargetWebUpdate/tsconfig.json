@@ -9,7 +9,7 @@
         "preserveConstEnums": true,
         "suppressImplicitAnyIndexErrors": true,
         "noEmitHelpers": true,
-        "noEmit": true,
+        "noEmit": false,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true
     },
@@ -84,6 +84,7 @@
         "./sources/application.angular/modules/shared/interfaces/dialogPage.d.ts",
         "./sources/application.angular/modules/shared/interfaces/loadingBar.d.ts",
         "./sources/application.angular/modules/shared/interfaces/modelController.d.ts",
+        "./sources/application.angular/modules/shared/interfaces/react-tap-event-plugin.d.ts",
         "./sources/application.angular/modules/shared/interfaces/reports.d.ts",
         "./sources/application.angular/modules/shared/interfaces/sortFilter.d.ts",
         "./sources/application.angular/modules/shared/interfaces/toaster.d.ts",

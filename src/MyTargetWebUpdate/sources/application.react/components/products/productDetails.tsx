@@ -19,14 +19,14 @@ export default class productDetails extends React.Component<any, { details : arb
   render(){
 
       var buttons = [
-        <RaisedButton label="Zapisz"
+        <RaisedButton label="Zapisz" key="save"
         secondary={false} />,
-        <RaisedButton label="Anuluj"
+        <RaisedButton label="Anuluj" key="cancel"
         secondary={true} />
       ];
       return (
         <Dialog contentStyle={ { maxWidth: '400px' } }
-          title={`Details for product`}
+          title={`Edytuj produkt`} autoScrollBodyContent={true}
           modal={true}
           open={true}
           actions={buttons}>
