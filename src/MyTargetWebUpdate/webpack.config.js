@@ -2,11 +2,19 @@ var path = require("path");
 module.exports = {
     module: {
         loaders: [
-            { test: /\.ts(x?)$/, loader: 'ts-loader' }
+            { test: /\.ts(x?)$/, loader: 'ts-loader' },
+            {
+              test: /\.jsx?$/,
+              exclude: /(node_modules|bower_components)/,
+              loader: 'babel', // 'babel-loader' is also a legal name to reference
+              query: {
+                presets: ['react', 'es2015']
+              }
+            }
         ]
     },
     resolve: {
-      extensions: ['', '.js', '.tsx']
+      extensions: ['', '.js', '.ts', '.tsx']
     },
     devtool: 'source-map',
     entry: {
